@@ -2,7 +2,7 @@
   <header>
     <main-nav />
   </header>
-  <main>
+  <main class="container px-16">
     <section>
       <section-hello />
     </section>
@@ -19,15 +19,15 @@
       <section-contact />
     </section>
 
+    <footer>
+      <footer-page/>
+    </footer>
   </main>
-  <footer>
-    <main-footer/>
-  </footer>
 </template>
 
 <script>
 import MainNav from '@/components/MainNav.vue';
-import MainFooter from '@/pages/MainFooter.vue';
+import FooterPage from '@/pages/Footer.vue';
 import SectionHello from "@/pages/SectionHello.vue"
 import SectionAbout from "@/pages/SectionAbout.vue"
 import SectionProjects from "@/pages/SectionProjects.vue"
@@ -37,7 +37,7 @@ export default {
   name: "App",
   components: {
     MainNav,
-    MainFooter,
+    FooterPage,
     SectionHello,
     SectionAbout,
     SectionProjects,
