@@ -2,20 +2,20 @@
   <header>
     <main-nav />
   </header>
-  <main class="container px-16">
-    <section>
+  <main class="px-16 bg-black">
+    <section class="container">
       <section-hello />
     </section>
-
-    <section>
+  
+    <section class="container" id="projects">
+      <section-projects />
+    </section>
+    
+    <section class="container" id="about">
       <section-about />
     </section>
 
-    <section>
-      <section-projects />
-    </section>
-
-    <section>
+    <section class="container" id="contact">
       <section-contact />
     </section>
 
