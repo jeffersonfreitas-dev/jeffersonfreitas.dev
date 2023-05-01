@@ -28,7 +28,7 @@ export default {
         {name: "Sobre", link: "#about"},
         {name: "Projetos", link: "#projects"},
         {name: "Contato", link: "#contact"},
-        {name: "Blog", link: "#hello"}
+        // {name: "Blog", link: "#hello"}
       ]
     }
   }
