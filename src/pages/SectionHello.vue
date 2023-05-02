@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-screen mt-16" id="hello">
+  <div class="w-full h-screen" id="hello">
     <div class="left-10 h-full bg-black py-16">
       
       <div class="grid grid-rows-1 w-full py-16">
@@ -7,7 +7,7 @@
         <p class="text-white mt-2">Atuando em todos os estágios de um projeto. Desde o desenvolvimento ao deploy!!</p>
       </div>
 
-      <div class="grid grid-cols-2 mt-24">
+      <div class="grid grid-cols-2">
         <div class="px-16 text-slate-50">
           <h2 class="text-3xl font-medium">Bem-vindo(a) ao meu Portfólio!</h2>
   
@@ -24,6 +24,7 @@
         <div class="px-16 text-slate-50">
           <div class="text-justify">
             <!-- <p class="text-lg font-medium mt-10">Se você estiver procurando por um desenvolvedor fullstack que possa transformar suas ideias em realidade, sinta-se à vontade para entrar em contato comigo. Vamos trabalhar juntos para construir soluções incríveis!</p> -->
+            <p class="text-xl font-medium mt-10">EM DESENVOLVIMENTO!!! Em breve estará disponível</p>
           </div>
         </div>
       </div>
