@@ -2,7 +2,7 @@
   <header>
     <main-nav />
   </header>
-  <main class="px-16 bg-black">
+  <main class="px-16 bg-default-dark-1">
     <section class="container">
       <section-hello />
     </section>
