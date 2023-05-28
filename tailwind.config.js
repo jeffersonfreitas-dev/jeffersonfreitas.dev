@@ -14,7 +14,8 @@ module.exports = {
       },
       colors:  {
         "default-green-1": "#2E8B57",
-        "default-green-2": "#197519"
+        "default-green-2": "#197519",
+        "default-dark-1": "#141412"
       }
     },
   },
