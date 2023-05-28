@@ -2,8 +2,8 @@
   <header>
     <main-nav />
   </header>
-  <main class="px-16 bg-default-dark-1">
-    <section class="container">
+  <main class="bg-default-dark-1">
+    <section class="container bg-default-dark-2">
       <section-hello />
     </section>
   
