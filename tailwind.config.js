@@ -16,7 +16,8 @@ module.exports = {
         "default-green-1": "#2E8B57",
         "default-green-2": "#197519",
         "default-dark-1": "#141412",
-        "default-dark-2": "#30302a"
+        "default-dark-2": "#30302a",
+        "default-gold-1": "#7a782a"
       }
     },
   },

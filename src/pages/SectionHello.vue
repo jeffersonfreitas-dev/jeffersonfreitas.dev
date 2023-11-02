@@ -1,35 +1,21 @@
 <template>
   <div class="h-screen">
-    <div class=" h-full grid grid-cols-1 lg:grid-cols-2 gap-3" >
-      <font-awesome-icon icon="fa-solid fa-user-secret" />
-      <!-- Coluna esquerda -->
-      <!-- <div class="grid grid-rows-1">
-          <div class="row-span-1 hello-principal">
-            <h1>Olá bom dia!!!</h1> 
-            <h2>Este é o meu Portfólio</h2>
-            <h3>Aqui você irá encontrar mais informações sobre mim e sobre os meus projetos.</h3>
-            <p>Bem vindo(a), meu nome é Jefferson e sou um entusiasta da tecnologia apaixonado por Desenvolvimento de Software (Frontend e Backend), com uma dedicação
-            diária à aquisição de conhecimentos e habilidades. Sou movido pela persistência e dedicação...</p>
-          
-            <button>Clique aqui para saber mais sobre mim</button>
-          </div>
-
-        </div> -->
-
-        <!-- Coluna direita -->
-        <!-- <div class="grid grid-rows-2 hello-projetos">
-            <h1>Confira Meus Projetos:</h1>
-            <div class="projeto-lista">
-                <div class="projetos">
-                  <a href="">Simed</a>
-                  <a href="">Central Notificações</a>
-                  <a href="">Aplicação Jobs</a>
-                  <a href="">MotoManager</a>
-                  <a href="">Colaborativa</a>
-                </div>
-            </div>
-            icones redes sociais
-        </div> -->
+    <div class="h-full grid grid-rows-3 bg-default-dark-2 text-white lg:grid-rows-1 lg:grid-cols-2 gap-1">
+      
+      <div class="row-span-2 lg:row-span-1 lg:col-span-1 w-70 h-full flex flex-col justify-center items-center">
+        <!-- Conteúdo da primeira div (70% de largura, 70% de altura) -->
+        <h1 :class="isMobile ? 'text-xl font-bold mt-28' : 'text-4xl font-bold'">Desenvolvedor de Software</h1>
+        <p class="mt-6 text-md">Seja bem-vindo(a) ao meu portfólio.</p>
+        <img src="../assets/foto_avatar.jpg" alt="Sua Foto" class="w-120 h-60 rounded-full mb-4 mt-8">
+      </div>
+      
+      
+      <div class="lg:col-span-1 w-30 h-full flex flex-col justify-center items-center">
+        <blockquote class="text-sm px-6 text-justify">
+          Como desenvolvedor de software, <span class="font-bold">estou aqui para criar soluções eficientes e escaláveis</span>. Juntos, podemos transformar desafios em oportunidades. Explore e conheça meu trabalho.
+        </blockquote>
+        <button class="bg-default-gold-1 rounded-xl text-white px-6 py-3 font-thin hover:default-dark-1 mt-8">Conheça meus projetos</button>
+      </div>
     </div>
   </div>
 </template>
@@ -37,69 +23,30 @@
 <script>
 
 export default {
-  name: "SectionHello"
-}
+  name: "SectionHello",
+  data() {
+    return {
+      phrases: ["Backend", "Frontend", "Devops"],
+      currentPhraseIndex: 0,
+      isMobile: false
+    };
+  },
+  mounted() {
+    this.displayPhrases();
+    this.isMobile = window.innerWidth <= 768;
+    window.addEventListener('resize', this.checkIsMobile);
+  },
+  methods: {
+    checkIsMobile() {
+      this.isMobile = window.innerWidth <= 768;
+    },
+    displayPhrases() {
+      const phrasesElement = this.$refs.phrases;
+      setInterval(() => {
+        phrasesElement.textContent = this.phrases[this.currentPhraseIndex];
+        this.currentPhraseIndex = (this.currentPhraseIndex + 1) % this.phrases.length;
+      }, 1500);
+    }
+  }
+};
 </script>
-
-<style scoped>
-
-.hello-principal{
-  display: flex;
-  padding: 12px;
-  padding-top: 30px;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.hello-principal h1 {
-  padding-left: 50px;
-  font-size: 85px;
-}
-
-.hello-principal h2 {
-  margin-top: 15px;
-  padding-left: 65px;
-  font-size: 45px;
-}
-
-.hello-principal h3 {
-  margin-top: 15px;
-  padding-left: 65px;
-  font-size: 25px;
-}
-
-.hello-principal p {
-  margin-top: 15px;
-  padding-left: 65px;
-}
-
-.hello-principal button {
-  margin-top: 15px;
-}
-
-.hello-projetos{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.hello-projetos h1 {
-  display: flex;
-  justify-content: center;
-  font-size: 30px;
-  align-content: center;
-  margin-top: 30px;
-}
-
-.projeto-lista {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-}
-
-.projetos {
-  display: flex;
-  flex-direction: column;
-}
-</style>

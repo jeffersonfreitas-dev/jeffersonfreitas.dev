@@ -13,7 +13,7 @@
 
         <ul :class="isMobile ? 'list-none flex items-center h-full mt-4' : 'list-none flex items-center ml-20 h-16'">
           <li v-for="item in menuItems" :key="item">
-            <a v-if="isMobile && mobileMenuVisible" :href="item.link" class="flex items-center py-2.5 text-slate-50 ml-14 hover:font-bold">{{ item.name }}</a>
+            <a v-if="isMobile && mobileMenuVisible" :href="item.link" class="flex items-justify py-2.5 text-slate-50 ml-10 hover:font-bold">{{ item.name }}</a>
             <a v-else-if="!isMobile" :href="item.link" class="flex items-center py-2.5 text-slate-50 ml-14 hover:font-bold">{{ item.name }}</a>
           </li>
         </ul>
