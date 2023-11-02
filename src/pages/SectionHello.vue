@@ -4,17 +4,24 @@
       
       <div class="row-span-2 lg:row-span-1 lg:col-span-1 w-70 h-full flex flex-col justify-center items-center">
         <!-- Conteúdo da primeira div (70% de largura, 70% de altura) -->
-        <h1 :class="isMobile ? 'text-xl font-bold mt-28' : 'text-4xl font-bold'">Desenvolvedor de Software</h1>
+        <h1 :class="isMobile ? 'text-xl font-bold mt-28' : 'text-4xl md:mt-64 lg:mt-16 font-bold'">Desenvolvedor de Software</h1>
         <p class="mt-6 text-md">Seja bem-vindo(a) ao meu portfólio.</p>
         <img src="../assets/foto_avatar.jpg" alt="Sua Foto" class="w-120 h-60 rounded-full mb-4 mt-8">
+
+
+        <blockquote v-if="!isMobile" class="text-sm px-12 text-justify">
+          Como desenvolvedor de software, <span class="font-bold">estou aqui para criar soluções eficientes e escaláveis</span>. Juntos, podemos transformar desafios em oportunidades. Explore e conheça meu trabalho.
+        </blockquote>
+        <button v-if="!isMobile" class="bg-default-gold-1 rounded-xl text-white px-6 py-3 font-thin hover:default-dark-1 mt-8">Conheça meus projetos</button>
+
       </div>
       
       
       <div class="lg:col-span-1 w-30 h-full flex flex-col justify-center items-center">
-        <blockquote class="text-sm px-6 text-justify">
+        <blockquote v-if="isMobile" class="text-sm px-12 text-justify">
           Como desenvolvedor de software, <span class="font-bold">estou aqui para criar soluções eficientes e escaláveis</span>. Juntos, podemos transformar desafios em oportunidades. Explore e conheça meu trabalho.
         </blockquote>
-        <button class="bg-default-gold-1 rounded-xl text-white px-6 py-3 font-thin hover:default-dark-1 mt-8">Conheça meus projetos</button>
+        <button v-if="isMobile" class="bg-default-gold-1 rounded-xl text-white px-6 py-3 font-thin hover:default-dark-1 mt-8">Conheça meus projetos</button>
       </div>
     </div>
   </div>
