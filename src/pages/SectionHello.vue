@@ -1,9 +1,9 @@
 <template>
-  <div class="w-full h-screen py-20" id="hello">
+  <div class="h-screen">
     <div class=" h-full grid grid-cols-1 lg:grid-cols-2 gap-3" >
-
+      <font-awesome-icon icon="fa-solid fa-user-secret" />
       <!-- Coluna esquerda -->
-      <div class="grid grid-rows-1">
+      <!-- <div class="grid grid-rows-1">
           <div class="row-span-1 hello-principal">
             <h1>Olá bom dia!!!</h1> 
             <h2>Este é o meu Portfólio</h2>
@@ -14,10 +14,10 @@
             <button>Clique aqui para saber mais sobre mim</button>
           </div>
 
-        </div>
+        </div> -->
 
         <!-- Coluna direita -->
-        <div class="grid grid-rows-2 hello-projetos">
+        <!-- <div class="grid grid-rows-2 hello-projetos">
             <h1>Confira Meus Projetos:</h1>
             <div class="projeto-lista">
                 <div class="projetos">
@@ -29,7 +29,7 @@
                 </div>
             </div>
             icones redes sociais
-        </div>
+        </div> -->
     </div>
   </div>
 </template>
