@@ -2,8 +2,8 @@
   <header>
     <main-nav />
   </header>
-  <main class="bg-default-dark-1 " style="color: aliceblue;">
-    <section class="container bg-default-dark-2">
+  <main class="bg-default-dark-1 ">
+    <section>
       <section-hello />
     </section>
   
