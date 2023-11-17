@@ -1,24 +1,23 @@
 <template>
   <div class="h-screen">
-    <div class="h-full grid grid-rows-3 bg-default-dark-2 text-white lg:grid-rows-1 lg:grid-cols-2 gap-1">
-      
-      <div class="row-span-2 lg:row-span-1 lg:col-span-1 w-70 h-full flex flex-col justify-center items-center">
-        <!-- Conteúdo da primeira div (70% de largura, 70% de altura) -->
-        <h1 :class="isMobile ? 'text-xl font-bold mt-28' : 'text-4xl md:mt-64 lg:mt-16 font-bold'">Desenvolvedor de Software</h1>
-        <p class="mt-6 text-md">Seja bem-vindo(a) ao meu portfólio.</p>
-        <img src="../assets/foto_avatar.jpg" alt="Sua Foto" class="w-120 h-60 rounded-full mb-4 mt-8">
+    <div class="h-full bg-default-dark-2 text-white lg:flex lg:flex-row flex-col">
 
-
-        <blockquote v-if="!isMobile" class="text-sm px-12 text-justify">
+      <!-- Conteúdo da primeira div -->
+      <div class="lg:w-1/2 lg:h-full h-screen flex flex-col justify-center items-center">
+        <h1 class="text-2xl lg:text-4xl font-bold">Desenvolvedor de Software</h1>
+        <p class="mt-3 text-md">Seja bem-vindo(a) ao meu portfólio.</p>
+        <img src="../assets/foto_avatar.jpg" alt="Foto Avatar Jefferson" class="w-120 h-60 lg:h-80 rounded-full mt-8 lg:mt-5">
+        
+        <blockquote class="text-sm lg:text-lg px-12 lg:px-16 text-justify mt-6">
           Como desenvolvedor de software, <span class="font-bold">estou aqui para criar soluções eficientes e escaláveis</span>. Juntos, podemos transformar desafios em oportunidades. Explore e conheça meu trabalho.
         </blockquote>
-        <button v-if="!isMobile" class="bg-default-gold-1 rounded-xl text-white px-6 py-3 font-thin hover:default-dark-1 mt-8">Conheça meus projetos</button>
 
+        <button class="bg-default-gold-1 rounded-xl text-white px-6 py-3 font-thin hover:default-dark-1 mt-8 lg:mt-16">Conheça meus projetos</button>
       </div>
-      
-      
-      <div class="lg:col-span-1 w-30 h-full flex flex-col justify-center items-center">
-        <ul v-if="!isMobile" class="text-md text-white list-none mt-4 px-16 max-w-prose text-justify">
+
+      <!-- Conteúdo da segunda div -->
+      <div class=" hidden sm:block lg:w-1/2 lg:h-full h-screen lg:mt-0 mt-0 lg:flex flex-col justify-center items-center bg-default-dark-2 text-white">
+        <ul class="text-md text-white list-none mt-4 px-16 max-w-prose text-justify">
           <li
             class="mb-4"
             v-for="(item, index) in listItems"
@@ -29,27 +28,6 @@
           </li>
           <br>
         </ul>
-  
-        
-        <div class="mt-4" v-if="!isMobile">
-          <a href="https://github.com/jeffersonfreitas-dev?tab=repositories" class=" rounded-full p-4 mx-4 bg-default-gold-1">
-            <font-awesome-icon  :icon="['fab', 'github']" size="16px"/>
-          </a>
-          <a href="https://www.linkedin.com/in/jefferson-freitas/" class=" rounded-full p-4 mx-4 bg-default-gold-1">
-            <font-awesome-icon :icon="['fab', 'linkedin-in']" size="16px"/>
-          </a>
-          <a href="#" class=" rounded-full p-4 mx-4 bg-default-gold-1">
-            <font-awesome-icon :icon="['fab', 'instagram']" />
-          </a>
-          <a href="#" class=" rounded-full p-4 mx-4 bg-default-gold-1">
-            <font-awesome-icon :icon="['fas', 'envelope']" />
-          </a>
-        </div>
-
-        <blockquote v-if="isMobile" class="text-sm px-12 text-justify">
-          Como desenvolvedor de software, <span class="font-bold">estou aqui para criar soluções eficientes e escaláveis</span>. Juntos, podemos transformar desafios em oportunidades. Explore e conheça meu trabalho.
-        </blockquote>
-        <button v-if="isMobile" class="bg-default-gold-1 rounded-xl text-white px-6 py-3 font-thin hover:default-dark-1 mt-8">Conheça meus projetos</button>
       </div>
     </div>
   </div>
@@ -96,7 +74,7 @@ export default {
     showNextItem() {
       this.showItems[this.currentItemIndex] = true;
       this.currentItemIndex = (this.currentItemIndex + 1) % this.listItems.length;
-      setTimeout(this.showNextItem, 1000);
+      setTimeout(this.showNextItem, 1);
     }
   }
 };
