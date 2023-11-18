@@ -17,7 +17,7 @@
             <font-awesome-icon :icon="['fas', 'envelope']" />
           </a>
       </div>
-      <div class="mt-8">
+      <div class="mt-6">
         <p class="text-xs font-bold"> @2023 Todos os direitos reservados</p>
       </div>
     </div>

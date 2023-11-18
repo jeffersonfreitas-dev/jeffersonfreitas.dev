@@ -1,10 +1,10 @@
 <template>
-  <div class="h-screen">
+  <div class="h-screen px-0 lg:px-16">
     <div class="h-full bg-default-dark-2 text-white lg:flex lg:flex-row flex-col">
 
       <!-- Conteúdo da primeira div -->
       <div class="lg:w-1/2 lg:h-full h-screen flex flex-col justify-center items-center">
-        <h1 class="text-2xl lg:text-4xl font-bold">Desenvolvedor de Software</h1>
+        <h1 class="text-2xl lg:text-4xl font-bold mt-2 lg:mt-16">Desenvolvedor de Software</h1>
         <p class="mt-3 text-md">Seja bem-vindo(a) ao meu portfólio.</p>
         <img src="../assets/foto_avatar.jpg" alt="Foto Avatar Jefferson" class="w-120 h-60 lg:h-80 rounded-full mt-8 lg:mt-5">
         
@@ -12,7 +12,7 @@
           Como desenvolvedor de software, <span class="font-bold">estou aqui para criar soluções eficientes e escaláveis</span>. Juntos, podemos transformar desafios em oportunidades. Explore e conheça meu trabalho.
         </blockquote>
 
-        <button class="bg-default-gold-1 rounded-xl text-white px-6 py-3 font-thin hover:default-dark-1 mt-8 lg:mt-16">Conheça meus projetos</button>
+        <button class="bg-default-gold-1 rounded-xl text-white px-6 py-3 font-thin hover:default-dark-1 mt-8 lg:mt-16" @click="handleVaParaProjetos">Conheça meus projetos</button>
       </div>
 
       <!-- Conteúdo da segunda div -->
@@ -61,6 +61,9 @@ export default {
     this.showNextItem();
   },
   methods: {
+    handleVaParaProjetos() {
+      alert("Ainda em Desenvolvimento")
+    },
     checkIsMobile() {
       this.isMobile = window.innerWidth <= 768;
     },
