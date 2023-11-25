@@ -3,11 +3,11 @@
     <main-nav />
   </header>
   <main >
-    <section class="bg-default-dark-1 mt-4 lg:mt-0 lg:pt-0">
+    <section class="tw-bg-default-dark-1 tw-mt-4 tw-lg:mt-0 tw-lg:pt-0">
       <section-hello />
     </section>
 
-    <section class="bg-default-dark-1">
+    <section class="tw-bg-default-dark-1">
       <section-contact />
     </section>
 

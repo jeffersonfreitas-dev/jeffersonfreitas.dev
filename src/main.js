@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import '@/assets/main.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faBars, faEnvelope} from "@fortawesome/free-solid-svg-icons";
 import { faGithub,faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'

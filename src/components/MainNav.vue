@@ -1,20 +1,14 @@
 <template>
-  <header class="w-full text-sm">
-    <div class="fixed top-0 left-0 w-full bg-default-green-1">
-      <div class="mx-auto flex flex-col mt-3 md:flex-row justify-between items-center h-full border-b border-solid border-green-900 px-8">
-        <div class="text-center flex items-center">
-          <a href="#hello" class="text-2xl text-slate-50">{{ company }}</a>
-          <div v-if="isMobile" class="ml-auto">
-            <i @click="showMobileMenu()" class="flex w-24 items-center justify-center h-full text-2xl">
-              <font-awesome-icon fixed-width inverse icon="bars" size="24px"/>
-            </i>
-          </div>
-        </div>
-
-        <ul :class="isMobile ? 'list-none flex items-center h-full mt-4' : 'list-none flex items-center ml-20 h-16'">
+  <header class="d-flex justify-content-center">
+    <div class="row container">
+      <div class="col-lg-4 col-md-4 col-sm-12 d-flex align-items-center">
+        <a href="#hello" class="company_name fs-3 fw-bold text-decoration-none">{{ company }}</a>
+      </div>
+      
+      <div class="col-lg-8 col-md-8 col-sm-12 d-flex align-items-center">
+        <ul class="list-unstyled d-flex flex-column justify-content-end align-items-center flex-md-row gap-2 menu_container">
           <li v-for="item in menuItems" :key="item">
-            <a v-if="isMobile && mobileMenuVisible" :href="item.link" class="flex items-justify py-2.5 text-slate-50 ml-10 hover:font-bold">{{ item.name }}</a>
-            <a v-else-if="!isMobile" :href="item.link" class="flex items-center py-2.5 text-slate-50 ml-14 hover:font-bold">{{ item.name }}</a>
+            <a href="#" class="text-decoration-none menu_items">{{ item.name }}</a>
           </li>
         </ul>
       </div>
@@ -52,3 +46,27 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+header {
+  width: 100%;
+  background-color: #2E8B57;
+}
+.container {
+  width: 100%;
+  height: 10vh;
+}
+.company_name {
+  color: azure;
+  font-size: 16;
+}
+.menu_items {
+  color: azure;
+  padding-left: 3rem;
+}
+.menu_container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+</style>
