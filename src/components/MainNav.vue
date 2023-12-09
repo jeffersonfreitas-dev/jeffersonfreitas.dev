@@ -21,9 +21,9 @@
         </button>
       </div>
       
-      <div class="col-lg-8 col-md-7 col-sm-12 d-flex align-items-center">
+      <div class="col-lg-8 col-md-7 col-sm-12 d-flex align-items-center menu">
         <div class="collapse navbar-collapse" :class="{ show: isMenuOpen }" id="navbarCollapse">
-          <ul class="navbar-nav me-auto mb-2 mb-md-0 list-unstyled d-flex flex-row justify-content-center align-items-center flex-md-row gap-2 menu_container">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0 list-unstyled d-flex flex-column justify-content-center align-items-start flex-md-row gap-2 menu_container">
             <li v-for="item in menuItems" :key="item">
               <a href="#" class="text-decoration-none menu_items">{{ item.name }}</a>
             </li>
@@ -77,6 +77,9 @@ export default {
 <style scoped>
 header {
   width: 100%;
+  background-color: #2E8B57;
+}
+.menu {
   background-color: #2E8B57;
 }
 .container {
