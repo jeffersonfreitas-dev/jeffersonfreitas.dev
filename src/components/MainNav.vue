@@ -1,22 +1,34 @@
 <template>
-  <header class="w-full text-sm">
-    <div class="fixed top-0 left-0 w-full bg-default-green-1">
-      <div class="mx-auto flex flex-col mt-3 md:flex-row justify-between items-center h-full border-b border-solid border-green-900 px-8">
-        <div class="text-center flex items-center">
-          <a href="#hello" class="text-2xl text-slate-50">{{ company }}</a>
-          <div v-if="isMobile" class="ml-auto">
-            <i @click="showMobileMenu()" class="flex w-24 items-center justify-center h-full text-2xl">
-              <font-awesome-icon fixed-width inverse icon="bars" size="24px"/>
-            </i>
-          </div>
+  <header class="d-flex justify-content-center">
+    <div class="row container">
+      <div class="col-lg-4 col-md-4 col-sm-10 col-10 d-flex align-items-center">
+        <a href="#hello" class="company_name fs-3 fw-bold text-decoration-none">{{ company }}</a>
+      </div>
+      
+      <div class="col-lg-1 col-md-1 col-sm-2 col-2 d-flex flex-row align-items-center justify-content-center">
+        <!-- Botão para acionar o menu em dispositivos móveis -->
+        <button
+        class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse"
+          aria-expanded="false" 
+          aria-label="Toggle navigation"
+          @click="toggleMenu"
+          >
+          <font-awesome-icon :icon="['fas', 'bars']" color="white" class="fa-xl" v-if="isMobile"/>
+        </button>
+      </div>
+      
+      <div class="col-lg-7 col-md-7 col-sm-12 d-flex align-items-center menu">
+        <div class="collapse navbar-collapse" :class="{ show: isMenuOpen }" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0 list-unstyled d-flex flex-column justify-content-center align-items-start flex-md-row gap-2 menu_container">
+            <li v-for="item in menuItems" :key="item">
+              <a href="#" class="text-decoration-none menu_items">{{ item.name }}</a>
+            </li>
+          </ul>
         </div>
-
-        <ul :class="isMobile ? 'list-none flex items-center h-full mt-4' : 'list-none flex items-center ml-20 h-16'">
-          <li v-for="item in menuItems" :key="item">
-            <a v-if="isMobile && mobileMenuVisible" :href="item.link" class="flex items-justify py-2.5 text-slate-50 ml-10 hover:font-bold">{{ item.name }}</a>
-            <a v-else-if="!isMobile" :href="item.link" class="flex items-center py-2.5 text-slate-50 ml-14 hover:font-bold">{{ item.name }}</a>
-          </li>
-        </ul>
       </div>
     </div>
   </header>
@@ -32,23 +44,59 @@ export default {
         { name: "Sobre", link: "#about" },
         { name: "Projetos", link: "#projects" },
         { name: "Contato", link: "#contact" },
-        { name: "Blog", link: "#hello" }
       ],
       isMobile: false,
-      mobileMenuVisible: false
+      isMenuOpen: false
     };
   },
   mounted() {
     this.isMobile = window.innerWidth <= 768;
+    if(this.isMobile){
+      this.isMenuOpen = false;
+    }else {
+      this.isMenuOpen = true;
+    }
     window.addEventListener('resize', this.checkIsMobile);
   },
   methods: {
     checkIsMobile() {
       this.isMobile = window.innerWidth <= 768;
+      if(this.isMobile) {
+        this.isMenuOpen = false;
+      }else {
+        this.isMenuOpen = true;
+      }
     },
-    showMobileMenu() {
-      this.mobileMenuVisible = !this.mobileMenuVisible;
+    toggleMenu() {
+      this.isMenuOpen = !this.isMenuOpen;
     }
   }
 };
 </script>
+
+<style scoped>
+header {
+  width: 100%;
+  background-color: #2E8B57;
+}
+.menu {
+  background-color: #2E8B57;
+}
+.container {
+  width: 100%;
+  height: 10vh;
+}
+.company_name {
+  color: azure;
+  font-size: 16;
+}
+.menu_items {
+  color: azure;
+  padding-left: 3rem;
+}
+.menu_container {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+</style>
