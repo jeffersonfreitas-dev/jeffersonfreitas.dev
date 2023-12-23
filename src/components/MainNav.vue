@@ -1,7 +1,7 @@
 <template>
   <header class="d-flex justify-content-center">
     <div class="row container">
-      <div class="col-lg-3 col-md-4 col-sm-10 col-10 d-flex align-items-center">
+      <div class="col-lg-4 col-md-4 col-sm-10 col-10 d-flex align-items-center">
         <a href="#hello" class="company_name fs-3 fw-bold text-decoration-none">{{ company }}</a>
       </div>
       
@@ -21,7 +21,7 @@
         </button>
       </div>
       
-      <div class="col-lg-8 col-md-7 col-sm-12 d-flex align-items-center menu">
+      <div class="col-lg-7 col-md-7 col-sm-12 d-flex align-items-center menu">
         <div class="collapse navbar-collapse" :class="{ show: isMenuOpen }" id="navbarCollapse">
           <ul class="navbar-nav me-auto mb-2 mb-md-0 list-unstyled d-flex flex-column justify-content-center align-items-start flex-md-row gap-2 menu_container">
             <li v-for="item in menuItems" :key="item">
