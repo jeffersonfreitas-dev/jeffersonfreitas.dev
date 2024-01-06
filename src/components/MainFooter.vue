@@ -9,12 +9,6 @@
           <a href="https://www.linkedin.com/in/jefferson-freitas/" class="mx-2">
             <font-awesome-icon :icon="['fab', 'linkedin-in']" class="fa-xl" color="white"/>
           </a>
-          <a href="#" class="mx-2">
-            <font-awesome-icon :icon="['fab', 'instagram']" class="fa-xl" color="white"/>
-          </a>
-          <a href="#" class="mx-2">
-            <font-awesome-icon :icon="['fas', 'envelope']" class="fa-xl" color="white"/>
-          </a>
       </div>
       <div class="col-12 d-flex justify-content-center align-items-center text-white">
         <p class="tw-text-xs fs-8 tw-font-bold"> @2023 Todos os direitos reservados</p>

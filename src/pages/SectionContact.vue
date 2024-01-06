@@ -1,45 +1,57 @@
 <template>
-  <div class="tw--h-screen tw-px-0 lg:tw-px-16">
-    <div class="tw-h-full tw-bg-default-dark-3  tw-text-white lg:tw-flex lg:tw-flex-row tw-flex-col">
-      <div class="lg:tw-w-1/1 lg:tw-h-full tw-h-screen tw-flex tw-flex-col tw-justify-center tw-items-center tw-px-0 lg:tw-px-16">
-        <h1 class="tw-text-2xl lg:tw-text-4xl tw-font-bold">Entre em contato comigo!</h1>
-        <p class="tw-mt-3 tw-text-md">Telefone: +55 (85) 997525813</p>
-        <p class=" tw-text-md tw-mt-2">Ou se preferir, envie um e-mail:</p>
-        
-        <div class="tw-max-w-md tw-mx-auto tw-text-white tw-w-full tw-mt-3">
-          <form class="tw-bg-default-dark-3 tw-shadow-md tw-rounded tw-px-8 tw-pt-6 tw-pb-8 tw-mb-4">
-            <div class="tw-mb-4">
-              <label class="tw-block tw-text-sm tw-font-bold tw-mb-2" for="email">
-                Email
-              </label>
-              <input class="tw-shadow tw-appearance-none tw-border tw-rounded tw-w-full tw-py-2 tw-px-3 tw-text-gray-700 tw-leading-tight focus:tw-outline-none focus:tw-shadow-outline" id="email" type="email" placeholder="Digite seu email">
-            </div>
-            <div class="tw-mb-4">
-              <label class="tw-block tw-text-sm tw-font-bold tw-mb-2" for="name">
-                Nome
-              </label>
-              <input class="tw-shadow tw-appearance-none tw-border tw-rounded tw-w-full tw-py-2 tw-px-3 tw-text-gray-700 tw-leading-tight focus:tw-outline-none focus:tw-shadow-outline" id="name" type="text" placeholder="Digite seu nome">
-            </div>
-            <div class="tw-mb-4">
-              <label class="tw-block  tw-text-sm tw-font-bold tw-mb-2" for="subject">
-                Assunto
-              </label>
-              <input class="tw-shadow tw-appearance-none tw-border tw-rounded tw-w-full tw-py-2 tw-px-3 tw-text-gray-700 tw-leading-tight focus:tw-outline-none focus:tw-shadow-outline" id="subject" type="text" placeholder="Digite o assunto">
-            </div>
-            <div class="tw-mb-6">
-              <label class="tw-block  tw-text-sm tw-font-bold tw-mb-2" for="content">
-                Conteúdo
-              </label>
-              <textarea class="tw-shadow tw-appearance-none tw-border tw-rounded tw-w-full tw-py-2 tw-px-3 tw-text-gray-700 tw-leading-tight focus:tw-outline-none focus:tw-shadow-outline" rows="3" id="content" placeholder="Digite o conteúdo do e-mail"></textarea>
-            </div>
-            <div class="tw-flex tw-items-center tw-justify-between">
-              <button class="tw-bg-default-gold-1 tw-rounded-xl tw-text-white tw-px-6 tw-py-3 tw-font-thin hover:tw-default-dark-1 tw-mt-1" type="button" @click="handleEnviarEmail">
-                Enviar E-mail
-              </button>
-            </div>
-          </form>
+  <div class="container-fluid flex-column text-black" style="background-color: #99998a;">
+    <div class="row py-5">
+      <div class="row p-5 ">
+        <div class="d-flex flex-row">
+          <h1 class="text-center fs-1">Fale comigo</h1>
+          <div class="text-center" style="margin-left: 1rem;">
+            <font-awesome-icon :icon="['fa', 'comment']" class="fa-2x" color="black"/>
+          </div>
         </div>
+      </div>
 
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex">
+        <div class="row p-3">
+          <blockquote class="fs-5 text-justify text-start text-wrap text-break font-monospace">
+            <p class="pt-3">Se você busca um desenvolvedor de software experiente para concretizar seus projetos, estou pronto para ajudar. Posso transformar suas ideias em soluções tecnológicas inovadoras.</p>
+            <p class="mt-3">Estou comprometido em oferecer qualidade e resultados excepcionais.</p>
+            <p class="mt-3 font-weight-bold" >Entre em contato para discutirmos como posso contribuir para o sucesso do seu projeto.</p>
+          </blockquote>
+        </div>
+      </div>
+      
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center align-items-center px-4">
+        <div class="flex-column">
+          <div class="row mt-3">
+            <div class="flex-row">
+              <font-awesome-icon :icon="['fa', 'envelope']" class="fa-2x" color="black"/>
+              <span class="fs-3 px-4">E-mail:</span>
+            </div>
+            <div class="row" style="margin-left: 2rem;">
+              <span class="fs-4 px-3">contato@jeffersonfreitas.dev</span>
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="flex-row">
+              <font-awesome-icon :icon="['fa', 'phone']" class="fa-2x" color="black"/>
+              <span class="fs-3 px-4">Telefone:</span>
+            </div>
+            <div class="row" style="margin-left: 2rem;">
+              <span class="fs-4 px-3">+55 (85) 9.8172-1585</span>
+            </div>
+          </div>
+
+          <div class="row mt-3 mb-5">
+            <div class="flex-row">
+              <font-awesome-icon :icon="['fab', 'whatsapp']" class="fa-2x" color="black"/>
+              <span class="fs-3 px-4">Whatsapp:</span>
+            </div>
+            <div class="row" style="margin-left: 2rem;">
+              <span class="fs-4 px-3">+55 (85) 9.9752-5813</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -47,11 +59,6 @@
 
 <script>
 export default {
-  name: "SectionContact",
-  methods: {
-    handleEnviarEmail() {
-      alert("Ainda em Desenvolvimento!")
-    }
-  }
+  name: "SectionContact"
 }
 </script>

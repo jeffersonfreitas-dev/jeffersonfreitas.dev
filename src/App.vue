@@ -7,8 +7,8 @@
       <section-hello />
     </section>
 
-    <section class="tw-bg-default-dark-1">
-      <!-- <section-contact /> -->
+    <section>
+      <section-contact />
     </section>
 
     <footer>
@@ -39,7 +39,7 @@ import FooterPage from '@/pages/Footer.vue';
 import SectionHello from "@/pages/SectionHello.vue"
 // import SectionAbout from "@/pages/SectionAbout.vue"
 // import SectionProjects from "@/pages/SectionProjects.vue"
-// import SectionContact from "@/pages/SectionContact.vue"
+import SectionContact from "@/pages/SectionContact.vue"
 
 export default {
   name: "App",
@@ -49,7 +49,7 @@ export default {
     SectionHello,
     // SectionAbout,
     // SectionProjects,
-    // SectionContact
+    SectionContact
   }
 }
 </script>
