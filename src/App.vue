@@ -8,6 +8,10 @@
     </section>
 
     <section>
+      <section-about />
+    </section>
+
+    <section>
       <section-contact />
     </section>
 
@@ -37,7 +41,7 @@
 import MainNav from '@/components/MainNav.vue';
 import FooterPage from '@/pages/Footer.vue';
 import SectionHello from "@/pages/SectionHello.vue"
-// import SectionAbout from "@/pages/SectionAbout.vue"
+import SectionAbout from "@/pages/SectionAbout.vue"
 // import SectionProjects from "@/pages/SectionProjects.vue"
 import SectionContact from "@/pages/SectionContact.vue"
 
@@ -47,7 +51,7 @@ export default {
     MainNav,
     FooterPage,
     SectionHello,
-    // SectionAbout,
+    SectionAbout,
     // SectionProjects,
     SectionContact
   }

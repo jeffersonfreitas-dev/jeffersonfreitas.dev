@@ -3,7 +3,7 @@
     <div class="row d-flex flex-row">
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex">
         
-        <div class="row flex-column justify-content-center align-items-center">
+        <div class="row flex-column justify-content-center align-items-center font-monospace">
           <div class="row p-5">
             <h1 class="text-center fs-3">Desenvolvedor de Software</h1>
             <p class="text-center">Seja bem-vindo(a) ao meu portfólio.</p>
@@ -11,7 +11,7 @@
           <font-awesome-icon :icon="['fa', 'code']" class="fa-3x" color="white"/>
 
           <div class="row p-3">
-            <blockquote class="fs-3 text-justify text-start text-wrap text-break font-monospace">
+            <blockquote class="fs-3 text-justify text-start text-wrap text-break">
               Como desenvolvedor de software, <span class="">estou aqui para criar soluções eficientes e escaláveis e </span>juntos podemos transformar desafios em oportunidades. Explore e conheça meu trabalho.
             </blockquote>
           </div>
@@ -24,7 +24,7 @@
         </div>
       </div>
 
-      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <!-- <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
         <div class="row mt-4">
           <h1 class="text-center fs-3">Olá!!!</h1>
         </div>
@@ -42,7 +42,7 @@
         </div>
         <div class="row mt-5">
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
