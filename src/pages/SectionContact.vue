@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid flex-column text-white" style="background-color: #30302a;">
+  <div class="container-fluid flex-column text-black" style="background-color: #a3a3a2;">
     <div class="row py-5">
       <div class="row p-5 ">
         <div class="d-flex flex-row">
