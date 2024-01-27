@@ -18,49 +18,49 @@
         </div>
       </div>
       
-      <div class="row col-lg-8 col-md-12 col-sm-12 col-xs-12 px-4">
-        <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false" data-bs-interval="false">
+      <div class="row col-lg-8 col-md-12 col-sm-12 col-xs-12 px-5">
+
+        <div id="carouselExampleCaptions" class="carousel slide">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <div class="row row-cols-1 row-cols-md-3 g-4 d-flex justify-content-center">
-                <div class="col">
-                  <div class="card h-100">
-                    <img src="../assets/foto_avatar2.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Simed3</h5>
-                      <p class="card-text">Sistema integrado que unifica controle financeiro, gestão de estoque, atendimento aos cooperados e fortalecendo a administração 
+              <img src="../assets/foto_avatar2.jpg" alt="..." style="max-width: 50%;">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Simed3 - Controle e Gerenciamento</h5>
+                <p>Sistema integrado que unifica controle financeiro, gestão de estoque, atendimento aos cooperados e fortalecendo a administração 
                         interna, melhorando a experiência, a confiabilidade e agilidade nas prestações de serviços.</p>
-                    </div>
-                    <div class="card-footer">
-                      <div class="d-flex flex-row justify-content-center align-items-center">
-                        <button class=" btn btn-secondary active p-3 rounded-4" @click="handleVaParaProjetos">Mais Detalhes</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="card h-100">
-                    <img src="../assets/foto_avatar2.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">MotoGestor 1.0</h5>
-                      <p class="card-text">Um sistema completo de gestão para oficinas mecânicas, unindo controle de clientes, veículos, ordens de serviço, estoque e finanças. 
+                <button class=" btn btn-secondary active p-3 rounded-4" @click="handleVaParaProjetos">Mais Detalhes</button>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="../assets/foto_avatar2.jpg" alt="..." style="max-width: 50%;">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>MotoGestor - Gestão de Oficinas</h5>
+                <p>Um sistema completo de gestão para oficinas mecânicas, unindo controle de clientes, veículos, ordens de serviço, estoque e finanças. 
                         Otimiza a operação da oficina, proporcionando gestão integrada para atendimento eficiente e satisfatório aos clientes.</p>
-                    </div>
-                    <div class="card-footer">
-                      <div class="d-flex flex-row justify-content-center align-items-center">
-                        <button class=" btn btn-secondary active p-3 rounded-4" @click="handleVaParaProjetos">Mais Detalhes</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>  
+                <button class=" btn btn-secondary active p-3 rounded-4" @click="handleVaParaProjetos">Mais Detalhes</button>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="../assets/foto_avatar2.jpg" alt="..." style="max-width: 50%;">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Cartão Saúde PET</h5>
+                <p>Cartão saúde para pets, oferecendo assinaturas de planos, agendamento de consultas, realização de pagamento e muito mais. 
+                        Proporcionando aos tutores uma maneira conveniente e abrangente de cuidar da saúde de seus animais de estimação.</p>
+                <button class=" btn btn-secondary active p-3 rounded-4" @click="handleVaParaProjetos">Mais Detalhes</button>
+              </div>
             </div>
           </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
           </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>

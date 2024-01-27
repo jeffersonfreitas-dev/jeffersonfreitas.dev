@@ -24,7 +24,7 @@
 
         <div class="row p-3 mb-3">
             <div class="d-flex flex-row justify-content-center align-items-center">
-              <button class=" btn btn-secondary active p-3 rounded-4" @click="handleVaParaProjetos">Meu Curriculum</button>
+              <button class=" btn btn-secondary active p-3 rounded-4" @click="openPdfInNewTab">Meu Currículo</button>
             </div>
           </div>
       </div>
@@ -42,11 +42,20 @@
 <script>
 import VueApexCharts from 'vue3-apexcharts';
 import 'apexcharts';
+import pdfUrl from "../assets/Curriculo01.pdf";
 
 export default {
   name: "SectionAbout",
   components: {
     apexchart: VueApexCharts,
+  },
+  methods: {
+    openPdfInNewTab() {
+      // Replace 'your-pdf-url.pdf' with the actual URL or path to your PDF file
+
+      // Open the PDF in a new browser tab
+      window.open(pdfUrl, '_blank');
+    },
   },
   data: function() {
   return {
