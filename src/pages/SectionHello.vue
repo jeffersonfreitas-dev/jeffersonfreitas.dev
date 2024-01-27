@@ -16,15 +16,10 @@
             </blockquote>
           </div>
 
-          <div class="row p-3 mb-3">
-            <div class="d-flex flex-row justify-content-center align-items-center">
-              <button class=" btn btn-secondary active p-3 rounded-4" @click="handleVaParaProjetos">Meus projetos</button>
-            </div>
-          </div>
         </div>
       </div>
 
-      <!-- <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
         <div class="row mt-4">
           <h1 class="text-center fs-3">Olá!!!</h1>
         </div>
@@ -42,7 +37,7 @@
         </div>
         <div class="row mt-5">
         </div>
-      </div> -->
+      </div>
     </div>
   </div>
 </template>
