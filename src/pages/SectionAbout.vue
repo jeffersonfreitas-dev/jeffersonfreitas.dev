@@ -42,7 +42,7 @@
 <script>
 import VueApexCharts from 'vue3-apexcharts';
 import 'apexcharts';
-import pdfUrl from "../assets/Curriculo01.pdf";
+import pdfUrl from "../assets/Curriculo02.pdf";
 
 export default {
   name: "SectionAbout",
@@ -51,9 +51,6 @@ export default {
   },
   methods: {
     openPdfInNewTab() {
-      // Replace 'your-pdf-url.pdf' with the actual URL or path to your PDF file
-
-      // Open the PDF in a new browser tab
       window.open(pdfUrl, '_blank');
     },
   },

@@ -1,41 +1,38 @@
 <template>
-  <div class="container-fluid flex-column text-white" style="background-color: #30302a;">
-    <div class="row d-flex flex-row">
-      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex">
+  <div class="container-fluid flex-column text-white justify-content-center align-items-start">
+    <div class="row col-12 d-flex flex-row">
+      <div class="col-6  d-flex">
         
         <div class="row flex-column justify-content-center align-items-center font-monospace">
           <div class="row p-5">
-            <h1 class="text-center fs-3">Desenvolvedor de Software</h1>
-            <p class="text-center">Seja bem-vindo(a) ao meu portfólio.</p>
+            <p class="text-start">Olá... Meu nome é</p>
+            <h1 class="text-start" style="font-size: 4em;"><strong style="color: #2E8B57;">Jefferson</strong> Freitas</h1>
           </div>
-          <font-awesome-icon :icon="['fa', 'code']" class="fa-3x" color="white"/>
-
-          <div class="row p-3">
-            <blockquote class="fs-3 text-justify text-start text-wrap text-break">
-              Como desenvolvedor de software, <span class="">estou aqui para criar soluções eficientes e escaláveis e </span>juntos podemos transformar desafios em oportunidades. Explore e conheça meu trabalho.
-            </blockquote>
+          <div class="row p-5">
+            <h1 class="text-center fs-3"><strong style="color: #2E8B57;">Desenvolvedor de Software</strong></h1>
+            <p class="text-center">Seja bem-vindo(a) ao meu portfólio.</p>
+            <font-awesome-icon :icon="['fa', 'code']" class="fa-3x" color="white"/>
           </div>
 
         </div>
       </div>
 
-      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-        <div class="row mt-4">
-          <h1 class="text-center fs-3">Olá!!!</h1>
-        </div>
-        <div class="row mt-2">
-          <p class="text-center">Meu nome é Jefferson Freitas</p>
-        </div>
-        <div class="row mt-3 d-flex d-column">
-          <div class="col-3">
-          </div>
-          <div class="col-6">
-            <img src="../assets/foto_avatar.jpg" alt="Foto Jefferson" class="img-fluid rounded-5">
-          </div>
-          <div class="col-3">
+      <div class="col-6 d-flex justify-content-center align-items-center">
+        
+        <div class="row">
+          <div class="row p-3 mb-3">
+          <div class="d-flex flex-row">
+            <button class=" btn active p-3 rounded-4" style="background-color: #2E8B57; border-color: #2E8B57;" @click="openPdfInNewTab"><strong>Conheça meus projetos</strong></button>
           </div>
         </div>
-        <div class="row mt-5">
+        </div>
+
+        <div class="row ">
+          <div class="row p-3 mb-3">
+          <div class="d-flex flex-row">
+            <button class=" btn active p-3 btn-primary rounded-4" style="background-color: #30302a; border-color: #30302a;" @click="openPdfInNewTab">Conheça mais sobre mim</button>
+          </div>
+        </div>
         </div>
       </div>
     </div>
@@ -44,7 +41,6 @@
 
 
 <script>
-
 export default {
   name: "SectionHello",
   data() {
@@ -70,3 +66,18 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.container-fluid {
+  width: 100%;
+  height: 100vh;
+  background-image: url('@/assets/backoff.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+</style>
