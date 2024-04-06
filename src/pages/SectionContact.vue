@@ -48,7 +48,7 @@
               <span class="fs-3 px-4">Whatsapp:</span>
             </div>
             <div class="row" style="margin-left: 2rem;">
-              <span class="fs-4 px-3">+55 (85) 9.9752-5813</span>
+              <span class="fs-4 px-3">+55 (85) 9.8172-1585</span>
             </div>
           </div>
         </div>
