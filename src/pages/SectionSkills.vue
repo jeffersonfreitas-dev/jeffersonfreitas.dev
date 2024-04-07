@@ -9,115 +9,12 @@
       </div>
     </div>
     
-    <div class="row">
-      <div class="col-12">
-        <div class="d-flex flex-column text-white">
-          <div class="row mt-3">
-            <div class="col-md-2 mb-3">
-              <div class="card text-center">
-                <div class="card-body">
-                  <font-awesome-icon :icon="['fab', 'java']" class="fa-5x mb-3"></font-awesome-icon>
-                  <h5 class="card-title">Java</h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-2 mb-3">
-              <div class="card text-center">
-                <div class="card-body">
-                  <font-awesome-icon :icon="['fab', 'python']" class="fa-5x mb-3"></font-awesome-icon>
-                  <h5 class="card-title">Python</h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-2 mb-3">
-              <div class="card text-center">
-                <div class="card-body">
-                  <font-awesome-icon :icon="['fa', 'database']" class="fa-5x mb-3"></font-awesome-icon>
-                  <h5 class="card-title">PostgreSQL, MySQL, Oracle</h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-2 mb-3">
-              <div class="card text-center">
-                <div class="card-body">
-                  <font-awesome-icon :icon="['fa', 'leaf']" class="fa-5x mb-3"></font-awesome-icon>
-                  <h5 class="card-title">Spring Framework</h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-2 mb-3">
-              <div class="card text-center">
-                <div class="card-body">
-                  <font-awesome-icon :icon="['fab', 'angular']" class="fa-5x mb-3"></font-awesome-icon>
-                  <h5 class="card-title">Angular</h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-2 mb-3">
-              <div class="card text-center">
-                <div class="card-body">
-                  <font-awesome-icon :icon="['fab', 'vuejs']" class="fa-5x mb-3"></font-awesome-icon>
-                  <h5 class="card-title">VueJs</h5>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-12">
-        <div class="d-flex flex-column text-white">
-          <div class="row mt-3">
-            <div class="col-md-2 mb-3">
-              <div class="card text-center">
-                <div class="card-body">
-                  <font-awesome-icon :icon="['fab', 'docker']" class="fa-5x mb-3"></font-awesome-icon>
-                  <h5 class="card-title">Docker</h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-2 mb-3">
-              <div class="card text-center">
-                <div class="card-body">
-                  <font-awesome-icon :icon="['fa', 'envelope']" class="fa-5x mb-3"></font-awesome-icon>
-                  <h5 class="card-title">Kafka, RabbitMQ</h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-2 mb-3">
-              <div class="card text-center">
-                <div class="card-body">
-                  <font-awesome-icon :icon="['fab', 'aws']" class="fa-5x mb-3"></font-awesome-icon>
-                  <h5 class="card-title">AWS/OCI</h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-2 mb-3">
-              <div class="card text-center">
-                <div class="card-body">
-                  <font-awesome-icon :icon="['fab', 'bootstrap']" class="fa-5x mb-3"></font-awesome-icon>
-                  <h5 class="card-title">Bootstrap</h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-2 mb-3">
-              <div class="card text-center">
-                <div class="card-body">
-                  <font-awesome-icon :icon="['fa', 'code']" class="fa-5x mb-3"></font-awesome-icon>
-                  <h5 class="card-title">JavaScript</h5>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-2 mb-3">
-              <div class="card text-center">
-                <div class="card-body">
-                  <font-awesome-icon :icon="['fab', 'html5']" class="fa-5x mb-3"></font-awesome-icon>
-                  <h5 class="card-title">HTML/CSS</h5>
-                </div>
-              </div>
-            </div>
+    <div class="row p-5">
+      <div class="col-md-4" v-for="(skill, index) in skills" :key="index">
+        <div class="card text-center mb-3">
+          <div class="card-body">
+            <font-awesome-icon :icon="skill.icon" class="fa-5x mb-3"></font-awesome-icon>
+            <h5 class="card-title">{{ skill.title }}</h5>
           </div>
         </div>
       </div>
@@ -128,14 +25,31 @@
 <script>
 
 export default {
-  name: "SectionAbout"
+  name: "SectionAbout",
+  data() {
+    return {
+      skills: [
+        { title: 'Java', icon: ['fab', 'java'] },
+        { title: 'Python', icon: ['fab', 'python'] },
+        { title: 'PostgreSQL, MySQL, Oracle', icon: ['fa', 'database'] },
+        { title: 'Spring Framework', icon: ['fa', 'leaf'] },
+        { title: 'Angular', icon: ['fab', 'angular'] },
+        { title: 'VueJs', icon: ['fab', 'vuejs'] },
+        { title: 'Docker', icon: ['fab', 'docker'] },
+        { title: 'Kafka, RabbitMQ', icon: ['fa', 'envelope'] },
+        { title: 'AWS/OCI', icon: ['fab', 'aws'] },
+        { title: 'Bootstrap', icon: ['fab', 'bootstrap'] },
+        { title: 'JavaScript', icon: ['fa', 'code'] },
+        { title: 'HTML/CSS', icon: ['fab', 'html5'] },
+      ]      
+    }
+  }
 }
 </script>
 
 <style scoped>
 .container-fluid {
   width: 100%;
-  height: 100vh;
   background-image: url('@/assets/backoff3.png');
   background-size: cover;
 }
