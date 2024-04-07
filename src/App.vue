@@ -16,6 +16,10 @@
     </section>
 
     <section>
+      <section-skills />
+    </section>
+
+    <section>
       <section-contact />
     </section>
 
@@ -32,6 +36,7 @@ import SectionHello from "@/pages/SectionHello.vue"
 import SectionAbout from "@/pages/SectionAbout.vue"
 import SectionProjects from "@/pages/SectionProjects.vue"
 import SectionContact from "@/pages/SectionContact.vue"
+import SectionSkills from './pages/SectionSkills.vue';
 
 export default {
   name: "App",
@@ -41,7 +46,8 @@ export default {
     SectionHello,
     SectionAbout,
     SectionProjects,
-    SectionContact
+    SectionContact,
+    SectionSkills
   }
 }
 </script>
