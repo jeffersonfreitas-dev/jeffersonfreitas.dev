@@ -1,5 +1,5 @@
 <template>
-  <header class="d-flex justify-content-center ">
+  <header class="d-flex justify-content-center font-monospace">
     <div class="row container">
       <div class="col-12 d-flex align-items-center justify-content-center">
         <a href="#hello" class="company_name fs-3 fw-bold text-decoration-none">{{ company }}</a>
@@ -13,7 +13,7 @@ export default {
   name: "MainNav",
   data() {
     return {
-      company: "Portfólio de Jefferson Freitas",
+      company: "Meu Portfólio",
       menuItems: [
         { name: "Sobre", link: "#about" },
         { name: "Projetos", link: "#projects" },
