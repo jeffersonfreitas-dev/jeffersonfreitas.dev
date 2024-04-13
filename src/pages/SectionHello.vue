@@ -18,22 +18,6 @@
       </div>
 
       <div class="col-6 d-flex justify-content-center align-items-center">
-        
-        <!-- <div class="row">
-          <div class="row p-3 mb-3">
-          <div class="d-flex flex-row">
-            <button class=" btn active p-3 rounded-4" style="background-color: #30302a; border-color: #30302a;" @click="openPdfInNewTab"><strong>Conheça meus projetos</strong></button>
-          </div>
-        </div>
-        </div> -->
-
-        <!-- <div class="row ">
-          <div class="row p-3 mb-3">
-          <div class="d-flex flex-row">
-            <button class=" btn active p-3 btn-primary rounded-4" style="background-color: #30302a; border-color: #30302a;" @click="openPdfInNewTab">Quem sou eu?</button>
-          </div>
-        </div>
-        </div> -->
       </div>
     </div>
   </div>
