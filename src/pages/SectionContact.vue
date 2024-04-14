@@ -9,7 +9,7 @@
       </div>
     </div> 
 
-    <div class="row p-5 font-monospace text-white">
+    <div class="row font-monospace text-white">
       <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex">
         <div class="row p-3">
           <blockquote class="fs-5 text-justify text-start text-wrap text-break">
@@ -20,25 +20,23 @@
         </div>
       </div>
              
-      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center align-items-center px-4">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center align-items-center text-start">
         <div class="flex-column">
           <div class="row mt-3">
             <div class="flex-row">
-              <font-awesome-icon :icon="['fa', 'envelope']" class="fa-2x" color="white"/>
-              <span class="fs-3 px-4">E-mail:</span>
+              <span class="fs-6 px-4 fw-bolder">E-mail:</span>
             </div>
             <div class="row" style="margin-left: 2rem;">
-              <span class="fs-4 px-3">contato@jeffersonfreitas.dev</span>
+              <span class="fs-5 px-3">contato@jeffersonfreitas.dev</span>
             </div>
           </div>
             
           <div class="row mt-3">
             <div class="flex-row">
-              <font-awesome-icon :icon="['fa', 'phone']" class="fa-2x" color="white"/>
-              <span class="fs-3 px-4">Telefone/Whatsapp:</span>
+              <span class="fs-6 px-4 fw-bolder">Fone/Whatsapp:</span>
             </div>
             <div class="row" style="margin-left: 2rem;">
-              <span class="fs-4 px-3">+55 (85) 9.8172-1585</span>
+              <span class="fs-5 px-3">+55 (85) 9.8172-1585</span>
             </div>
           </div>
           </div>

@@ -1,10 +1,10 @@
 <template>
   <div class="container-fluid">
     <div class="row p-5">
-      <div class="d-flex flex-row align-items-center justify-content-center text-white font-monospace">
+      <div class="d-flex flex-row align-items-center justify-content-center text-black font-monospace">
         <h1 class="text-center fs-1">Skills</h1>
         <div class="text-center">
-          <font-awesome-icon :icon="['fa', 'code']" class="fa-2x" color="white"/>
+          <font-awesome-icon :icon="['fa', 'code']" class="fa-2x" color="black"/>
         </div>
       </div>
     </div>

@@ -2,7 +2,7 @@
   <header>
     <main-nav />
   </header>
-  <main >
+  <main>
     <section>
       <section-hello />
     </section>
