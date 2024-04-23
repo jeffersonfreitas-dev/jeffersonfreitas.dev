@@ -32,7 +32,7 @@
             <div class="col-md-12">
               <blockquote class="fs-5 text-justify">
                 <p class="pt-3">Sou um Desenvolvedor Fullstack especializado em Java e Spring Framework, com uma sólida experiência como freelancer desde 2018. Atualmente, faço parte do time de Inovações da Unimed do Ceará.</p>
-                <p class="pt-3">Graduei-me em Administração de Empresas e obtive um diploma de Tecnólogo em Análise e Desenvolvimento de Sistemas. Além disso, possuo especializações em Arquitetura de Sistemas para Cloud e Segurança da Informação. Conto com diversos certificados e cursos na área de Desenvolvimento e DevOps. Para mais detalhes, você pode acessar meu perfil <a target="'_blank'" href="https://www.linkedin.com/in/jefferson-freitas/details/certifications/">clicando aqui.</a> </p>
+                <p class="pt-3">Graduei-me em Administração de Empresas e obtive um diploma de Tecnólogo em Análise e Desenvolvimento de Sistemas. Além disso, possuo especializações em Arquitetura de Sistemas para Cloud e Segurança da Informação. Conto com diversos certificados e cursos na área de Desenvolvimento e DevOps. Para mais detalhes, você pode acessar meu perfil <a target="'_blank'" href="https://www.linkedin.com/in/jefferson-freitas/details/certifications/" style="color: #30302a;">clicando aqui.</a> </p>
                 <p class="pt-3">Minha paixão pela tecnologia me impulsiona a buscar constante aprimoramento, o que se reflete em minha versatilidade e participação em diversas fases do ciclo de desenvolvimento de software.</p>
               </blockquote>
             </div>

@@ -11,7 +11,7 @@
     <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-5" v-for="(p) in projetos" :key="p.name">
       <div class="card-deck">
         <div class="card">
-          <img class="card-img-top" :src="`./src/assets/${p.imageFolder}/0.png`" :alt="projetoSelected.name">
+          <img class="card-img-top" :src="`/images/${projetoSelected.imageFolder}/0.png`" :alt="projetoSelected.name">
           <div class="card-body">
             <h5 class="card-title">{{ p.name }}</h5>
             <p class="card-text">{{ p.description }}</p>
@@ -39,19 +39,19 @@
             <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-inner rounded-4">
                 <div class="carousel-item active">
-                  <img :src="`./src/assets/${projetoSelected.imageFolder}/0.png`" class="d-block w-100" :alt="projetoSelected.name">
+                  <img :src="`/images/${projetoSelected.imageFolder}/0.png`" class="d-block w-100" :alt="projetoSelected.name">
                 </div>
                 <div class="carousel-item">
-                  <img :src="`./src/assets/${projetoSelected.imageFolder}/1.png`" class="d-block w-100" :alt="projetoSelected.name">
+                  <img :src="`/images/${projetoSelected.imageFolder}/1.png`" class="d-block w-100" :alt="projetoSelected.name">
                 </div>
                 <div class="carousel-item">
-                  <img :src="`./src/assets/${projetoSelected.imageFolder}/2.png`" class="d-block w-100" :alt="projetoSelected.name">
+                  <img :src="`/images/${projetoSelected.imageFolder}/2.png`" class="d-block w-100" :alt="projetoSelected.name">
                 </div>
                 <div class="carousel-item">
-                  <img :src="`./src/assets/${projetoSelected.imageFolder}/3.png`" class="d-block w-100" :alt="projetoSelected.name">
+                  <img :src="`/images/${projetoSelected.imageFolder}/3.png`" class="d-block w-100" :alt="projetoSelected.name">
                 </div>
                 <div class="carousel-item">
-                  <img :src="`./src/assets/${projetoSelected.imageFolder}/4.png`" class="d-block w-100" :alt="projetoSelected.name">
+                  <img :src="`/images/${projetoSelected.imageFolder}/4.png`" class="d-block w-100" :alt="projetoSelected.name">
                 </div>
               </div>
             </div>
@@ -76,7 +76,7 @@
             <li class="list-group-item" v-for="s in stacksItems" :key="s">{{ s }}</li>
           </ul>
         </div>
-        <div class="modal-footer">
+        <div class="modal-footer d-flex justify-content-center">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: #2e8b57; border-color: #2e8b57;">Fechar</button>
         </div>
       </div>

@@ -31,7 +31,7 @@
             </div>
           </div>
             
-          <div class="row mt-3">
+          <div class="row mt-3 mb-3">
             <div class="flex-row">
               <span class="fs-6 px-4 fw-bolder">Fone/Whatsapp:</span>
             </div>

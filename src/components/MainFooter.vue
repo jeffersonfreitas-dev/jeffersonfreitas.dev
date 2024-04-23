@@ -11,7 +11,7 @@
           </a>
       </div>
       <div class="col-12 d-flex justify-content-center align-items-center text-white">
-        <p class="tw-text-xs fs-8 tw-font-bold"> @2023 Todos os direitos reservados</p>
+        <p class="tw-text-xs fs-8 tw-font-bold"> @2024 Todos os direitos reservados</p>
       </div>
     </div>
   </footer>
