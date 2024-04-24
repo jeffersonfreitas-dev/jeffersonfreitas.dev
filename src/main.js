@@ -7,6 +7,7 @@ import { faBars, faPhone, faComment, faCode, faHandshake, faAddressCard, faDiagr
 import { faGithub, faLinkedinIn, faWhatsapp, faJava, faPython, faAngular, faVuejs, faDocker, faAws, faBootstrap, faHtml5} from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
+
 library.add(
   faBars, 
   faGithub, 

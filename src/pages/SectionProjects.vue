@@ -11,7 +11,7 @@
     <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-5" v-for="(p) in projetos" :key="p.name">
       <div class="card-deck">
         <div class="card">
-          <img class="card-img-top" :src="`/images/${projetoSelected.imageFolder}/0.png`" :alt="projetoSelected.name">
+          <img class="card-img-top" :src="`/images/${p.imageFolder}/0.png`" :alt="projetoSelected.name">
           <div class="card-body">
             <h5 class="card-title">{{ p.name }}</h5>
             <p class="card-text">{{ p.description }}</p>
