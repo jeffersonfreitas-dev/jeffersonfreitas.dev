@@ -11,16 +11,16 @@ export default [
     tests: true,
     code: false
   },
-  // {
-  //   name: "MotoGestor 1.0",
-  //   description: "Sistema para gerenciamento de oficina mecânica feito em Java com VueJS e banco de dados PostgreSQL para controles de clientes, veículos, produtos e serviços, ordens de serviços, atendimentos e muito mais! (Em breve módulo financeiro)",
-  //   imageFolder: "motogestor",
-  //   detailDescription: "Projeto solicitado pelo cliente após passar por problemas com históricos dos atendimentos, consultas de informações dos clientes e ordens de serviços ineficientes pois, controlava tudo com planilhas eletrônicas e principalmente tornando o registro das movimentações da oficina demorado e inconsistente. Foram realizados todos os levantamentos dos requisitos e o projeto ainda está em andamento.",
-  //   link: "https://motogestor.jeffersonfreitas.dev/",
-  //   functions: "O Motogestor realiza o cadastro dos clientes e seus veículos. Possui o cadastro de peças e serviços com quantidades e preços, realiza o cadastro da ordem de serviço com busca de clientes e seleção do veículo para manutenção. Possui o atendimento da ordem de serviço com a inclusão das peças e serviços, quantidades e valores bem como o fechamento da ordem com opção de descontos e acréscimos. Módulo financeiro em desenvolvimento, mas possui o registro dos fechamentos das ordens de serviços no livro caixa.\n Possui o cadastro de mecânicos e marcas dos veículos além de um dashboard com graficos e principais indicadores para análise.",
-  //   stacks: "Java com Spring Boot no Backend; VueJS no Frontend; PostgreSQL Database; Ambiente Docker em produção; Autenticação com Firebase",
-  //   tests: true,
-  //   code: false
-  // }
+  {
+    name: "MotoGestor 1.0",
+    description: "Sistema para gerenciamento de oficina mecânica feito em Java com VueJS e banco de dados PostgreSQL para controles de clientes, veículos, produtos e serviços, ordens de serviços, atendimentos e muito mais! (Em breve módulo financeiro)",
+    imageFolder: "motogestor",
+    detailDescription: "Projeto solicitado pelo cliente após passar por problemas com históricos dos atendimentos, consultas de informações dos clientes e ordens de serviços ineficientes pois, controlava tudo com planilhas eletrônicas e principalmente tornando o registro das movimentações da oficina demorado e inconsistente. Foram realizados todos os levantamentos dos requisitos e o projeto ainda está em andamento.",
+    link: "https://motogestor.jeffersonfreitas.dev/",
+    functions: "O Motogestor realiza o cadastro dos clientes e seus veículos. Possui o cadastro de peças e serviços com quantidades e preços, realiza o cadastro da ordem de serviço com busca de clientes e seleção do veículo para manutenção. Possui o atendimento da ordem de serviço com a inclusão das peças e serviços, quantidades e valores bem como o fechamento da ordem com opção de descontos e acréscimos. Módulo financeiro em desenvolvimento, mas possui o registro dos fechamentos das ordens de serviços no livro caixa.\n Possui o cadastro de mecânicos e marcas dos veículos além de um dashboard com graficos e principais indicadores para análise.",
+    stacks: "Java com Spring Boot no Backend; VueJS no Frontend; PostgreSQL Database; Ambiente Docker em produção; Autenticação com Firebase",
+    tests: true,
+    code: false
+  }
 ]
 
