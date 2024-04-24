@@ -42,7 +42,7 @@
               <div class="col-md-8 text-white">
                 <div class="card-body">
                   <h5 class="font-weight-bold">Problema ao buscar posts</h5>
-                  <p class="card-text">Houve um problema ao buscar os posts no meu blog. Você pode acessar diretamente meu blog clicando aqui!</p>
+                  <p class="card-text">Houve um problema ao buscar os posts no meu blog, mas você pode acessar diretamente clicando aqui!</p>
                 </div>
               </div>
             </div>
