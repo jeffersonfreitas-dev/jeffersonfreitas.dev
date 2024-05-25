@@ -16,10 +16,16 @@
             <h5 class="card-title">{{ p.name }}</h5>
             <p class="card-text">{{ p.description }}</p>
           </div>
-          <div class="card-footer">
-            <button class=" btn btn-primary active p-3 rounded-4" style="background-color: #2e8b57; border-color: #2e8b57;" 
-              data-bs-toggle="modal" data-bs-target="#exampleModal" @click="selecionarProjeto(p)">Mais Detalhes
-            </button>
+          <div class="card-footer d-flex justify-content-end" style="cursor: pointer;">
+            <a class=" px-2" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-placement="top" title="Mais Detalhes" @click="selecionarProjeto(p)"> 
+                <font-awesome-icon :icon="['fa', 'info-circle']" class="fa-2x" color="#2e8b57"/>
+          </a>
+          <a  v-if="p.link" class="px-2" target="_blank" :href="p.link" data-bs-placement="top" title="Abrir uma amostra da aplicação">
+            <font-awesome-icon :icon="['fa', 'eye']" class="fa-2x" color="#30302a"/> 
+          </a>
+            <a v-if="p.github" class="px-2" target="_blanck" :href="p.github" data-bs-placement="top" title="Ver código fonte">
+              <font-awesome-icon :icon="['fab', 'github']" class="fa-2x" color="#30302a"/> 
+            </a>
           </div>
         </div>
       </div>
@@ -61,12 +67,12 @@
 
          
          <p><strong>Acesso ao Projeto</strong></p>
-         <p v-if="projetoSelected.tests">
-            Você pode conferir o projeto rodando em um ambiente de teste. Para isso, basta clicar no link ao lado <a target="_blank" class="link-opacity-75 mr-5" :href="projetoSelected.link">{{ projetoSelected.name }}</a> e explorar todas as funcionalidades da aplicação. 
-            As credenciais de acesso estão descritas na tela de login, caso existam.</p>
+         <p v-if="projetoSelected.link">
+            Você pode conferir uma amostra projeto rodando em um ambiente de teste clicando neste <a target="_blank" class="link-opacity-75 mr-5" :href="projetoSelected.link">link</a> e explorar todas as funcionalidades da aplicação. 
+            Caso existam credenciais de testes pré-criadas, estará descrita na tela de login, do contrário, você poderá criar o seu próprio cadastro de acesso.</p>
           
-          <p v-if="projetoSelected.code">
-            Você pode conferir o código fonte do projeto no meu github. Para isso, basta clicar no link ao lado <a target="_blank" class="link-opacity-75 mr-5" href="{{ projetoSelected.link }}">{{ projetoSelected.name }}</a>.</p>
+          <p v-if="projetoSelected.github">
+            Você pode conferir o código fonte do projeto no meu <a target="_blank" class="link-opacity-75 mr-5" :href="projetoSelected.github">Github</a>.</p>
 
          <p><strong>Funcionalidades</strong></p>
          <p>{{ projetoSelected.functions }}</p>
