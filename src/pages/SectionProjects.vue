@@ -7,15 +7,13 @@
     </div>
   </div>  
   
-  <div class="row d-flex justify-content-center">
+  <div class="row d-flex justify-content-center px-3">
     <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-5" v-for="(p) in projetos" :key="p.name">
       <div class="card-deck">
         <div class="card">
           <a data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor: pointer;" data-bs-placement="top" @click="selecionarProjeto(p)">
-            <img class="card-img-top" :src="`/images/${p.imageFolder}/0.png`" :alt="projetoSelected.name">
-            <div class="card-body">
-              <h5 class="card-title">{{ p.name }}</h5>
-              <!-- <p class="card-text">{{ p.description }}</p> -->
+            <div class="image-container">
+              <img class="card-img-top image" :src="`/images/${p.imageFolder}/0.png`" :alt="projetoSelected.name">
             </div>
           </a>
           <div class="card-footer d-flex justify-content-end">
@@ -25,7 +23,7 @@
             <a v-if="p.youtubeCode" class=" px-2" data-bs-toggle="modal" data-bs-target="#modalVideo" style="cursor: pointer;" data-bs-placement="top" title="Ver Video Apresentação" @click="selecionarProjeto(p)"> 
                 <font-awesome-icon :icon="['fab', 'youtube']" class="fa-2x" color="#30302a"/>
             </a>
-            <a  v-if="p.link" class="px-2" target="_blank" :href="p.link" data-bs-placement="top" style="cursor: pointer;" title="Abrir uma amostra da aplicação">
+            <a  v-if="p.link" class="px-2" target="_blank" :href="p.link" data-bs-placement="top" style="cursor: pointer;" title="Testar a aplicação">
               <font-awesome-icon :icon="['fa', 'eye']" class="fa-2x" color="#30302a"/> 
             </a>
             <a v-if="p.github" class="px-2" target="_blanck" :href="p.github" data-bs-placement="top" style="cursor: pointer;" title="Ver código fonte">
@@ -168,5 +166,19 @@ export default {
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+.card:hover {
+    transform: scale(1.025);
+    box-shadow: rgba(46, 139, 87, 0.24) 0px 5px 10px;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    transition: filter 0.5s ease;
+}
+
+.image-container:hover .image {
+    filter: brightness(50%);
 }
 </style>

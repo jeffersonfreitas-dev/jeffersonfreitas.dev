@@ -10,7 +10,7 @@
     </div> 
 
     <div class="row text-white px-3">             
-      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex flex-column text-start">
+      <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 d-flex flex-column text-start">
         <div class="row d-flex justify-content-center ">
           <p> <span class="fs-3">Últimos Posts</span>  <a class="ml-5 text-decoration-none" style="color: #2e8b57;" href="https://jeffersonfreitas-dev.blogspot.com/"> | Visite meu blog!</a></p>
         </div>
@@ -50,7 +50,7 @@
         </div>
       </div>
 
-      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex font-monospace">
+      <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 d-flex font-monospace">
         <div class="row p-3">
           <blockquote class="fs-5 text-justify text-start text-wrap text-break">
             <p class="pt-3">Se você busca um desenvolvedor de software experiente para concretizar seus projetos, estou pronto para ajudar. Posso transformar suas ideias em soluções tecnológicas inovadoras.</p>
