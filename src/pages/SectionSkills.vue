@@ -20,7 +20,7 @@
         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12" v-for="(item, index) in languagens" :key="index">
           <div class="card text-center mb-3 ">
             <div class="card-body text-white d-flex d-row" style="background-color: #30302a;">
-              <font-awesome-icon :icon="item.icon" class="fa-5x mb-3" color="white"></font-awesome-icon>
+              <font-awesome-icon :icon="item.icon" class="fa-4x mb-3" color="white"></font-awesome-icon>
               <h4 class="card-title mt-4 mx-4">{{ item.title }}</h4>
             </div>
           </div>
@@ -38,7 +38,7 @@
       <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12" v-for="(item, index) in databases" :key="index">
         <div class="card text-center mb-3 ">
           <div class="card-body text-white d-flex d-row" style="background-color: #30302a;">
-            <font-awesome-icon :icon="item.icon" class="fa-5x mb-3" color="white"></font-awesome-icon>
+            <font-awesome-icon :icon="item.icon" class="fa-4x mb-3" color="white"></font-awesome-icon>
             <h4 class="card-title mt-4 mx-4">{{ item.title }}</h4>
           </div>
         </div>
@@ -55,7 +55,7 @@
       <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12" v-for="(item, index) in frameworksWebs" :key="index">
         <div class="card text-center mb-3 ">
           <div class="card-body text-white d-flex d-row" style="background-color: #30302a;">
-            <font-awesome-icon :icon="item.icon" class="fa-5x mb-3" color="white"></font-awesome-icon>
+            <font-awesome-icon :icon="item.icon" class="fa-4x mb-3" color="white"></font-awesome-icon>
             <h4 class="card-title mt-4 mx-4">{{ item.title }}</h4>
           </div>
         </div>
@@ -72,7 +72,7 @@
       <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12" v-for="(item, index) in clouds" :key="index">
         <div class="card text-center mb-3 ">
           <div class="card-body text-white d-flex d-row" style="background-color: #30302a;">
-            <font-awesome-icon :icon="item.icon" class="fa-5x mb-3" color="white"></font-awesome-icon>
+            <font-awesome-icon :icon="item.icon" class="fa-4x mb-3" color="white"></font-awesome-icon>
             <h4 class="card-title mt-4 mx-4">{{ item.title }}</h4>
           </div>
         </div>
@@ -86,10 +86,10 @@
           <h2>Devops & Outros</h2>
         </div>
       </div>
-      <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-5" v-for="(item, index) in devops" :key="index">
+      <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12" v-for="(item, index) in devops" :key="index">
         <div class="card text-center mb-3 ">
           <div class="card-body text-white d-flex d-row" style="background-color: #30302a;">
-            <font-awesome-icon :icon="item.icon" class="fa-5x mb-3" color="white"></font-awesome-icon>
+            <font-awesome-icon :icon="item.icon" class="fa-4x mb-3" color="white"></font-awesome-icon>
             <h4 class="card-title mt-4 mx-4">{{ item.title }}</h4>
           </div>
         </div>
