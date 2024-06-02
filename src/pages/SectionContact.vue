@@ -50,7 +50,7 @@
         </div>
       </div>
 
-      <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 d-flex font-monospace">
+      <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 d-flex font-monospace mb-5">
         <div class="row p-3">
           <blockquote class="fs-5 text-justify text-start text-wrap text-break">
             <p class="pt-3">Se você busca um desenvolvedor de software experiente para concretizar seus projetos, estou pronto para ajudar. Posso transformar suas ideias em soluções tecnológicas inovadoras.</p>
@@ -94,7 +94,7 @@ export default {
   },
   mounted() {
     axios.get(`https://www.googleapis.com/blogger/v3/blogs/${import.meta.env.VITE_BLOG_ID}/posts`, {
-      params: {key:import.meta.env.VITE_BLOG_KEY, maxResults: 5, orderBy: 'published'}
+      params: {key:import.meta.env.VITE_BLOG_KEY, maxResults: 2, orderBy: 'published'}
     }).then(response => {
       const posts = response.data.items;
       

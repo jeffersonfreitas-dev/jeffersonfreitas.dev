@@ -16,11 +16,13 @@
           <h2>Linguagens</h2>
         </div>
       </div>
-      <div class="col-3" v-for="(item, index) in languagens" :key="index">
-        <div class="card text-center mb-3 ">
-          <div class="card-body text-white d-flex d-row" style="background-color: #30302a;">
-            <font-awesome-icon :icon="item.icon" class="fa-5x mb-3" color="white"></font-awesome-icon>
-            <h4 class="card-title mt-4 mx-4">{{ item.title }}</h4>
+      <div class="row">
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12" v-for="(item, index) in languagens" :key="index">
+          <div class="card text-center mb-3 ">
+            <div class="card-body text-white d-flex d-row" style="background-color: #30302a;">
+              <font-awesome-icon :icon="item.icon" class="fa-5x mb-3" color="white"></font-awesome-icon>
+              <h4 class="card-title mt-4 mx-4">{{ item.title }}</h4>
+            </div>
           </div>
         </div>
       </div>
@@ -33,7 +35,7 @@
           <h2>Banco de Dados</h2>
         </div>
       </div>
-      <div class="col-3" v-for="(item, index) in databases" :key="index">
+      <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12" v-for="(item, index) in databases" :key="index">
         <div class="card text-center mb-3 ">
           <div class="card-body text-white d-flex d-row" style="background-color: #30302a;">
             <font-awesome-icon :icon="item.icon" class="fa-5x mb-3" color="white"></font-awesome-icon>
@@ -50,7 +52,7 @@
           <h2>Frameworks & Web</h2>
         </div>
       </div>
-      <div class="col-3" v-for="(item, index) in frameworksWebs" :key="index">
+      <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12" v-for="(item, index) in frameworksWebs" :key="index">
         <div class="card text-center mb-3 ">
           <div class="card-body text-white d-flex d-row" style="background-color: #30302a;">
             <font-awesome-icon :icon="item.icon" class="fa-5x mb-3" color="white"></font-awesome-icon>
@@ -67,7 +69,7 @@
           <h2>Cloud</h2>
         </div>
       </div>
-      <div class="col-3" v-for="(item, index) in clouds" :key="index">
+      <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12" v-for="(item, index) in clouds" :key="index">
         <div class="card text-center mb-3 ">
           <div class="card-body text-white d-flex d-row" style="background-color: #30302a;">
             <font-awesome-icon :icon="item.icon" class="fa-5x mb-3" color="white"></font-awesome-icon>
@@ -84,7 +86,7 @@
           <h2>Devops & Outros</h2>
         </div>
       </div>
-      <div class="col-3" v-for="(item, index) in devops" :key="index">
+      <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-5" v-for="(item, index) in devops" :key="index">
         <div class="card text-center mb-3 ">
           <div class="card-body text-white d-flex d-row" style="background-color: #30302a;">
             <font-awesome-icon :icon="item.icon" class="fa-5x mb-3" color="white"></font-awesome-icon>
@@ -127,6 +129,7 @@ export default {
         { title: 'OCI Oracle', icon: ['fa', 'database'] },
         { title: 'Google Cloud', icon: ['fab', 'google'] },
         { title: 'Firebase', icon: ['fab', 'google-plus-square'] },
+        { title: 'Spring Cloud', icon: ['fa', 'leaf'] },
 
       ] ,
       devops: [

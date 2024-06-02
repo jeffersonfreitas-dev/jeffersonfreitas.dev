@@ -7,7 +7,7 @@
     </div>
   </div>  
   
-  <div class="row d-flex justify-content-center px-3">
+  <div class="row d-flex justify-content-center px-3 mb-5">
     <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-5" v-for="(p) in projetos" :key="p.name">
       <div class="card-deck">
         <div class="card">
