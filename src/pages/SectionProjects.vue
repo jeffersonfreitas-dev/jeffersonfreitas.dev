@@ -5,7 +5,7 @@
     <div class="text-center">
       <font-awesome-icon :icon="['fa', 'diagram-project']" class="fa-2x" color="white"/>
     </div>
-  </div>
+  </div>  
   
   <div class="row d-flex justify-content-center">
     <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-5" v-for="(p) in projetos" :key="p.name">
@@ -42,7 +42,7 @@
         
         <div class="modal-body">
           <div class="row d-flex col-12 d-flex justify-content-center align-items-center">
-            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" v-if="!projetoSelected.youtubeCode">
               <div class="carousel-inner rounded-4">
                 <div class="carousel-item active">
                   <img :src="`/images/${projetoSelected.imageFolder}/0.png`" class="d-block w-100" :alt="projetoSelected.name">
@@ -61,18 +61,25 @@
                 </div>
               </div>
             </div>
+            <YouTubePlayer :videoId="projetoSelected.youtubeCode" v-if="projetoSelected.youtubeCode"/>
           </div>
 
-         <p class="mt-5">{{ projetoSelected.detailDescription }}</p>
 
-         
-         <p><strong>Acesso ao Projeto</strong></p>
-         <p v-if="projetoSelected.link">
-            Você pode conferir uma amostra projeto rodando em um ambiente de teste clicando neste <a target="_blank" class="link-opacity-75 mr-5" :href="projetoSelected.link">link</a> e explorar todas as funcionalidades da aplicação. 
-            Caso existam credenciais de testes pré-criadas, estará descrita na tela de login, do contrário, você poderá criar o seu próprio cadastro de acesso.</p>
+
+         <p class="mt-5">{{ projetoSelected.detailDescription }}</p>
           
-          <p v-if="projetoSelected.github">
+         <div v-if="projetoSelected.acessoProjeto">
+           <p><strong>Acesso ao Projeto</strong></p>
+           <p v-if="projetoSelected.link">
+              Você pode conferir uma amostra projeto rodando em um ambiente de teste clicando neste <a target="_blank" class="link-opacity-75 mr-5" :href="projetoSelected.link">link</a> e explorar todas as funcionalidades da aplicação. 
+              Caso existam credenciais de testes pré-criadas, estará descrita na tela de login, do contrário, você poderá criar o seu próprio cadastro de acesso.</p>
+         </div>
+         
+         <div v-if="projetoSelected.github">
+          <p><strong>Acesso ao Código Fonte</strong></p>
+          <p >
             Você pode conferir o código fonte do projeto no meu <a target="_blank" class="link-opacity-75 mr-5" :href="projetoSelected.github">Github</a>.</p>
+        </div>
 
          <p><strong>Funcionalidades</strong></p>
          <p>{{ projetoSelected.functions }}</p>
@@ -94,9 +101,11 @@
 <script>
 import 'bootstrap/dist/css/bootstrap.min.css';
 import projetos from '../projetos';
+import YouTubePlayer from '../components/YouTubePlayer.vue';
 
 export default {
   name: "SectionProjects",
+  components: {YouTubePlayer},
   data() {
     return {
       isMobile: false,

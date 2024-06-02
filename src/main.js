@@ -6,6 +6,8 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { faBars, faPhone, faComment, faCode, faHandshake, faAddressCard, faDiagramProject, faThumbsUp, faDatabase, faLeaf, faEnvelope, faCloud, faInfoCircle, faEye} from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedinIn, faWhatsapp, faJava, faPython, faAngular, faVuejs, faDocker, faAws, faBootstrap, faHtml5} from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import VuePlyr from 'vue-plyr'
+import 'vue-plyr/dist/vue-plyr.css'
 
 
 library.add(
@@ -35,4 +37,15 @@ library.add(
   faDiagramProject, 
   faThumbsUp);
 
-createApp(App).component("font-awesome-icon", FontAwesomeIcon).mount('#app')
+  const app = createApp(App)
+
+  // Use the vue-youtube-embed plugin
+  app.use(VuePlyr, {
+    plyr: {}
+  })
+  
+  // Register the font-awesome-icon component
+  app.component('font-awesome-icon', FontAwesomeIcon)
+  
+  // Mount the app
+  app.mount('#app')
