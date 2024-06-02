@@ -11,19 +11,24 @@
     <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-5" v-for="(p) in projetos" :key="p.name">
       <div class="card-deck">
         <div class="card">
-          <img class="card-img-top" :src="`/images/${p.imageFolder}/0.png`" :alt="projetoSelected.name">
-          <div class="card-body">
-            <h5 class="card-title">{{ p.name }}</h5>
-            <p class="card-text">{{ p.description }}</p>
-          </div>
-          <div class="card-footer d-flex justify-content-end" style="cursor: pointer;">
-            <a class=" px-2" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-placement="top" title="Mais Detalhes" @click="selecionarProjeto(p)"> 
+          <a data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor: pointer;" data-bs-placement="top" @click="selecionarProjeto(p)">
+            <img class="card-img-top" :src="`/images/${p.imageFolder}/0.png`" :alt="projetoSelected.name">
+            <div class="card-body">
+              <h5 class="card-title">{{ p.name }}</h5>
+              <!-- <p class="card-text">{{ p.description }}</p> -->
+            </div>
+          </a>
+          <div class="card-footer d-flex justify-content-end">
+            <a class=" px-2" data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor: pointer;" data-bs-placement="top" title="Mais Detalhes" @click="selecionarProjeto(p)"> 
                 <font-awesome-icon :icon="['fa', 'info-circle']" class="fa-2x" color="#2e8b57"/>
-          </a>
-          <a  v-if="p.link" class="px-2" target="_blank" :href="p.link" data-bs-placement="top" title="Abrir uma amostra da aplicação">
-            <font-awesome-icon :icon="['fa', 'eye']" class="fa-2x" color="#30302a"/> 
-          </a>
-            <a v-if="p.github" class="px-2" target="_blanck" :href="p.github" data-bs-placement="top" title="Ver código fonte">
+            </a>
+            <a v-if="p.youtubeCode" class=" px-2" data-bs-toggle="modal" data-bs-target="#modalVideo" style="cursor: pointer;" data-bs-placement="top" title="Ver Video Apresentação" @click="selecionarProjeto(p)"> 
+                <font-awesome-icon :icon="['fab', 'youtube']" class="fa-2x" color="#30302a"/>
+            </a>
+            <a  v-if="p.link" class="px-2" target="_blank" :href="p.link" data-bs-placement="top" style="cursor: pointer;" title="Abrir uma amostra da aplicação">
+              <font-awesome-icon :icon="['fa', 'eye']" class="fa-2x" color="#30302a"/> 
+            </a>
+            <a v-if="p.github" class="px-2" target="_blanck" :href="p.github" data-bs-placement="top" style="cursor: pointer;" title="Ver código fonte">
               <font-awesome-icon :icon="['fab', 'github']" class="fa-2x" color="#30302a"/> 
             </a>
           </div>
@@ -31,6 +36,8 @@
       </div>
     </div>  
   </div>   
+
+
 
   <div class="modal fade text-start" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog text-black modal-lg">
@@ -61,10 +68,11 @@
                 </div>
               </div>
             </div>
-            <YouTubePlayer :videoId="projetoSelected.youtubeCode" v-if="projetoSelected.youtubeCode"/>
+            <iframe width="560" height="420" :src="`https://www.youtube.com/embed/${projetoSelected.youtubeCode}`" 
+             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen :title="projetoSelected.name" v-if="projetoSelected.youtubeCode"></iframe>
+            
           </div>
-
-
 
          <p class="mt-5">{{ projetoSelected.detailDescription }}</p>
           
@@ -95,17 +103,38 @@
       </div>
     </div>
   </div>
+
+
+  <div class="modal fade text-start" id="modalVideo" tabindex="-1" aria-labelledby="modalVideoLabel" aria-hidden="true">
+    <div class="modal-dialog text-black modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="modalVideoLabel">{{ projetoSelected.name }}</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        <div class="modal-body">
+          <div class="row d-flex col-12 d-flex justify-content-center align-items-center">
+            <iframe width="560" height="420" :src="`https://www.youtube.com/embed/${projetoSelected.youtubeCode}`" 
+             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen :title="projetoSelected.name" v-if="projetoSelected.youtubeCode"></iframe>
+          </div>
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: #2e8b57; border-color: #2e8b57;">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 </template>
 
 <script>
 import 'bootstrap/dist/css/bootstrap.min.css';
 import projetos from '../projetos';
-import YouTubePlayer from '../components/YouTubePlayer.vue';
 
 export default {
   name: "SectionProjects",
-  components: {YouTubePlayer},
   data() {
     return {
       isMobile: false,
