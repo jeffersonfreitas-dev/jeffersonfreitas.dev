@@ -6,12 +6,13 @@
         <a href="https://github.com/jeffersonfreitas-dev?tab=repositories" class="mx-2">
             <font-awesome-icon  :icon="['fab', 'github']" class="fa-xl" color="white"/>
           </a>
-          <a href="https://www.linkedin.com/in/jefferson-freitas/" class="mx-2">
+          <button  @click="changeLinkedinLink()" class="btn btn-link mx-2">
+            {{ linkedinLink }}
             <font-awesome-icon :icon="['fab', 'linkedin-in']" class="fa-xl" color="white"/>
-          </a>
+          </button>
       </div>
       <div class="col-12 d-flex justify-content-center align-items-center text-white">
-        <p class="tw-text-xs fs-8 tw-font-bold"> @2024 Todos os direitos reservados</p>
+        <p class="tw-text-xs fs-8 tw-font-bold"> @2024 {{ $t('all_rights') }}</p>
       </div>
     </div>
   </footer>
@@ -20,6 +21,21 @@
 <script>
 export default {
   name: "MainFooter",
+  data() {
+    return {
+      linkedinLinks: {
+        pt: "https://www.linkedin.com/in/jefferson-freitas",
+        en: "https://www.linkedin.com/in/jefferson-freitas?locale=en_US"
+      }, 
+    }
+  },
+  methods: {
+    changeLinkedinLink() {
+      let current = localStorage.getItem('lang') || 'pt';
+      let storedLink = this.linkedinLinks[current]; 
+      window.open(storedLink, '_blank');
+    }
+  }
 }
 </script>
 

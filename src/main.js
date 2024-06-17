@@ -11,6 +11,23 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import VuePlyr from 'vue-plyr'
 import 'vue-plyr/dist/vue-plyr.css'
 
+import { createI18n } from 'vue-i18n'
+import en from './locales/en.json'
+import pt from './locales/pt.json'
+
+
+
+const messages = {
+  en,
+  pt
+}
+
+const i18n = createI18n({
+  locale: localStorage.getItem('lang') || 'pt',
+  fallbackLocale: 'pt',
+  messages,
+})
+
 
 library.add(
   faBars, 
@@ -49,6 +66,8 @@ library.add(
   app.use(VuePlyr, {
     plyr: {}
   })
+
+  app.use(i18n)
   
   // Register the font-awesome-icon component
   app.component('font-awesome-icon', FontAwesomeIcon)

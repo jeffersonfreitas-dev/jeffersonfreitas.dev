@@ -1,7 +1,7 @@
 <template>
 <div class="container-fluid"> 
   <div class="d-flex flex-row align-items-center justify-content-center text-white font-monospace py-5">
-    <h1 class="text-center fs-1">Meus Projetos</h1>
+    <h1 class="text-center fs-1">{{ $t('my_projects') }}</h1>
     <div class="text-center">
       <font-awesome-icon :icon="['fa', 'diagram-project']" class="fa-2x" color="white"/>
     </div>

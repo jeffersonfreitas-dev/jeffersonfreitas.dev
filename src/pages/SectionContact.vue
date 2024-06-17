@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row p-5">
       <div class="d-flex flex-row align-items-center justify-content-center text-white font-monospace">
-        <h1 class="text-center fs-1">Contato/ Blog </h1>
+        <h1 class="text-center fs-1">{{ $t('contacts') }}</h1>
         <div class="text-center">
           <font-awesome-icon :icon="['fa', 'comment']" class="fa-2x" color="white"/>
         </div>
@@ -12,7 +12,7 @@
     <div class="row text-white px-3">             
       <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 d-flex flex-column text-start">
         <div class="row d-flex justify-content-center ">
-          <p> <span class="fs-3">Últimos Posts</span>  <a class="ml-5 text-decoration-none" style="color: #2e8b57;" href="https://jeffersonfreitas-dev.blogspot.com/"> | Visite meu blog!</a></p>
+          <p> <span class="fs-3">{{ $t('last_posts') }}</span>  <a class="ml-5 text-decoration-none" style="color: #2e8b57;" href="https://jeffersonfreitas-dev.blogspot.com/"> | {{ $t('visit_my_blog') }}</a></p>
         </div>
         <div v-if="posts.length > 0">
           <a v-for="(p, idx) in posts" :key="idx" :href="p.url" target="_blank" style="color: #30302a;" class="text-decoration-none">
@@ -41,8 +41,8 @@
               </div>
               <div class="col-md-8 text-white">
                 <div class="card-body">
-                  <h5 class="font-weight-bold">Problema ao buscar posts</h5>
-                  <p class="card-text">Houve um problema ao buscar os posts no meu blog, mas você pode acessar diretamente clicando aqui!</p>
+                  <h5 class="font-weight-bold">{{ $t('post_problem_title') }}</h5>
+                  <p class="card-text">{{ $t('post_problem_body') }}</p>
                 </div>
               </div>
             </div>
@@ -53,8 +53,8 @@
       <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 d-flex font-monospace mb-5">
         <div class="row p-3">
           <blockquote class="fs-5 text-justify text-start text-wrap text-break">
-            <p class="pt-3">Se você busca um desenvolvedor de software experiente para concretizar seus projetos, estou pronto para ajudar. Posso transformar suas ideias em soluções tecnológicas inovadoras.</p>
-            <p class="mt-3 font-weight-bold" >Entre em contato para discutirmos como posso contribuir para o sucesso do seu projeto.</p>
+            <p class="pt-3">{{ $t('contact_1') }}</p>
+            <p class="mt-3 font-weight-bold" >{{ $t('contact_2') }}</p>
           </blockquote>
 
           <div class="flex-column">

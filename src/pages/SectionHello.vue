@@ -4,11 +4,11 @@
     <div class="row col-12 d-flex">
       <div class="row flex-column px-5 py-5 justify-content-center align-items-center font-monospace">
 
-          <p class="text-start">Olá... Meu nome é</p>
+          <p class="text-start">{{ $t('my_name') }}</p>
           <h1 class="text-start display-1"><strong style="color: #2E8B57;">Jefferson</strong> Freitas</h1>
    
-            <h2 class="text-center display-6 mt-5"><strong style="color: #2E8B57;">Desenvolvedor de Software</strong></h2>
-            <p class="text-center">Seja bem-vindo(a) ao meu portfólio.</p>
+            <h2 class="text-center display-6 mt-5"><strong style="color: #2E8B57;">{{ $t('my_title') }}</strong></h2>
+            <p class="text-center">{{ $t('wellcome') }}</p>
             <font-awesome-icon :icon="['fa', 'code']" class="fa-3x" color="white"/>
 
       </div>

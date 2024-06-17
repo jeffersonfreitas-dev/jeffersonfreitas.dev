@@ -13,7 +13,7 @@
       <div class="row">
         <div class="col-12 mb-3 d-flex d-row">
           <font-awesome-icon :icon="['fa', 'code']" class="fa-2x mx-2" color="#30302a"></font-awesome-icon>
-          <h2>Linguagens</h2>
+          <h2>{{ $t('languagens') }}</h2>
         </div>
       </div>
       <div class="row">
@@ -32,7 +32,7 @@
       <div class="row">
         <div class="col-12 mb-3 d-flex d-row">
           <font-awesome-icon :icon="['fa', 'database']" class="fa-2x mx-2" color="#30302a"></font-awesome-icon>
-          <h2>Banco de Dados</h2>
+          <h2>Databases</h2>
         </div>
       </div>
       <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12" v-for="(item, index) in databases" :key="index">

@@ -1,16 +1,25 @@
 <template>
   <header class="d-flex justify-content-center font-monospace">
     <div class="row container">
-      <div class="col-12 d-flex align-items-center justify-content-center">
-        <a href="#hello" class="company_name fs-3 fw-bold text-decoration-none">{{ company }}</a>
+      <div class="col-10 d-flex align-items-center justify-content-center">
+        <a href="#hello" class="company_name fs-3 fw-bold text-decoration-none">{{ $t('my_portfolio') }}</a>
+      </div>
+      <div class="col-2 d-flex align-items-center justify-content-center">
+        <country-flag @click="changeLanguage('pt')" country='br' size='normal' style="cursor: pointer; margin-right: 5px;"/>
+        <country-flag @click="changeLanguage('en')" country='usa' size='normal' style="cursor: pointer;"/>
       </div>
     </div>
   </header>
 </template>
 
 <script>
+import CountryFlag from 'vue-country-flag-next'
+
 export default {
   name: "MainNav",
+  components: {
+        CountryFlag
+    },
   data() {
     return {
       company: "Meu Portfólio",
@@ -43,6 +52,10 @@ export default {
     },
     toggleMenu() {
       this.isMenuOpen = !this.isMenuOpen;
+    },
+    changeLanguage(lang) {
+      this.$i18n.locale = lang;
+      localStorage.setItem('lang', lang);
     }
   }
 };

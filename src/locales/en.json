@@ -1,0 +1,22 @@
+{
+  "my_portfolio": "My Portfolio",
+  "my_name": "Hello... My name is",
+  "my_title": "Software Developer",
+  "wellcome": "Welcome to my portfolio",
+  "about_me": "About Me",
+  "my_projects": "My Projects",
+  "contacts": "Contact/Blog",
+  "about_me_1": "I am a Fullstack Developer specialized in Java and Spring Framework, with solid experience as a freelancer since 2018. Currently, I am part of the Innovations team at Unimed do Ceará.",
+  "about_me_2": "I graduated in Business Administration and obtained a degree as a Technologist in Systems Analysis and Development. Additionally, I have specializations in Cloud Systems Architecture and Information Security. I hold various certifications and have taken several courses in Development and DevOps. For more details, you can access my certifications ",
+  "about_me_3": "My passion for technology drives me to seek constant improvement, which is reflected in my versatility and participation in various phases of the software development cycle.",
+  "click_here": "by clicking here.",
+  "my_curriculum": "View My Resume",
+  "contact_1": "If you are looking for an experienced software developer to bring your projects to life, I am ready to help. I can transform your ideas into innovative technological solutions.",
+  "contact_2": "Get in touch to discuss how I can contribute to the success of your project.",
+  "post_problem_title": "Problem Fetching Posts",
+  "post_problem_body": "There was a problem fetching the posts from my blog, but you can access them directly by clicking here!",
+  "last_posts": "Latest Posts",
+  "visit_my_blog": "Visit my blog!",
+  "languagens": "Languages",
+  "all_rights": "All rights reserved"
+}
