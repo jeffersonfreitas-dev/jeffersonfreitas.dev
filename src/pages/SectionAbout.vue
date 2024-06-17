@@ -32,7 +32,7 @@
             <div class="col-md-12">
               <blockquote class="fs-5 text-justify">
                 <p class="pt-3">{{ $t('about_me_1') }}</p>
-                <p class="pt-3">{{ $t('about_me_2') }}<a target="'_blank'" href="https://www.linkedin.com/in/jefferson-freitas/details/certifications/" style="color: #30302a;">{{ $t('click_here') }}</a> </p>
+                <p class="pt-3">{{ $t('about_me_2') }}<a target="'_blank'" href="https://www.linkedin.com/in/jefferson-freitas/" style="color: #30302a;">{{ $t('click_here') }}</a> </p>
                 <p class="pt-3">{{ $t('about_me_3') }}</p>
               </blockquote>
             </div>
@@ -43,7 +43,8 @@
 </template>
 
 <script>
-import pdfUrl from "../assets/Curriculo02.pdf";
+import curriculoPdf from "../assets/Curriculo.pdf";
+import resumePdf from "../assets/Resume.pdf";
 
 export default {
   name: "SectionAbout",
@@ -58,7 +59,14 @@ export default {
   },
   methods: {
     openPdfInNewTab() {
-      window.open(pdfUrl, '_blank');
+      let locale = localStorage.getItem('lang') || 'pt';
+
+      if(locale === 'pt') {
+        window.open(curriculoPdf, '_blank');
+      }else {
+        window.open(resumePdf, '_blank');
+      }
+
     },
   }
 }
