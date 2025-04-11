@@ -14,6 +14,7 @@ import 'vue-plyr/dist/vue-plyr.css'
 import { createI18n } from 'vue-i18n'
 import en from './locales/en.json'
 import pt from './locales/pt.json'
+import { MotionPlugin } from '@vueuse/motion'
 
 
 
@@ -68,6 +69,7 @@ library.add(
   })
 
   app.use(i18n)
+  app.use(MotionPlugin)
   
   // Register the font-awesome-icon component
   app.component('font-awesome-icon', FontAwesomeIcon)

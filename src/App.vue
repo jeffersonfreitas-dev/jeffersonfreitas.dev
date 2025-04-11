@@ -21,7 +21,7 @@
     <div class="collapse navbar-collapse" id="navbarMenu">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item" v-for="item in menu" :key="item.id">
-          <a class="nav-link" :href="'#' + item.id">{{ item.label }}</a>
+          <a class="nav-link" :href="'#' + item.id" :class="{ active: activeSection === item.id }">{{ item.label }}</a>
         </li>
       </ul>
     </div>
@@ -63,9 +63,33 @@ export default {
         { id: "habilidades", label: "Habilidades", component: "Skills" },
         { id: "contato", label: "Contato", component: "Contato" },
       ],
+      activeSection: null
     };
   },
+  mounted() {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          this.activeSection = entry.target.id;
+        }
+      });
+    },
+    {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.6, // mais de 60% da seção visível
+    }
+  );
+
+  this.menu.forEach((item) => {
+    const section = document.getElementById(item.id);
+    if (section) observer.observe(section);
+  });
+}
 };
+
+
 </script>
 
 <style>
