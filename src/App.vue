@@ -1,16 +1,32 @@
 <template>
   <div id="app">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-      <div class="container-fluid">
-        <div class="collapse navbar-collapse">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item" v-for="item in menu" :key="item.id">
-              <a class="nav-link" :href="'#' + item.id">{{ item.label }}</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Meu Portfólio</a>
+
+    <!-- Botão sanduíche -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarMenu"
+      aria-controls="navbarMenu"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Menu que colapsa no mobile -->
+    <div class="collapse navbar-collapse" id="navbarMenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item" v-for="item in menu" :key="item.id">
+          <a class="nav-link" :href="'#' + item.id">{{ item.label }}</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
     <div
       v-for="item in menu"
