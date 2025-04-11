@@ -1,31 +1,8 @@
-# Meu site de Portfólio
+# Meu Portfólio
 
-Este é meu portfólio como desenvolvedor de software. 
-
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+Olá, eu sou o Jefferson Freitas desenvolvedor de software Fullstak. Este é meu portfólio como desenvolvedor de software. 
 
 ## Meus Projetos
 
-
-### Rodar o Projeto
-
-Rode o comando abaixo para baixar todas as dependências necessárias.
-```sh
-npm install
-```
-
-Rode em ambiente Development
-
-```sh
-npm run dev
-```
-
-Rode em ambiente de Produção
-```sh
-npm run build
-```
 
 ## Outras informações

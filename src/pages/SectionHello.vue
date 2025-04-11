@@ -1,7 +1,6 @@
 <template>
-  <div class="container-fluid flex-column text-white align-items-center " 
-      :class="{'justify-content-center vh-100': !isMobile, 'justify-content-start': isMobile}">
-    <div class="row col-12 d-flex">
+  <div class="container-fluid flex-column text-white align-items-center " :class="{'justify-content-center vh-100': !isMobile, 'justify-content-start': isMobile}">
+    <!-- <div class="row col-12 d-flex">
       <div class="row flex-column px-5 py-5 justify-content-center align-items-center font-monospace">
 
           <p class="text-start">{{ $t('my_name') }}</p>
@@ -12,7 +11,7 @@
             <font-awesome-icon :icon="['fa', 'code']" class="fa-3x" color="white"/>
 
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
