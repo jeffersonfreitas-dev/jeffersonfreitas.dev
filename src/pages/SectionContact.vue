@@ -93,6 +93,7 @@ export default {
     }
   },
   mounted() {
+    console.log(import.meta.env.VITE_BLOG_KEY)
     axios.get(`https://www.googleapis.com/blogger/v3/blogs/${import.meta.env.VITE_BLOG_ID}/posts`, {
       params: {key:import.meta.env.VITE_BLOG_KEY, maxResults: 2, orderBy: 'published'}
     }).then(response => {
