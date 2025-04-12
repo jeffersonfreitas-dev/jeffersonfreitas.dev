@@ -107,13 +107,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #134e4a;
+  background-color: #1e7c77;
   transition: background-color 0.3s ease-in-out;
 }
 
-.section:hover {
+/* .section:hover {
   background-color: #1e7c77;
-}
+} */
 
 .navbar .nav-link.active {
   font-weight: bold;
