@@ -21,6 +21,10 @@ export const useLangStore = defineStore('lang', {
                 this.langCode = langCode;
                 localStorage.setItem('lang', langCode);
             }
+        },
+        getLang(){
+            const lang = localStorage.getItem("lang") ?? 'pt';
+            return this.langs.find(l => l.language === lang);
         }
     }
 })
