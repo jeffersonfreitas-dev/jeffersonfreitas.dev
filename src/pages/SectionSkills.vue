@@ -137,7 +137,6 @@ export default {
         { title: 'Kafka', icon: ['fa', 'envelope'] },
         { title: 'CI/CD Pipeline', icon: ['fab', 'github'] },
         { title: 'RabbitMQ', icon: ['fa', 'envelope'] },
-
       ]     
     }
   }
