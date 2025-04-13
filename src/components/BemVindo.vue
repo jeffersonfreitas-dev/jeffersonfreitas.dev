@@ -1,31 +1,34 @@
 <template>
-  <div class="container text-white d-flex flex-column flex-lg-row align-items-center justify-content-between h-100 w-100">
-    <div class="text-start mb-4 mb-lg-0 animate-name">
-      <h1 class="display-3 fw-bold">Jefferson Freitas</h1>
-      <p class="display-6 lead mt-3">{{ $t('my_title') }}</p>
-      <p class="lead ">{{ $t('quick_description') }}</p>
+  <div class="container text-white d-flex flex-column flex-lg-row align-items-center justify-content-between">
+    <div class="col-lg-5 col-12">
+      <div class="text-lg-start text-center mb-4 animate-name">
+        <h1 class="display-3 fw-bold">Jefferson Freitas</h1>
+        <p class="display-6 lead mt-3">{{ $t('my_title') }}</p>
+        <p class="lead ">{{ $t('quick_description') }}</p>
+  
+        <a :href="LINK_GITHUB" class="mx-2" target="_blank">
+          <font-awesome-icon  :icon="['fab', 'github']" class="fa-xl" color="white"/>
+        </a>
+        <a :href="LINK_LINKEDIN"  class="mx-2" target="_blank">
+          <font-awesome-icon :icon="['fab', 'linkedin-in']" class="fa-xl" color="white"/>
+        </a>
+  
+  
+              <!-- Certificação AWS -->
+        <a class="d-flex flex-column align-items-center mt-4 text-decoration-none" target="_blank" :href="LINK_CERTIFICADO_AWS" style="color: #fff;" >
+          <img src="/images/aws.png" alt="Certificação AWS" style="width: 130px; height: auto;" />
+          <span class="mt-2 ">AWS Developer</span>
+        </a>
+      </div>
 
-      <a :href="LINK_GITHUB" class="mx-2" target="_blank">
-        <font-awesome-icon  :icon="['fab', 'github']" class="fa-xl" color="white"/>
-      </a>
-      <a :href="LINK_LINKEDIN"  class="mx-2" target="_blank">
-        <font-awesome-icon :icon="['fab', 'linkedin-in']" class="fa-xl" color="white"/>
-      </a>
-
-
-            <!-- Certificação AWS -->
-      <a class="d-flex flex-column align-items-center mt-4 text-decoration-none" target="_blank" :href="LINK_CERTIFICADO_AWS" style="color: #fff;" >
-        <img src="/images/aws.png" alt="Certificação AWS" style="width: 130px; height: auto;" />
-        <span class="mt-2 ">AWS Developer</span>
-      </a>
     </div>
 
     <!-- Lottie com animação de entrada -->
-    <motion
+    <motion class="d-none d-md-block"
       :initial="{ opacity: 0, x: 100 }"
       :enter="{ opacity: 1, x: 0, transition: { duration: 1 } }"
     >
-      <div ref="lottieContainer" style="width: 600px; height: 600px;"></div>
+      <div ref="lottieContainer" class="lottie"></div>
     </motion>
     
   </div>
@@ -67,6 +70,11 @@ export default {
   padding: 20px;
 }
 
+.lottie {
+  width: 600px;
+  height: 600px;
+}
+
 .animate-name {
   opacity: 0;
   transform: translateY(20px);
@@ -77,6 +85,20 @@ export default {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 992px) {
+  .lottie {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .lottie {
+    width: 300px;
+    height: 300px;
   }
 }
 </style>
