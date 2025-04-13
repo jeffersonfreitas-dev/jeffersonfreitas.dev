@@ -12,7 +12,7 @@
           </button>
       </div>
       <div class="col-12 d-flex justify-content-center align-items-center text-white">
-        <p class="tw-text-xs fs-8 tw-font-bold"> @2024 {{ $t('all_rights') }}</p>
+        <p class="tw-text-xs fs-8 tw-font-bold"> @2025 {{ $t('all_rights') }}</p>
       </div>
     </div>
   </footer>
