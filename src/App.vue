@@ -21,7 +21,7 @@
         <div class="collapse navbar-collapse" id="navbarMenu">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item" v-for="item in menu" :key="item.id">
-              <a class="nav-link" :href="'#' + item.id" :class="{ active: activeSection === item.id }">{{ defaultLang?.language === 'pt' ? item.label : item.labelUs }}</a>
+              <a class="nav-link" :href="'#' + item.id" :class="{ active: activeSection === item.id }">{{ savedLang.language === 'pt' ? item.label : item.labelUs }}</a>
             </li>
 
         <!-- Dropdown de idioma -->
@@ -35,7 +35,7 @@
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
-          <country-flag :country='defaultLang.country' size='normal' style="cursor: pointer; margin-right: 5px; margin-left: 5px; margin-top: -5px;"/>
+          <country-flag :country='savedLang.country' size='normal' style="cursor: pointer; margin-right: 5px; margin-left: 5px; margin-top: -5px;"/>
           </a>
           
           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
@@ -84,12 +84,12 @@ export default {
   },
   data() {
     const langStore = useLangStore();
+    let defaultLang = langStore.currentLang;
+    const savedLang = langStore.getLang();
     return {
       langStore,
-      defaultLang: {
-        language: langStore.currentLang.language,
-        country: langStore.currentLang.country
-      },
+      defaultLang,
+      savedLang,
       menu: [
         { id: "eu", label: "Olá", labelUs: 'Hello', component: "Eu" },
         { id: "sobre", label: "Sobre", labelUs: 'About', component: "Sobre" },
