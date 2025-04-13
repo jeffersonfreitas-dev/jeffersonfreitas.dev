@@ -15,8 +15,9 @@ import { createI18n } from 'vue-i18n'
 import en from './locales/en.json'
 import pt from './locales/pt.json'
 import { MotionPlugin } from '@vueuse/motion'
+import { createPinia } from 'pinia';
 
-
+const pinia = createPinia();
 
 const messages = {
   en,
@@ -70,6 +71,7 @@ library.add(
 
   app.use(i18n)
   app.use(MotionPlugin)
+  app.use(pinia)
   
   // Register the font-awesome-icon component
   app.component('font-awesome-icon', FontAwesomeIcon)

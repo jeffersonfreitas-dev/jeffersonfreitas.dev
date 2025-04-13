@@ -1,8 +1,8 @@
 <template>
-  <div class="container text-white d-flex flex-column flex-lg-row align-items-center justify-content-between gap-5 h-100 w-100">
+  <div class="container text-white d-flex flex-column flex-lg-row align-items-center justify-content-between  ">
     <div class="col-5 text-start mb-4 mb-lg-0 animate-name">
-      <h1 class="display-3 fw-bold">Entre em Contato</h1>
-      <p class="display-6 lead mt-3">Tel: +55 (85) 9.8172-1585</p>
+      <h1 class="display-3 fw-bold ">{{ $t('contacts') }}</h1>
+      <p class="display-6 lead mt-3">{{ $t('tel') }} +55 (85) 9.8172-1585</p>
       <p class="lead ">contato@jeffersonfreitas.dev</p>
       <p class="lead ">jefferson.dev21@gmail.com</p>
       <a href="https://github.com/jeffersonfreitas-dev?tab=repositories" class="mx-2">
@@ -14,46 +14,70 @@
       </button>
     </div>
 
-    <div v-if="posts.length > 0">
-      <a v-for="(p, idx) in posts" :key="idx" :href="p.url" target="_blank">
-        <div class="col-12 col-lg-7 mt-5">
-          <div class="project-card d-flex flex-row gap-5" style="cursor: pointer;">
-            <div class="d-flex align-items-center justify-content-center project-image" style="width: 260px; height: 260px; flex-shrink: 0;">
-              <img :src="p.image" alt="Blog Post" style="width: 100%; height: 100%; object-fit: cover;">
+    <div class="col-lg-6 mt-5" v-if="posts.length > 0">
+      <p class="mb-3 text-start">{{ $t('same_posts_lbl') }}</p>
+
+      <a class="col-12 mt-3 text-decoration-none" v-for="(p, idx) in posts" :key="idx" :href="p.url" target="_blank" style="color: #fff;">
+        <div class="project-card d-flex flex-row gap-3" style="cursor: pointer;">
+          <div class="d-flex align-items-center justify-content-center project-image" style="width: 150px; height: 150px; flex-shrink: 0;">
+            <img :src="p.image" alt="Blog Post" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+  
+          <div class="d-flex flex-column flex-grow-1 mt-3 justify-content-between">
+            <div class="text-start gap-5">
+              <p class="fw-bold mb-1 mb-3">{{ p.title }}</p>
+              <p class="mb-3 text-justify">
+                {{ p.content }}
+              </p>
             </div>
-    
-            <div class="d-flex flex-column flex-grow-1 mt-3 justify-content-between">
-              <div class="text-start gap-5">
-                <h4 class="fw-bold mb-1">{{ p.title }}</h4>
-                <p class="mb-3 text-justify">
-                  {{ p.content }}
-                </p>
-              </div>
-    
-              <div class="d-flex flex-wrap justify-content-center gap-2">
-                <!-- <span class="tech-badge" v-for="(s) in p.stacks" :key="s">{{ s }}</span> -->
-              </div>
-    
-              <!-- <div class="d-flex flex-wrap justify-content-end gap-2">
-                <a class=" px-2" data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor: pointer;" data-bs-placement="top" title="Mais Detalhes" @click="selecionarProjeto(p)"> 
-                    <font-awesome-icon :icon="['fa', 'info-circle']" class="fa-2x" color="#fff"/>
-                </a>
-                <a v-if="p.youtubeCode" class=" px-2" data-bs-toggle="modal" data-bs-target="#modalVideo" style="cursor: pointer;" data-bs-placement="top" title="Ver Video Apresentação" @click="selecionarProjeto(p)"> 
-                    <font-awesome-icon :icon="['fab', 'youtube']" class="fa-2x" color="#fff"/>
-                </a>
-                <a  v-if="p.link" class="px-2" target="_blank" :href="p.link" data-bs-placement="top" style="cursor: pointer;" title="Testar a aplicação">
-                  <font-awesome-icon :icon="['fa', 'eye']" class="fa-2x" color="#fff"/> 
-                </a>
-                <a v-if="p.github" class="px-2" target="_blanck" :href="p.github" data-bs-placement="top" style="cursor: pointer;" title="Ver código fonte">
-                  <font-awesome-icon :icon="['fab', 'github']" class="fa-2x" color="#fff"/> 
-                </a>
-              </div> -->
+  
+            <div class="d-flex flex-wrap justify-content-end gap-2">
+              <a  class="px-2" target="_blank" :href="p.url" data-bs-placement="top" style="cursor: pointer;" title="Ver blog">
+                <font-awesome-icon :icon="['fa', 'eye']" class="fa-2x" color="#fff"/> 
+              </a>
             </div>
           </div>
         </div>
-
       </a>
+
+      <div class="row mt-3">
+        <a class="fw-bold mb-1 mb-3 text-decoration-none text-white" target="_blank" href="https://jeffersonfreitas-dev.blogspot.com/">Visite meu Blog</a>
+      </div>     
     </div>
+
+
+    <div class="col-lg-6 mt-5" v-else>
+      <p class="mb-3 text-start">{{ $t('same_posts_lbl') }}</p>
+
+      <a class="col-12 mt-3 text-decoration-none" href="https://jeffersonfreitas-dev.blogspot.com/" target="_blank" style="color: #fff;">
+        <div class="project-card d-flex flex-row gap-3" style="cursor: pointer;">
+          <div class="d-flex align-items-center justify-content-center project-image" style="width: 150px; height: 150px; flex-shrink: 0;">
+            <img src="/images/rededown.png" alt="Erro network" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+  
+          <div class="d-flex flex-column flex-grow-1 mt-3 justify-content-between">
+            <div class="text-start gap-5">
+              <p class="fw-bold mb-1 mb-3">{{ $t('post_problem_title') }}</p>
+              <p class="mb-3 text-justify">
+                {{ $t('post_problem_body') }}
+              </p>
+            </div>
+  
+            <div class="d-flex flex-wrap justify-content-end gap-2">
+              <a  class="px-2" target="_blank" href="https://jeffersonfreitas-dev.blogspot.com/" data-bs-placement="top" style="cursor: pointer;" title="Ver blog">
+                <font-awesome-icon :icon="['fa', 'eye']" class="fa-2x" color="#ccc"/> 
+              </a>
+            </div>
+          </div>
+        </div>
+      </a>
+
+      <div class="row mt-3">
+        <a class="fw-bold mb-1 mb-3 text-decoration-none text-white" target="_blank" href="https://jeffersonfreitas-dev.blogspot.com/">{{ $t('visit_my_blog') }}</a>
+      </div>     
+    </div>
+
+
   </div>
 
 
@@ -88,7 +112,7 @@ export default {
     getResumoContent(post){
       const text = this.getContent(post);
       if(text !== null || text !== ""){
-        return text[0].slice(0, 150) + "...";
+        return text[0].slice(0, 130) + "...";
       }else {
         return "";
       }
@@ -137,6 +161,7 @@ export default {
 
 
 .project-card {
+  background-color: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   padding: 16px;
   transition: border 0.3s ease, box-shadow 0.3s ease;
@@ -145,7 +170,6 @@ export default {
 }
 
 .project-card:hover {
-  background-color: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
 }

@@ -2,12 +2,12 @@
   <div class="container text-white">
     <div class="d-flex flex-column flex-lg-row align-items-center justify-content-between gap-5 animate-name mb-5">
       <div class="col-4 text-start mb-4 mb-lg-0 mr-md">
-        <h1 class="display-3 fw-bold">Meus Projetos</h1>
-        <p class="display-6 lead mt-3">Soluções reais com foco em performance e escalabilidade</p>
+        <h1 class="display-3 fw-bold">{{ $t('my_projects') }}</h1>
+        <p class="display-6 lead mt-3">{{ $t('quick_projects') }}</p>
       </div>
         <div class="col-12 col-lg-8">
         <p class="lead text-start">
-          Apresento alguns dos principais projetos em que atuei. Cada solução foi desenvolvida com foco em qualidade, segurança e eficiência, utilizando as mais diversas tecnologias presentes no mercado.
+          {{ $t('quick_projects_2') }}
         </p>
 
       </div>
@@ -23,7 +23,7 @@
           <div class="text-start gap-5">
             <h4 class="fw-bold mb-1">{{ p.name }}</h4>
             <p class="mb-3 text-justify">
-              {{ p.description }}
+              {{ currentLang.language === 'pt' ? p.description : p.descriptionEng }}
             </p>
           </div>
 
@@ -32,16 +32,16 @@
           </div>
 
           <div class="d-flex flex-wrap justify-content-end gap-2">
-            <a class=" px-2" data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor: pointer;" data-bs-placement="top" title="Mais Detalhes" @click="selecionarProjeto(p)"> 
+            <a class=" px-2" data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor: pointer;" data-bs-placement="top" :title="$t('btn_more_details')" @click="selecionarProjeto(p)"> 
                 <font-awesome-icon :icon="['fa', 'info-circle']" class="fa-2x" color="#fff"/>
             </a>
-            <a v-if="p.youtubeCode" class=" px-2" data-bs-toggle="modal" data-bs-target="#modalVideo" style="cursor: pointer;" data-bs-placement="top" title="Ver Video Apresentação" @click="selecionarProjeto(p)"> 
+            <a v-if="p.youtubeCode" class=" px-2" data-bs-toggle="modal" data-bs-target="#modalVideo" style="cursor: pointer;" data-bs-placement="top" :title="$t('btn_see_apresentation_video')" @click="selecionarProjeto(p)"> 
                 <font-awesome-icon :icon="['fab', 'youtube']" class="fa-2x" color="#fff"/>
             </a>
-            <a  v-if="p.link" class="px-2" target="_blank" :href="p.link" data-bs-placement="top" style="cursor: pointer;" title="Testar a aplicação">
+            <a  v-if="p.link" class="px-2" target="_blank" :href="p.link" data-bs-placement="top" style="cursor: pointer;" :title="$t('btn_try_application')">
               <font-awesome-icon :icon="['fa', 'eye']" class="fa-2x" color="#fff"/> 
             </a>
-            <a v-if="p.github" class="px-2" target="_blanck" :href="p.github" data-bs-placement="top" style="cursor: pointer;" title="Ver código fonte">
+            <a v-if="p.github" class="px-2" target="_blanck" :href="p.github" data-bs-placement="top" style="cursor: pointer;" :title="$t('btn_see_source')">
               <font-awesome-icon :icon="['fab', 'github']" class="fa-2x" color="#fff"/> 
             </a>
           </div>
@@ -49,10 +49,10 @@
       </div>
     </div>
 
-    <div class="row">
+    <div class="row mb-5">
       <div class="col-12 d-flex align-items-center justify-content-center mt-3">
         <a href="/curriculo.pdf" download class="btn btn-outline-light custom-btn">
-          Confira todos os Projetos
+          {{ $t('btn_check_all_projects') }}
         </a>
       </div>
     </div>
@@ -63,6 +63,7 @@
 
 <script>
 import projetos from '../projetos';
+import { useLangStore } from '@/stores/Lang'
 
 export default {
   data() {
@@ -70,8 +71,15 @@ export default {
       projetos: projetos,
     };
   },
-  mounted() {
-  },
+  computed: {
+    useLangStore() {
+      return useLangStore();
+    },
+    currentLang() {
+      console.log(this.useLangStore.currentLang)
+      return this.useLangStore.currentLang
+    }
+  }
 };
 </script>
 

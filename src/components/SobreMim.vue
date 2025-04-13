@@ -1,33 +1,30 @@
 <template>
   <div class="container text-white d-flex flex-column flex-lg-row align-items-center justify-content-between">
-    <!-- Coluna esquerda -->
-    
-    
     <div class="col-12 col-lg-6 d-flex flex-column align-items-center">
       <!-- Textos "Sobre mim" -->
       <div class="text-start mt-4 animate-name px-3 px-lg-0 ">
-        <h1 class="display-3 fw-bold">Sobre mim</h1>
-        <p class=" lead display-6 mt-3">Profissional com foco em tecnologia, inovação e resultados</p>
+        <h1 class="display-3 fw-bold">{{ $t('about_me') }}</h1>
+        <p class=" lead display-6 mt-3">{{ $t('quick_about_me') }}</p>
         <p class="lead mb-3">
-          Desenvolvedor com forte atuação em <strong>backend</strong> e <strong>arquitetura de sistemas em nuvem.</strong> Acumulo ampla experiência em projetos robustos e soluções escaláveis.
+          {{ $t('about_me_1') }} <strong>backend</strong> {{ $t('and') }} <strong>{{ $t('about_me_2') }}</strong> {{ $t('about_me_3') }}
         </p>
         <p class="lead mb-3">
-          Graduado em <strong>Administração</strong>, <strong>Tecnólogo em Análise e Desenvolvimento de Sistemas</strong> e <strong>pós-graduado em Aplicações Cloud Computing</strong>, também possuo certificação <strong>AWS Certified Developer</strong>.
+          {{ $t('about_me_4') }} <strong>{{ $t('about_me_5') }}</strong>, <strong>{{ $t('about_me_6') }}</strong> {{ $t('and') }} <strong>{{ $t('about_me_7') }}</strong>, {{ $t('about_me_8') }} <strong>AWS Certified Developer</strong>.
         </p>
         <p class="lead mb-3">
-          Tenho sólida vivência em todas as etapas do ciclo de desenvolvimento, com foco em qualidade, performance e segurança.
+          {{ $t('about_me_9') }}
         </p>
       </div>
     </div>
 
     <!-- Coluna direita -->
     <div class="col-12 col-lg-5 d-flex flex-column align-items-center text-start px-3 px-lg-5 mt-4 mt-lg-0">
-      <p class="lead display-6">Quer conhecer mais sobre minha trajetória e projetos?</p>
-      <p class="lead mb-4">Baixe meu currículo ou conecte-se comigo no LinkedIn.</p>
+      <p class="lead display-6">{{ $t('about_more_me') }}</p>
+      <p class="lead mb-4">{{ $t('down_cv') }}</p>
 
       <div class="d-flex flex-column flex-md-row gap-3">
         <a href="/curriculo.pdf" download class="btn btn-outline-light custom-btn">
-          Baixar Currículo
+          {{ $t('btn_down_cv') }} 
         </a>
         <a
           href="https://www.linkedin.com/in/seu-usuario"
