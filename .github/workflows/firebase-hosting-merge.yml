@@ -42,9 +42,9 @@ jobs:
           docker push $IMAGE:latest
           docker push $IMAGE:$VERSION
 
-      # - uses: FirebaseExtended/action-hosting-deploy@v0
-      #   with:
-      #     repoToken: '${{ secrets.GITHUB_TOKEN }}'
-      #     firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_JEFFERSONFREITAS_DEV }}'
-      #     channelId: live
-      #     projectId: jeffersonfreitas-dev
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_JEFFERSONFREITAS_DEV }}'
+          channelId: live
+          projectId: jeffersonfreitas-dev
