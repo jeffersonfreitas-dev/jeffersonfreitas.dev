@@ -5,13 +5,12 @@
       <p class="display-6 lead mt-3">{{ $t('tel') }} +55 (85) 9.8172-1585</p>
       <p class="lead ">contato@jeffersonfreitas.dev</p>
       <p class="lead ">jefferson.dev21@gmail.com</p>
-      <a href="https://github.com/jeffersonfreitas-dev?tab=repositories" class="mx-2">
+      <a :href="LINK_LINKEDIN" target="_blank" class="mx-2">
         <font-awesome-icon  :icon="['fab', 'github']" class="fa-xl" color="white"/>
       </a>
-      <button  @click="changeLinkedinLink()" class="btn btn-link mx-2">
-        {{ linkedinLink }}
+      <a :href="LINK_LINKEDIN" target="_blank" class="mx-2">
         <font-awesome-icon :icon="['fab', 'linkedin-in']" class="fa-xl" color="white"/>
-      </button>
+      </a>
     </div>
 
     <div class="col-lg-6 mt-5" v-if="posts.length > 0">
@@ -41,7 +40,7 @@
       </a>
 
       <div class="row mt-3">
-        <a class="fw-bold mb-1 mb-3 text-decoration-none text-white" target="_blank" href="https://jeffersonfreitas-dev.blogspot.com/">Visite meu Blog</a>
+        <a class="fw-bold mb-1 mb-3 text-decoration-none text-white" target="_blank" :href="LINK_BLOG">Visite meu Blog</a>
       </div>     
     </div>
 
@@ -49,7 +48,7 @@
     <div class="col-lg-6 mt-5" v-else>
       <p class="mb-3 text-start">{{ $t('same_posts_lbl') }}</p>
 
-      <a class="col-12 mt-3 text-decoration-none" href="https://jeffersonfreitas-dev.blogspot.com/" target="_blank" style="color: #fff;">
+      <a class="col-12 mt-3 text-decoration-none" :href="LINK_BLOG" target="_blank" style="color: #fff;">
         <div class="project-card d-flex flex-row gap-3" style="cursor: pointer;">
           <div class="d-flex align-items-center justify-content-center project-image" style="width: 150px; height: 150px; flex-shrink: 0;">
             <img src="/images/rededown.png" alt="Erro network" style="width: 100%; height: 100%; object-fit: cover;">
@@ -64,7 +63,7 @@
             </div>
   
             <div class="d-flex flex-wrap justify-content-end gap-2">
-              <a  class="px-2" target="_blank" href="https://jeffersonfreitas-dev.blogspot.com/" data-bs-placement="top" style="cursor: pointer;" title="Ver blog">
+              <a  class="px-2" target="_blank" :href="LINK_BLOG" data-bs-placement="top" style="cursor: pointer;" title="Ver blog">
                 <font-awesome-icon :icon="['fa', 'eye']" class="fa-2x" color="#ccc"/> 
               </a>
             </div>
@@ -85,11 +84,15 @@
 
 <script>
 import axios from 'axios';
+import { LINK_LINKEDIN, LINK_GITHUB, LINK_BLOG } from '@/constants.js'
 
 export default {
   data() {
     return {
-      posts: []
+      posts: [],
+      LINK_GITHUB,
+      LINK_LINKEDIN,
+      LINK_BLOG
     }
   },
   mounted() {

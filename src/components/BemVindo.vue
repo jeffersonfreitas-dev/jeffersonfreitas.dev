@@ -5,17 +5,16 @@
       <p class="display-6 lead mt-3">{{ $t('my_title') }}</p>
       <p class="lead ">{{ $t('quick_description') }}</p>
 
-      <a href="https://github.com/jeffersonfreitas-dev?tab=repositories" class="mx-2">
+      <a :href="LINK_GITHUB" class="mx-2" target="_blank">
         <font-awesome-icon  :icon="['fab', 'github']" class="fa-xl" color="white"/>
       </a>
-      <button  @click="changeLinkedinLink()" class="btn btn-link mx-2">
-        {{ linkedinLink }}
+      <a :href="LINK_LINKEDIN"  class="mx-2" target="_blank">
         <font-awesome-icon :icon="['fab', 'linkedin-in']" class="fa-xl" color="white"/>
-      </button>
+      </a>
 
 
             <!-- Certificação AWS -->
-      <a class="d-flex flex-column align-items-center mt-4 text-decoration-none" target="_blank" style="color: #fff;" >
+      <a class="d-flex flex-column align-items-center mt-4 text-decoration-none" target="_blank" :href="LINK_CERTIFICADO_AWS" style="color: #fff;" >
         <img src="/images/aws.png" alt="Certificação AWS" style="width: 130px; height: auto;" />
         <span class="mt-2 ">AWS Developer</span>
       </a>
@@ -34,8 +33,16 @@
 
 <script>
 import lottie from 'lottie-web'
+import { LINK_LINKEDIN, LINK_GITHUB, LINK_CERTIFICADO_AWS } from '@/constants.js'
 
 export default {
+  data() {
+    return {
+      LINK_GITHUB,
+      LINK_LINKEDIN,
+      LINK_CERTIFICADO_AWS
+    }
+  },
   mounted() {
     const urls = [
       'https://assets1.lottiefiles.com/packages/lf20_kkflmtur.json',

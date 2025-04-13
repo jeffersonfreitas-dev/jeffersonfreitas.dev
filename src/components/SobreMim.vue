@@ -23,11 +23,11 @@
       <p class="lead mb-4">{{ $t('down_cv') }}</p>
 
       <div class="d-flex flex-column flex-md-row gap-3">
-        <a href="/curriculo.pdf" download class="btn btn-outline-light custom-btn">
+        <a :href="LINK_CURRICULO" download class="btn btn-outline-light custom-btn" target="_blank">
           {{ $t('btn_down_cv') }} 
         </a>
         <a
-          href="https://www.linkedin.com/in/seu-usuario"
+          :href="LINK_LINKEDIN"
           target="_blank"
           rel="noopener noreferrer"
           class="btn btn-outline-light custom-btn d-flex align-items-center justify-content-center"
@@ -42,8 +42,15 @@
 
 <script>
 import lottie from 'lottie-web'
+import { LINK_LINKEDIN, LINK_CURRICULO } from '@/constants.js'
 
 export default {
+  data() {
+    return {
+      LINK_CURRICULO,
+      LINK_LINKEDIN
+    }
+  },
   mounted() {
     lottie.loadAnimation({
       container: this.$refs.lottieContainer,

@@ -21,7 +21,7 @@
         <div class="collapse navbar-collapse" id="navbarMenu">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item" v-for="item in menu" :key="item.id">
-              <a class="nav-link" :href="'#' + item.id" :class="{ active: activeSection === item.id }">{{ defaultLang.language === 'pt' ? item.label : item.labelUs }}</a>
+              <a class="nav-link" :href="'#' + item.id" :class="{ active: activeSection === item.id }">{{ defaultLang?.language === 'pt' ? item.label : item.labelUs }}</a>
             </li>
 
         <!-- Dropdown de idioma -->

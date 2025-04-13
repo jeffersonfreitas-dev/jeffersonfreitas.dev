@@ -32,10 +32,10 @@
           </div>
 
           <div class="d-flex flex-wrap justify-content-end gap-2">
-            <a class=" px-2" data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor: pointer;" data-bs-placement="top" :title="$t('btn_more_details')" @click="selecionarProjeto(p)"> 
+            <a class=" px-2" style="cursor: pointer;" data-bs-placement="top" :title="$t('btn_more_details')" href="#"> 
                 <font-awesome-icon :icon="['fa', 'info-circle']" class="fa-2x" color="#fff"/>
             </a>
-            <a v-if="p.youtubeCode" class=" px-2" data-bs-toggle="modal" data-bs-target="#modalVideo" style="cursor: pointer;" data-bs-placement="top" :title="$t('btn_see_apresentation_video')" @click="selecionarProjeto(p)"> 
+            <a v-if="p.youtubeCode" class=" px-2" target="_blank" :href="`https://www.youtube.com/watch?v=${p.youtubeCode}`" style="cursor: pointer;" data-bs-placement="top" :title="$t('btn_see_apresentation_video')"> 
                 <font-awesome-icon :icon="['fab', 'youtube']" class="fa-2x" color="#fff"/>
             </a>
             <a  v-if="p.link" class="px-2" target="_blank" :href="p.link" data-bs-placement="top" style="cursor: pointer;" :title="$t('btn_try_application')">
@@ -51,7 +51,7 @@
 
     <div class="row mb-5">
       <div class="col-12 d-flex align-items-center justify-content-center mt-3">
-        <a href="/curriculo.pdf" download class="btn btn-outline-light custom-btn">
+        <a href="#" class="btn btn-outline-light custom-btn">
           {{ $t('btn_check_all_projects') }}
         </a>
       </div>
@@ -76,7 +76,6 @@ export default {
       return useLangStore();
     },
     currentLang() {
-      console.log(this.useLangStore.currentLang)
       return this.useLangStore.currentLang
     }
   }
