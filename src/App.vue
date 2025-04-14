@@ -84,11 +84,9 @@ export default {
   },
   data() {
     const langStore = useLangStore();
-    let defaultLang = langStore.currentLang;
     const savedLang = langStore.getLang();
     return {
       langStore,
-      defaultLang,
       savedLang,
       menu: [
         { id: "eu", label: "Olá", labelUs: 'Hello', component: "Eu" },
@@ -103,7 +101,6 @@ export default {
   mounted() {
     const lang = localStorage.getItem('lang');
     this.langStore.setLang(lang);
-    this.defaultLang = localStorage.currentLang;
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -129,7 +126,7 @@ methods: {
     this.$i18n.locale = lang;
       localStorage.setItem('lang', lang);
       this.langStore.setLang(lang);
-      this.defaultLang = this.langStore.currentLang;
+      this.savedLang = this.langStore.currentLang;
     }
 }
 };

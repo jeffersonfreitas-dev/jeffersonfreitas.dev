@@ -23,9 +23,28 @@
       <p class="lead mb-4">{{ $t('down_cv') }}</p>
 
       <div class="d-flex flex-column flex-md-row gap-3">
-        <a :href="LINK_CURRICULO" download class="btn btn-outline-light custom-btn" target="_blank">
-          {{ $t('btn_down_cv') }} 
-        </a>
+        <div class="btn-group">
+          <button
+            type="button"
+            class="btn btn-outline-light custom-btn dropdown-toggle"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            {{ $t('btn_down_cv') }}
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <a class="dropdown-item" :href="LINK_CURRICULO_PT" download target="_blank">
+                {{ $t('cv_pt')}}
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" :href="LINK_CURRICULO_EN" download target="_blank">
+                {{ $t('cv_en')}}
+              </a>
+            </li>
+          </ul>
+        </div>
         <a
           :href="LINK_LINKEDIN"
           target="_blank"
@@ -48,7 +67,9 @@ export default {
   data() {
     return {
       LINK_CURRICULO,
-      LINK_LINKEDIN
+      LINK_LINKEDIN,
+      LINK_CURRICULO_PT: LINK_CURRICULO + 'cv-br.pdf?alt=media',
+      LINK_CURRICULO_EN: LINK_CURRICULO + 'cv-en.pdf?alt=media',
     }
   },
   mounted() {

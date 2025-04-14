@@ -16,28 +16,31 @@
     <div class="col-lg-6 mt-5" v-if="posts.length > 0">
       <p class="mb-3 text-start">{{ $t('same_posts_lbl') }}</p>
 
-      <a class="col-12 mt-3 text-decoration-none" v-for="(p, idx) in posts" :key="idx" :href="p.url" target="_blank" style="color: #fff;">
-        <div class="project-card d-flex flex-row gap-3" style="cursor: pointer;">
-          <div class="d-flex align-items-center justify-content-center project-image" style="width: 150px; height: 150px; flex-shrink: 0;">
-            <img :src="p.image" alt="Blog Post" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-  
-          <div class="d-flex flex-column flex-grow-1 mt-3 justify-content-between">
-            <div class="text-start gap-5">
-              <p class="fw-bold mb-1 mb-3">{{ p.title }}</p>
-              <p class="mb-3 text-justify">
-                {{ p.content }}
-              </p>
+      <div class="col-12 mt-3">
+        <a class="col-12 mt-3 text-decoration-none" v-for="(p, idx) in posts" :key="idx" :href="p.url" target="_blank" style="color: #fff;">
+          <div class="project-card d-flex flex-row gap-3" style="cursor: pointer;">
+            <div class="d-flex align-items-center justify-content-center project-image" style="width: 150px; height: 150px; flex-shrink: 0;">
+              <img :src="p.image" alt="Blog Post" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
-  
-            <div class="d-flex flex-wrap justify-content-end gap-2">
-              <a  class="px-2" target="_blank" :href="p.url" data-bs-placement="top" style="cursor: pointer;" title="Ver blog">
-                <font-awesome-icon :icon="['fa', 'eye']" class="fa-2x" color="#fff"/> 
-              </a>
+    
+            <div class="d-flex flex-column flex-grow-1 mt-3 justify-content-between">
+              <div class="text-start gap-5">
+                <p class="fw-bold mb-1 mb-3">{{ p.title }}</p>
+                <p class="mb-3 text-justify">
+                  {{ p.content }}
+                </p>
+              </div>
+    
+              <div class="d-flex flex-wrap justify-content-end gap-2">
+                <a  class="px-2" target="_blank" :href="p.url" data-bs-placement="top" style="cursor: pointer;" title="Ver blog">
+                  <font-awesome-icon :icon="['fa', 'eye']" class="fa-2x" color="#fff"/> 
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-      </a>
+        </a>
+      </div>
+
 
       <div class="row mt-3">
         <a class="fw-bold mb-1 mb-3 text-decoration-none text-white" target="_blank" :href="LINK_BLOG">Visite meu Blog</a>
@@ -48,29 +51,30 @@
     <div class="col-lg-6 mt-5" v-else>
       <p class="mb-3 text-start">{{ $t('same_posts_lbl') }}</p>
 
-      <a class="col-12 mt-3 text-decoration-none" :href="LINK_BLOG" target="_blank" style="color: #fff;">
-        <div class="project-card d-flex flex-row gap-3" style="cursor: pointer;">
-          <div class="d-flex align-items-center justify-content-center project-image" style="width: 150px; height: 150px; flex-shrink: 0;">
-            <img src="/images/rededown.png" alt="Erro network" style="width: 100%; height: 100%; object-fit: cover;">
-          </div>
-  
-          <div class="d-flex flex-column flex-grow-1 mt-3 justify-content-between">
-            <div class="text-start gap-5">
-              <p class="fw-bold mb-1 mb-3">{{ $t('post_problem_title') }}</p>
-              <p class="mb-3 text-justify">
-                {{ $t('post_problem_body') }}
-              </p>
+      <div class="col-12 mt-3">
+        <a class="text-decoration-none" :href="LINK_BLOG" target="_blank" style="color: #fff;">
+          <div class="project-card d-flex flex-row gap-3" style="cursor: pointer;">
+            <div class="d-flex align-items-center justify-content-center project-image" style="width: 150px; height: 150px; flex-shrink: 0;">
+              <img src="/images/rededown.png" alt="Erro network" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
-  
-            <div class="d-flex flex-wrap justify-content-end gap-2">
-              <a  class="px-2" target="_blank" :href="LINK_BLOG" data-bs-placement="top" style="cursor: pointer;" title="Ver blog">
-                <font-awesome-icon :icon="['fa', 'eye']" class="fa-2x" color="#ccc"/> 
-              </a>
+    
+            <div class="d-flex flex-column flex-grow-1 mt-3 justify-content-between">
+              <div class="text-start gap-5">
+                <p class="fw-bold mb-1 mb-3">{{ $t('post_problem_title') }}</p>
+                <p class="mb-3 text-justify">
+                  {{ $t('post_problem_body') }}
+                </p>
+              </div>
+    
+              <div class="d-flex flex-wrap justify-content-end gap-2">
+                <a  class="px-2" target="_blank" :href="LINK_BLOG" data-bs-placement="top" style="cursor: pointer;" title="Ver blog">
+                  <font-awesome-icon :icon="['fa', 'eye']" class="fa-2x" color="#ccc"/> 
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-      </a>
-
+        </a>
+      </div>
       <div class="row mt-3">
         <a class="fw-bold mb-1 mb-3 text-decoration-none text-white" target="_blank" href="https://jeffersonfreitas-dev.blogspot.com/">{{ $t('visit_my_blog') }}</a>
       </div>     

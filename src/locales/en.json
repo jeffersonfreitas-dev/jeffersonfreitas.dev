@@ -44,5 +44,8 @@
   "visit_my_blog": "Visit my blog!",
 
   "post_problem_title": "Problem Fetching Posts",
-  "post_problem_body": "There was a problem fetching the posts from my blog, but you can access them directly by clicking here!"
+  "post_problem_body": "There was a problem fetching the posts from my blog, but you can access them directly by clicking here!",
+
+  "cv_pt": "Portuguese Version",
+  "cv_en": "English Version"
 }
