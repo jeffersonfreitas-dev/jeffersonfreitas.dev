@@ -86,19 +86,7 @@ import { LINK_LINKEDIN, LINK_GITHUB, LINK_BLOG } from '@/constants.js'
 export default {
   data() {
     return {
-      posts: [{
-        url: "dlkfjsldkfjsdlkfjds",
-        image: "dlkfjsldfjslkjdfds",
-        title: "teste teste teste",
-        content: 'kdfjlskjflksdjflksjdlkfjslkfjdslkjfsldkjfsldkjfsdf'
-      },
-      {
-        url: "dlkfjsldkfjsdlkfjds",
-        image: "dlkfjsldfjslkjdfds",
-        title: "teste teste teste",
-        content: 'kdfjlskjflksdjflksjdlkfjslkfjdslkjfsldkjfsldkjfsdf'
-      }
-    ],
+      posts: [],
       LINK_GITHUB,
       LINK_LINKEDIN,
       LINK_BLOG
