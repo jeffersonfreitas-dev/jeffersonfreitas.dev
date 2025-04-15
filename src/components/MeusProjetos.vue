@@ -13,40 +13,42 @@
       </div>
     </div>
 
-    <div class="col-12 col-lg-12 mt-5" v-for="(p) in projetos" :key="p.name">
-      <div class="project-card d-flex flex-row gap-5" style="cursor: pointer;">
-        <div class="d-flex align-items-center justify-content-center project-image" style="width: 260px; height: 260px; flex-shrink: 0;">
-          <img :src="`/images/${p.imageFolder}/0.png`" :alt="p.name" style="width: 100%; height: 100%; object-fit: cover;">
+    <div class="col-12 mt-5 " v-for="(p) in projetos" :key="p.name">
+      <a class="text-decoration-none text-white" :href="p.link" target="_blank">
+        <div class="project-card d-flex flex-row gap-5" style="cursor: pointer;">
+          <div class="d-flex align-items-center justify-content-center project-image" style="width: 260px; height: 260px; flex-shrink: 0;">
+            <img :src="`/images/${p.imageFolder}/0.png`" :alt="p.name" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+  
+          <div class="d-flex flex-column flex-grow-1 mt-3 justify-content-between">
+            <div class="text-start gap-5">
+              <h4 class="fw-bold mb-1">{{ p.name }}</h4>
+              <p class="mb-3 text-justify">
+                {{ currentLang.language === 'pt' ? p.description : p.descriptionEng }}
+              </p>
+            </div>
+  
+            <div class="d-flex flex-wrap justify-content-center gap-2">
+              <span class="tech-badge" v-for="(s) in p.stacks" :key="s">{{ s }}</span>
+            </div>
+  
+            <div class="d-flex flex-wrap justify-content-end gap-2">
+              <a class=" px-2" style="cursor: pointer;" data-bs-placement="top" :title="$t('btn_more_details')" href="#"> 
+                  <font-awesome-icon :icon="['fa', 'info-circle']" class="fa-2x" color="#fff"/>
+              </a>
+              <a v-if="p.youtubeCode" class=" px-2" target="_blank" :href="`https://www.youtube.com/watch?v=${p.youtubeCode}`" style="cursor: pointer;" data-bs-placement="top" :title="$t('btn_see_apresentation_video')"> 
+                  <font-awesome-icon :icon="['fab', 'youtube']" class="fa-2x" color="#fff"/>
+              </a>
+              <a  v-if="p.link" class="px-2" target="_blank" :href="p.link" data-bs-placement="top" style="cursor: pointer;" :title="$t('btn_try_application')">
+                <font-awesome-icon :icon="['fa', 'eye']" class="fa-2x" color="#fff"/> 
+              </a>
+              <a v-if="p.github" class="px-2" target="_blanck" :href="p.github" data-bs-placement="top" style="cursor: pointer;" :title="$t('btn_see_source')">
+                <font-awesome-icon :icon="['fab', 'github']" class="fa-2x" color="#fff"/> 
+              </a>
+            </div>
+          </div>
         </div>
-
-        <div class="d-flex flex-column flex-grow-1 mt-3 justify-content-between">
-          <div class="text-start gap-5">
-            <h4 class="fw-bold mb-1">{{ p.name }}</h4>
-            <p class="mb-3 text-justify">
-              {{ currentLang.language === 'pt' ? p.description : p.descriptionEng }}
-            </p>
-          </div>
-
-          <div class="d-flex flex-wrap justify-content-center gap-2">
-            <span class="tech-badge" v-for="(s) in p.stacks" :key="s">{{ s }}</span>
-          </div>
-
-          <div class="d-flex flex-wrap justify-content-end gap-2">
-            <a class=" px-2" style="cursor: pointer;" data-bs-placement="top" :title="$t('btn_more_details')" href="#"> 
-                <font-awesome-icon :icon="['fa', 'info-circle']" class="fa-2x" color="#fff"/>
-            </a>
-            <a v-if="p.youtubeCode" class=" px-2" target="_blank" :href="`https://www.youtube.com/watch?v=${p.youtubeCode}`" style="cursor: pointer;" data-bs-placement="top" :title="$t('btn_see_apresentation_video')"> 
-                <font-awesome-icon :icon="['fab', 'youtube']" class="fa-2x" color="#fff"/>
-            </a>
-            <a  v-if="p.link" class="px-2" target="_blank" :href="p.link" data-bs-placement="top" style="cursor: pointer;" :title="$t('btn_try_application')">
-              <font-awesome-icon :icon="['fa', 'eye']" class="fa-2x" color="#fff"/> 
-            </a>
-            <a v-if="p.github" class="px-2" target="_blanck" :href="p.github" data-bs-placement="top" style="cursor: pointer;" :title="$t('btn_see_source')">
-              <font-awesome-icon :icon="['fab', 'github']" class="fa-2x" color="#fff"/> 
-            </a>
-          </div>
-        </div>
-      </div>
+      </a>
     </div>
 
     <div class="row mb-5">

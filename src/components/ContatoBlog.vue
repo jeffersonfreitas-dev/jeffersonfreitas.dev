@@ -1,6 +1,6 @@
 <template>
   <div class="container text-white d-flex flex-column flex-lg-row align-items-center justify-content-between  ">
-    <div class="col-5 text-start mb-4 mb-lg-0 animate-name">
+    <div class="col-12 col-lg-5 text-start mb-4 mb-lg-0 animate-name">
       <h1 class="display-3 fw-bold ">{{ $t('contacts') }}</h1>
       <p class="display-6 lead mt-3">{{ $t('tel') }} +55 (85) 9.8172-1585</p>
       <p class="lead ">contato@jeffersonfreitas.dev</p>
@@ -13,10 +13,10 @@
       </a>
     </div>
 
-    <div class="col-lg-6 mt-5" v-if="posts.length > 0">
+    <div class="col-12 col-lg-6 mt-5">
       <p class="mb-3 text-start">{{ $t('same_posts_lbl') }}</p>
 
-      <div class="col-12 mt-3">
+      <div class="col-12 mt-3" v-if="posts.length > 0">
         <a class="col-12 mt-3 text-decoration-none" v-for="(p, idx) in posts" :key="idx" :href="p.url" target="_blank" style="color: #fff;">
           <div class="project-card d-flex flex-row gap-3" style="cursor: pointer;">
             <div class="d-flex align-items-center justify-content-center project-image" style="width: 150px; height: 150px; flex-shrink: 0;">
@@ -41,17 +41,7 @@
         </a>
       </div>
 
-
-      <div class="row mt-3">
-        <a class="fw-bold mb-1 mb-3 text-decoration-none text-white" target="_blank" :href="LINK_BLOG">Visite meu Blog</a>
-      </div>     
-    </div>
-
-
-    <div class="col-lg-6 mt-5" v-else>
-      <p class="mb-3 text-start">{{ $t('same_posts_lbl') }}</p>
-
-      <div class="col-12 mt-3">
+      <div class="col-12 mt-3" v-else>
         <a class="text-decoration-none" :href="LINK_BLOG" target="_blank" style="color: #fff;">
           <div class="project-card d-flex flex-row gap-3" style="cursor: pointer;">
             <div class="d-flex align-items-center justify-content-center project-image" style="width: 150px; height: 150px; flex-shrink: 0;">
@@ -75,10 +65,13 @@
           </div>
         </a>
       </div>
+
+
       <div class="row mt-3">
-        <a class="fw-bold mb-1 mb-3 text-decoration-none text-white" target="_blank" href="https://jeffersonfreitas-dev.blogspot.com/">{{ $t('visit_my_blog') }}</a>
+        <a class="fw-bold mb-1 mb-3 text-decoration-none text-white" target="_blank" :href="LINK_BLOG">Visite meu Blog</a>
       </div>     
     </div>
+
 
 
   </div>
