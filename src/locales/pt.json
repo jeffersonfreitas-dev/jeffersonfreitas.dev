@@ -46,5 +46,14 @@
   "post_problem_body": "Houve um problema ao buscar os posts no meu blog, mas você pode acessar diretamente clicando aqui!",
 
   "cv_pt": "Em Português",
-  "cv_en": "Em Inglês"
+  "cv_en": "Em Inglês",
+  "access_project": "Acesso ao Projeto",
+  "click": "Clique",
+  "here": "aqui",
+  "text_001": "e confira uma amostra do projeto rodando em um ambiente de teste!.",
+  "access_source": "Acesso ao Código Fonte",
+  "text_002": "Você pode conferir o código fonte do projeto no meu ",
+  "features": "Funcionalidades",
+  "tech_used": "Tecnologias utilizadas",
+  "close": "Fechar"
 }

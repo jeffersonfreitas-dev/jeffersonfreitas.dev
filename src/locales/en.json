@@ -47,5 +47,14 @@
   "post_problem_body": "There was a problem fetching the posts from my blog, but you can access them directly by clicking here!",
 
   "cv_pt": "Portuguese Version",
-  "cv_en": "English Version"
+  "cv_en": "English Version",
+  "access_project": "Project Access",
+  "click": "Click",
+  "here": "here",
+  "text_001": "and check out a sample of the project running in a test environment!.",
+  "access_source": "Source Code Access",
+  "text_002": "You can check the project source code on my ",
+  "features": "Features",
+  "tech_used": "Technologies used",
+  "close": "Close"
 }

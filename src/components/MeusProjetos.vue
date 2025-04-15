@@ -93,29 +93,29 @@
           </div>
           <div class="col-lg-3 "></div>
 
-         <p class="mt-2">{{ projetoSelected.detailDescription }}</p>
+         <p class="mt-2">{{ currentLang.language === 'pt' ? projetoSelected.detailDescription : projetoSelected.detailDescriptionEng }}</p>
           
          <div v-if="projetoSelected.acessoProjeto">
-           <p><strong>Acesso ao Projeto</strong></p>
+           <p><strong>{{ $t('access_project') }}</strong></p>
            <p v-if="projetoSelected.link">
-              Clique <a target="_blank" class="link-opacity-75 mr-5" :href="projetoSelected.link">aqui</a> e confira uma amostra do projeto rodando em um ambiente de teste!.</p>
+            {{ $t('click') }} <a target="_blank" class="link-opacity-75 mr-5" :href="projetoSelected.link">{{ $t('here') }}</a> {{ $t('text_001') }} </p> 
          </div>
          
          <div v-if="projetoSelected.github">
-          <p><strong>Acesso ao Código Fonte</strong></p>
+          <p><strong>{{ $t('access_source')}}</strong></p>
           <p >
-            Você pode conferir o código fonte do projeto no meu <a target="_blank" class="link-opacity-75 mr-5" :href="projetoSelected.github">Github</a>.</p>
+            {{ $t('text_002') }}<a target="_blank" class="link-opacity-75 mr-5" :href="projetoSelected.github">Github</a>.</p>
         </div>
 
-         <p><strong>Funcionalidades</strong></p>
-         <p>{{ projetoSelected.functions }}</p>
+         <p><strong>{{ $t('features')}}</strong></p>
+         <p>{{ currentLang.language === 'pt' ? projetoSelected.functions : projetoSelected.functionsEng }}</p>
 
-         <p><strong>Tecnologias utilizadas</strong></p>
+         <p><strong>{{ $t('tech_used')}}</strong></p>
          <p>{{ projetoSelected.stacks.join('; ') }};</p>
 
         </div>
         <div class="modal-footer d-flex justify-content-center">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: #fff; color: black; border-color: #fff;">Fechar</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: #fff; color: black; border-color: #fff;">{{ $t('close')}}</button>
         </div>
       </div>
     </div>
