@@ -14,10 +14,10 @@
     </div>
 
     <div class="col-12 col-lg-6 mt-5">
-      <p class="mb-3 text-start">{{ $t('same_posts_lbl') }}</p>
+      <p class="mb-5 text-start">{{ $t('same_posts_lbl') }}</p>
 
-      <div class="col-12 mt-3" v-if="posts.length > 0">
-        <a class="col-12 mt-3 text-decoration-none" v-for="(p, idx) in posts" :key="idx" :href="p.url" target="_blank" style="color: #fff;">
+      <div class="mb-5" v-if="posts.length > 0">
+        <a class="text-decoration-none mb-5" v-for="(p, idx) in posts" :key="idx" :href="p.url" target="_blank" style="color: #fff;">
           <div class="project-card d-flex flex-row gap-3" style="cursor: pointer;">
             <div class="d-flex align-items-center justify-content-center project-image" style="width: 150px; height: 150px; flex-shrink: 0;">
               <img :src="p.image" alt="Blog Post" style="width: 100%; height: 100%; object-fit: cover;">
@@ -68,7 +68,7 @@
 
 
       <div class="row mt-3">
-        <a class="fw-bold mb-1 mb-3 text-decoration-none text-white" target="_blank" :href="LINK_BLOG">Visite meu Blog</a>
+        <a class="fw-bold mb-1 mb-3 text-decoration-none text-white " target="_blank" :href="LINK_BLOG">{{ $t('visit_my_blog') }}</a>
       </div>     
     </div>
 
@@ -86,7 +86,19 @@ import { LINK_LINKEDIN, LINK_GITHUB, LINK_BLOG } from '@/constants.js'
 export default {
   data() {
     return {
-      posts: [],
+      posts: [{
+        url: "dlkfjsldkfjsdlkfjds",
+        image: "dlkfjsldfjslkjdfds",
+        title: "teste teste teste",
+        content: 'kdfjlskjflksdjflksjdlkfjslkfjdslkjfsldkjfsldkjfsdf'
+      },
+      {
+        url: "dlkfjsldkfjsdlkfjds",
+        image: "dlkfjsldfjslkjdfds",
+        title: "teste teste teste",
+        content: 'kdfjlskjflksdjflksjdlkfjslkfjdslkjfsldkjfsldkjfsdf'
+      }
+    ],
       LINK_GITHUB,
       LINK_LINKEDIN,
       LINK_BLOG
@@ -164,6 +176,7 @@ export default {
   background-color: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   padding: 16px;
+  margin-top: 3%;
   transition: border 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid transparent;
   min-height: 140px;
