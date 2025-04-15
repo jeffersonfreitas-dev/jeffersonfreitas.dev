@@ -33,7 +33,7 @@
             </div>
   
             <div class="d-flex flex-wrap justify-content-end gap-2">
-              <a class=" px-2" style="cursor: pointer;" data-bs-placement="top" :title="$t('btn_more_details')" href="#"> 
+              <a class=" px-2" data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor: pointer;" data-bs-placement="top" :title="$t('btn_more_details')" @click="selecionarProjeto(p)"> 
                   <font-awesome-icon :icon="['fa', 'info-circle']" class="fa-2x" color="#fff"/>
               </a>
               <a v-if="p.youtubeCode" class=" px-2" target="_blank" :href="`https://www.youtube.com/watch?v=${p.youtubeCode}`" style="cursor: pointer;" data-bs-placement="top" :title="$t('btn_see_apresentation_video')"> 
@@ -59,6 +59,68 @@
       </div>
     </div>
 
+
+    <div class="modal fade text-start" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog text-black modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">{{ projetoSelected.name }}</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        
+        <div class="row modal-body">
+          <div class="col-lg-3 "></div>
+          <div class="col-lg-6 col-12 mb-3">
+            <div id="carouselExampleSlidesOnly" class="carousel slide d-flex justify-content-center align-items-center" data-bs-ride="carousel">
+              <div class="carousel-inner rounded-4">
+                <div class="carousel-item active">
+                  <img :src="`/images/${projetoSelected.imageFolder}/0.png`" class="d-block w-100" :alt="projetoSelected.name">
+                </div>
+                <div class="carousel-item">
+                  <img :src="`/images/${projetoSelected.imageFolder}/1.png`" class="d-block w-100" :alt="projetoSelected.name">
+                </div>
+                <div class="carousel-item">
+                  <img :src="`/images/${projetoSelected.imageFolder}/2.png`" class="d-block w-100" :alt="projetoSelected.name">
+                </div>
+                <div class="carousel-item">
+                  <img :src="`/images/${projetoSelected.imageFolder}/3.png`" class="d-block w-100" :alt="projetoSelected.name">
+                </div>
+                <div class="carousel-item">
+                  <img :src="`/images/${projetoSelected.imageFolder}/4.png`" class="d-block w-100" :alt="projetoSelected.name">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 "></div>
+
+         <p class="mt-2">{{ projetoSelected.detailDescription }}</p>
+          
+         <div v-if="projetoSelected.acessoProjeto">
+           <p><strong>Acesso ao Projeto</strong></p>
+           <p v-if="projetoSelected.link">
+              Clique <a target="_blank" class="link-opacity-75 mr-5" :href="projetoSelected.link">aqui</a> e confira uma amostra do projeto rodando em um ambiente de teste!.</p>
+         </div>
+         
+         <div v-if="projetoSelected.github">
+          <p><strong>Acesso ao Código Fonte</strong></p>
+          <p >
+            Você pode conferir o código fonte do projeto no meu <a target="_blank" class="link-opacity-75 mr-5" :href="projetoSelected.github">Github</a>.</p>
+        </div>
+
+         <p><strong>Funcionalidades</strong></p>
+         <p>{{ projetoSelected.functions }}</p>
+
+         <p><strong>Tecnologias utilizadas</strong></p>
+         <p>{{ projetoSelected.stacks.join('; ') }};</p>
+
+        </div>
+        <div class="modal-footer d-flex justify-content-center">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: #fff; color: black; border-color: #fff;">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
     
   </div>
 </template>
@@ -71,7 +133,13 @@ export default {
   data() {
     return {
       projetos: projetos,
+      projetoSelected: projetos[0]
     };
+  },
+  methods: {
+    selecionarProjeto(projeto) {
+      this.projetoSelected = projeto;
+    }
   },
   computed: {
     useLangStore() {
