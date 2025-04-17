@@ -13,7 +13,7 @@
           <font-awesome-icon :icon="['fab', 'linkedin-in']" class="fa-xl" color="white"/>
         </a>
 
-        <a :href="LINK_LINKEDIN"  class="mx-2" target="_blank"  v-if="isMobile">
+        <a :href="LINK_CERTIFICADO_AWS"  class="mx-2" target="_blank"  v-if="isMobile">
           <img src="/images/aws.png" alt="Certificação AWS" style="width: 30px;"/>
         </a>
         
