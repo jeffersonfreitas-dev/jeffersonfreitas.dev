@@ -1,6 +1,6 @@
 <template>
-  <div class="container text-white d-flex flex-column flex-lg-row align-items-center justify-content-between  ">
-    <div class="col-12 col-lg-5 text-start mb-4 mb-lg-0 animate-name">
+  <div class="container text-white d-flex flex-column flex-lg-row align-items-center justify-content-between mt-5 mt-lg-0 ">
+    <div class="col-12 col-lg-5 text-start mb-4 mb-lg-0 animate-name mt-5 mt-lg-0">
       <h1 class="display-3 fw-bold ">{{ $t('contacts') }}</h1>
       <p class="display-6 lead mt-3">{{ $t('tel') }} +55 (85) 9.8172-1585</p>
       <p class="lead ">contato@jeffersonfreitas.dev</p>
@@ -18,7 +18,7 @@
 
       <div class="mb-5" v-if="posts.length > 0">
         <a class="text-decoration-none mb-5" v-for="(p, idx) in posts" :key="idx" :href="p.url" target="_blank" style="color: #fff;">
-          <div class="project-card d-flex flex-row gap-3" style="cursor: pointer;">
+          <div class="project-card d-flex flex-column flex-md-row align-items-center text-center text-md-start gap-3" style="cursor: pointer;">
             <div class="d-flex align-items-center justify-content-center project-image" style="width: 150px; height: 150px; flex-shrink: 0;">
               <img :src="p.image" alt="Blog Post" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
@@ -43,7 +43,7 @@
 
       <div class="col-12 mt-3" v-else>
         <a class="text-decoration-none" :href="LINK_BLOG" target="_blank" style="color: #fff;">
-          <div class="project-card d-flex flex-row gap-3" style="cursor: pointer;">
+          <div class="project-card d-flex flex-column flex-md-row align-items-center text-center text-md-start gap-3" style="cursor: pointer;">
             <div class="d-flex align-items-center justify-content-center project-image" style="width: 150px; height: 150px; flex-shrink: 0;">
               <img src="/images/rededown.png" alt="Erro network" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
@@ -58,7 +58,7 @@
     
               <div class="d-flex flex-wrap justify-content-end gap-2">
                 <a  class="px-2" target="_blank" :href="LINK_BLOG" data-bs-placement="top" style="cursor: pointer;" title="Ver blog">
-                  <font-awesome-icon :icon="['fa', 'eye']" class="fa-2x" color="#ccc"/> 
+                  <font-awesome-icon :icon="['fa', 'eye']" :class="isMobile ? 'fa-lg' : 'fa-2x'" color="#ccc"/> 
                 </a>
               </div>
             </div>
@@ -66,17 +66,11 @@
         </a>
       </div>
 
-
       <div class="row mt-3">
         <a class="fw-bold mb-1 mb-3 text-decoration-none text-white " target="_blank" :href="LINK_BLOG">{{ $t('visit_my_blog') }}</a>
       </div>     
     </div>
-
-
-
   </div>
-
-
 </template>
 
 <script>
@@ -89,7 +83,8 @@ export default {
       posts: [],
       LINK_GITHUB,
       LINK_LINKEDIN,
-      LINK_BLOG
+      LINK_BLOG,
+      isMobile: window.innerWidth < 768
     }
   },
   mounted() {
@@ -106,7 +101,11 @@ export default {
           url: item.url
         })
       })
-    })
+    }),
+    window.addEventListener('resize', this.checkMobile);
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.checkMobile);
   },
   methods: {
     getResumoContent(post){
@@ -136,7 +135,10 @@ export default {
         }
       })
       return paragraphArray;
-    }
+    },
+    checkMobile() {
+    this.isMobile = window.innerWidth < 768;
+  }
   }
 }
 </script>
@@ -190,5 +192,44 @@ export default {
   font-size: 0.8rem;
   color: white;
   white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .project-image {
+    width: 230px !important;
+    height: 100px !important;
+  }
+
+  .div-projetos{
+    border-radius: 10px;
+  }
+
+  h1, h4 {
+    font-size: 2.0rem !important;
+  }
+
+  h4 {
+    font-size: 1.5rem !important;
+  }
+
+  .lead, p {
+    font-size: 1.0rem !important;
+  }
+
+  .tech-badge {
+    font-size: 0.7rem !important;
+    padding: 2px 8px;
+  }
+  .container {
+    padding: 0 10px;
+  }
+
+  .project-card {
+    padding: 10px;
+  }
+
+  .modal .modal-body {
+    font-size: 0.9rem;
+  }
 }
 </style>

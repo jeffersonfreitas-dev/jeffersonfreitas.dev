@@ -12,19 +12,20 @@
         <a :href="LINK_LINKEDIN"  class="mx-2" target="_blank">
           <font-awesome-icon :icon="['fab', 'linkedin-in']" class="fa-xl" color="white"/>
         </a>
-  
-  
-              <!-- Certificação AWS -->
-        <a class="d-flex flex-column align-items-center mt-4 text-decoration-none" target="_blank" :href="LINK_CERTIFICADO_AWS" style="color: #fff;" >
-          <img src="/images/aws.png" alt="Certificação AWS" style="width: 130px; height: auto;" />
+
+        <a :href="LINK_LINKEDIN"  class="mx-2" target="_blank"  v-if="isMobile">
+          <img src="/images/aws.png" alt="Certificação AWS" style="width: 30px;"/>
+        </a>
+        
+        <a class="d-flex flex-column align-items-center mt-4 text-decoration-none" target="_blank" :href="LINK_CERTIFICADO_AWS" style="color: #fff;"  v-if="!isMobile">
+          <img src="/images/aws.png" alt="Certificação AWS"   style="width: 130px; height: auto" />
           <span class="mt-2 ">AWS Developer</span>
         </a>
       </div>
-
     </div>
 
     <!-- Lottie com animação de entrada -->
-    <motion class="d-none d-md-block"
+    <motion
       :initial="{ opacity: 0, x: 100 }"
       :enter="{ opacity: 1, x: 0, transition: { duration: 1 } }"
     >
@@ -43,15 +44,27 @@ export default {
     return {
       LINK_GITHUB,
       LINK_LINKEDIN,
-      LINK_CERTIFICADO_AWS
+      LINK_CERTIFICADO_AWS,
+      isMobile: window.innerWidth < 768
     }
+  },
+  methods: {
+    selecionarProjeto(projeto) {
+      this.projetoSelected = projeto;
+    },
+      checkMobile() {
+      this.isMobile = window.innerWidth < 768;
+    }
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.checkMobile);
   },
   mounted() {
     const urls = [
       'https://assets1.lottiefiles.com/packages/lf20_kkflmtur.json',
       'https://assets1.lottiefiles.com/packages/lf20_0yfsb3a1.json'
     ];
-
+    window.addEventListener('resize', this.checkMobile);
     const selectedUrl = urls[Math.floor(Math.random() * urls.length)];
     
     lottie.loadAnimation({
@@ -99,6 +112,13 @@ export default {
   .lottie {
     width: 300px;
     height: 300px;
+  }
+  h1, h4 {
+    font-size: 2.0rem !important;
+  }
+
+  .lead, p {
+    font-size: 1.0rem !important;
   }
 }
 </style>

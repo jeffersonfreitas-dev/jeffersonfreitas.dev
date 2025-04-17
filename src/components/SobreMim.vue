@@ -125,4 +125,18 @@ export default {
   padding: 10px 20px;
   border-radius: 8px;
 }
+
+@media (max-width: 768px) {
+  .lottie {
+    width: 300px;
+    height: 300px;
+  }
+  h1, h4 {
+    font-size: 2.0rem !important;
+  }
+
+  .lead, p {
+    font-size: 1.0rem !important;
+  }
+}
 </style>

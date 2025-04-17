@@ -1,8 +1,8 @@
 <template>
   <div class="container text-white">
     <div class="d-flex flex-column flex-lg-row align-items-center justify-content-between gap-5 animate-name mb-5">
-      <div class="col-4 text-start mb-4 mb-lg-0 mr-md">
-        <h1 class="display-3 fw-bold">{{ $t('my_projects') }}</h1>
+      <div class="col-lg-4 col-12 text-start mt-5 mt-lg-0 mb-lg-4 mb-lg-0 mr-lg-md">
+        <h1 class="display-3 fw-bold mt-5 mt-lg-0">{{ $t('my_projects') }}</h1>
         <p class="display-6 lead mt-3">{{ $t('quick_projects') }}</p>
       </div>
         <div class="col-12 col-lg-8">
@@ -13,14 +13,15 @@
       </div>
     </div>
 
-    <div class="col-12 mt-5 " v-for="(p) in projetos" :key="p.name">
+    <div class="col-12 mt-5 div-projetos" v-for="(p) in projetos" :key="p.name">
       <a class="text-decoration-none text-white" :href="p.link" target="_blank">
-        <div class="project-card d-flex flex-row gap-5" style="cursor: pointer;">
-          <div class="d-flex align-items-center justify-content-center project-image" style="width: 260px; height: 260px; flex-shrink: 0;">
+
+        <div class="project-card d-flex flex-column flex-md-row align-items-center text-center text-md-start gap-3" style="cursor: pointer;">
+          <div class="d-flex align-items-center justify-content-center flex-shrink-0 project-image" style="width: 260px; height: 260px;">
             <img :src="`/images/${p.imageFolder}/0.png`" :alt="p.name" style="width: 100%; height: 100%; object-fit: cover;">
           </div>
   
-          <div class="d-flex flex-column flex-grow-1 mt-3 justify-content-between">
+          <div class="d-flex flex-column flex-grow-1 w-100 mt-3 justify-content-between">
             <div class="text-start gap-5">
               <h4 class="fw-bold mb-1">{{ p.name }}</h4>
               <p class="mb-3 text-justify">
@@ -32,18 +33,18 @@
               <span class="tech-badge" v-for="(s) in p.stacks" :key="s">{{ s }}</span>
             </div>
   
-            <div class="d-flex flex-wrap justify-content-end gap-2">
+            <div class="d-flex flex-wrap justify-content-end gap-2 mt-3">
               <a class=" px-2" data-bs-toggle="modal" data-bs-target="#exampleModal" style="cursor: pointer;" data-bs-placement="top" :title="$t('btn_more_details')" @click="selecionarProjeto(p)"> 
-                  <font-awesome-icon :icon="['fa', 'info-circle']" class="fa-2x" color="#fff"/>
+                  <font-awesome-icon :icon="['fa', 'info-circle']" :class="isMobile ? 'fa-lg' : 'fa-2x'" color="#fff"/>
               </a>
               <a v-if="p.youtubeCode" class=" px-2" target="_blank" :href="`https://www.youtube.com/watch?v=${p.youtubeCode}`" style="cursor: pointer;" data-bs-placement="top" :title="$t('btn_see_apresentation_video')"> 
-                  <font-awesome-icon :icon="['fab', 'youtube']" class="fa-2x" color="#fff"/>
+                  <font-awesome-icon :icon="['fab', 'youtube']" :class="isMobile ? 'fa-lg' : 'fa-2x'" color="#fff"/>
               </a>
               <a  v-if="p.link" class="px-2" target="_blank" :href="p.link" data-bs-placement="top" style="cursor: pointer;" :title="$t('btn_try_application')">
-                <font-awesome-icon :icon="['fa', 'eye']" class="fa-2x" color="#fff"/> 
+                <font-awesome-icon :icon="['fa', 'eye']" :class="isMobile ? 'fa-lg' : 'fa-2x'" color="#fff"/> 
               </a>
               <a v-if="p.github" class="px-2" target="_blanck" :href="p.github" data-bs-placement="top" style="cursor: pointer;" :title="$t('btn_see_source')">
-                <font-awesome-icon :icon="['fab', 'github']" class="fa-2x" color="#fff"/> 
+                <font-awesome-icon :icon="['fab', 'github']" :class="isMobile ? 'fa-lg' : 'fa-2x'" color="#fff"/> 
               </a>
             </div>
           </div>
@@ -133,13 +134,23 @@ export default {
   data() {
     return {
       projetos: projetos,
-      projetoSelected: projetos[0]
+      projetoSelected: projetos[0],
+      isMobile: window.innerWidth < 768
     };
   },
   methods: {
     selecionarProjeto(projeto) {
       this.projetoSelected = projeto;
+    },
+      checkMobile() {
+      this.isMobile = window.innerWidth < 768;
     }
+  },
+  mounted() {
+    window.addEventListener('resize', this.checkMobile);
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.checkMobile);
   },
   computed: {
     useLangStore() {
@@ -171,6 +182,7 @@ export default {
 }
 
 .project-card {
+  background-color: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   padding: 16px;
   transition: border 0.3s ease, box-shadow 0.3s ease;
@@ -199,5 +211,44 @@ export default {
   font-size: 0.8rem;
   color: white;
   white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .project-image {
+    width: 230px !important;
+    height: 100px !important;
+  }
+
+  .div-projetos{
+    border-radius: 10px;
+  }
+
+  h1, h4 {
+    font-size: 2.0rem !important;
+  }
+
+  h4 {
+    font-size: 1.5rem !important;
+  }
+
+  .lead, p {
+    font-size: 1.0rem !important;
+  }
+
+  .tech-badge {
+    font-size: 0.7rem !important;
+    padding: 2px 8px;
+  }
+  .container {
+    padding: 0 10px;
+  }
+
+  .project-card {
+    padding: 10px;
+  }
+
+  .modal .modal-body {
+    font-size: 0.9rem;
+  }
 }
 </style>

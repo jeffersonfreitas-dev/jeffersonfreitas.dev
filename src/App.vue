@@ -159,4 +159,31 @@ body {
   font-weight: bold;
   color: #00ffcc !important;
 }
+
+#app {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.container-fluid {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.navbar-nav {
+  flex-wrap: nowrap;
+}
+
+.dropdown-menu {
+  min-width: unset;
+}
+
+.country-flag {
+  flex-shrink: 0;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
 </style>

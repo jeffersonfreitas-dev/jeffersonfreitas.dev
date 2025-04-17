@@ -1,6 +1,6 @@
 <template>
   <div class="container text-white d-flex flex-column flex-lg-row align-items-center mt-5 justify-content-between h-100 w-100">
-    <div class="col-4 text-start mb-4 mb-lg-0 animate-name">
+    <div class="col-lg-4 col-12 text-start mb-4 mb-lg-0 animate-name">
       <h1 class="display-3 fw-bold">{{ $t('my_skills') }}</h1>
       <p class="display-6 lead mt-3">{{ $t('quick_my_skills') }}</p>
       <p class="lead">
