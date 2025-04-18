@@ -26,7 +26,7 @@ export default [
     functionsEng: "Motogestor registers customers and their vehicles. It has a register of parts and services with quantities and prices, and registers service orders with customer searches and vehicle selection for maintenance. It handles service orders with the inclusion of parts and services, quantities and values, as well as closing the order with the option of discounts and additions. The financial module is under development, but it has a record of service order closings in the cash book. It has a register of mechanics and vehicle brands, as well as a dashboard with graphs and main indicators for analysis.",
     stacks: ["Java", "Spring Boot", "VueJS", "PostgreSQL Database", "Firebase Authentication"],
     youtubeCode: 'XvEQi2AN_4s',
-    acessoProjeto:false
+    acessoProjeto:true
   },
   {
     name: "StockSet Catálogo",
