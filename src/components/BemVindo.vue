@@ -25,7 +25,7 @@
     </div>
 
     <!-- Lottie com animação de entrada -->
-    <motion
+    <motion class="mt-3"
       :initial="{ opacity: 0, x: 100 }"
       :enter="{ opacity: 1, x: 0, transition: { duration: 1 } }"
     >
