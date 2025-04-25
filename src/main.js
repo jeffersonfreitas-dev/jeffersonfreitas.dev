@@ -5,7 +5,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faBars, faPhone, faComment, faCode, faHandshake, faAddressCard, faDiagramProject, faThumbsUp, faDatabase, faLeaf, faEnvelope, 
   faCloud, faInfoCircle, faEye, faArrowAltCircleRight} from "@fortawesome/free-solid-svg-icons";
-import { faGithub, faLinkedinIn, faWhatsapp, faJava, faPython, faAngular, faVuejs, faDocker, faAws, faBootstrap, faHtml5, faYoutube, faGoogle, faGooglePlusSquare} from '@fortawesome/free-brands-svg-icons'
+import { faGithub, faLinkedinIn, faWhatsapp, faJava, faPython, faAngular, faVuejs, faDocker, faAws, faBootstrap, faHtml5, faYoutube, faGoogle, faGooglePlusSquare, faDev, faConnectdevelop, faSketch} from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 import VuePlyr from 'vue-plyr'
@@ -45,6 +45,9 @@ library.add(
   faWhatsapp, 
   faGoogle,
   faCode, 
+  faDev,
+  faSketch,
+  faConnectdevelop,
   faLeaf,
   faHtml5,
   faComment, 

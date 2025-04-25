@@ -150,7 +150,8 @@ export default {
         { title: 'Kafka', icon: ['fa', 'envelope'] },
         { title: 'CI/CD', icon: ['fab', 'github'] },
         { title: 'RabbitMQ', icon: ['fa', 'envelope'] },
-        { title: 'Github Actions', icon: ['fab', 'github'] },
+        { title: 'Grafana', icon: ['fab', 'sketch'] },
+        { title: 'Observability', icon: ['fab', 'dev'] },
       ]     
     }
   },
