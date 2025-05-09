@@ -5,7 +5,7 @@
       <p class="display-6 lead mt-3">{{ $t('tel') }} +55 (85) 9.8172-1585</p>
       <p class="lead ">contato@jeffersonfreitas.dev</p>
       <p class="lead ">jefferson.dev21@gmail.com</p>
-      <a :href="LINK_LINKEDIN" target="_blank" class="mx-2">
+      <a :href="LINK_GITHUB" target="_blank" class="mx-2">
         <font-awesome-icon  :icon="['fab', 'github']" class="fa-xl" color="white"/>
       </a>
       <a :href="LINK_LINKEDIN" target="_blank" class="mx-2">

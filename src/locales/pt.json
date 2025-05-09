@@ -55,5 +55,6 @@
   "text_002": "Você pode conferir o código fonte do projeto no meu ",
   "features": "Funcionalidades",
   "tech_used": "Tecnologias utilizadas",
-  "close": "Fechar"
+  "close": "Fechar",
+  "text_to_test_projects": "Você pode testar as aplicações clicando no projeto. Estão rodando em um ambiente de teste, pode acessar à vontade."
 }

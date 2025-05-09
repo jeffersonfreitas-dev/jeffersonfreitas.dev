@@ -13,6 +13,10 @@
       </div>
     </div>
 
+    <div class="col-12">
+      <h5 ><strong>{{ $t('text_to_test_projects') }}</strong> 😊 </h5>
+    </div>
+
     <div class="col-12 mt-5 mb-5 div-projetos" v-for="(p) in projetos" :key="p.name">
       <a class="text-decoration-none text-white" :href="p.link" target="_blank">
 

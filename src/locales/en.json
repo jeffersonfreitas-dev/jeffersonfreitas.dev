@@ -56,5 +56,6 @@
   "text_002": "You can check the project source code on my ",
   "features": "Features",
   "tech_used": "Technologies used",
-  "close": "Close"
+  "close": "Close",
+    "text_to_test_projects": "You can test the applications by clicking on the project. They are running in a test environment, you can access them at will."
 }
