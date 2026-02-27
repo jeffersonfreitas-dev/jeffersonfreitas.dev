@@ -15,7 +15,7 @@
   "about_me_9":"I have solid experience in all stages of the development cycle, with a focus on quality, performance and security.",
   "about_more_me": "Do you want to know more about my career and projects?",
   "down_cv": "Download my resume or connect with me on LinkedIn.",
-  "btn_down_cv": "Download Resume",
+  "btn_down_cv": "Resume Access",
   "and": "and",
   "my_projects": "My Projects",
   "quick_projects" : "Real solutions focused on performance and scalability",
@@ -36,7 +36,6 @@
   "framework_2": "Mastery of modern frameworks applied to development.",  
   "cloud_2": "Experience in cloud computing environments.",  
   "devops_2": "Experience with DevOps practices and process automation.",  
-
 
   "contacts": "Contacts",
   "tel": "Cell:",

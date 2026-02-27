@@ -61,15 +61,15 @@
 
 <script>
 import lottie from 'lottie-web'
-import { LINK_LINKEDIN, LINK_CURRICULO } from '@/constants.js'
+import { LINK_LINKEDIN, LINK_RESUME } from '@/constants.js'
 
 export default {
   data() {
     return {
-      LINK_CURRICULO,
+      LINK_RESUME,
       LINK_LINKEDIN,
-      LINK_CURRICULO_PT: LINK_CURRICULO + 'cv-br.pdf?alt=media',
-      LINK_CURRICULO_EN: LINK_CURRICULO + 'cv-en.pdf?alt=media',
+      LINK_CURRICULO_PT: LINK_RESUME + '?lang=pt',
+      LINK_CURRICULO_EN: LINK_RESUME + '?lang=en',
     }
   },
   mounted() {

@@ -61,9 +61,9 @@ export default {
   },
   mounted() {
     const urls = [
-      'https://assets1.lottiefiles.com/packages/lf20_kkflmtur.json',
-      'https://assets1.lottiefiles.com/packages/lf20_0yfsb3a1.json'
+      'https://assets1.lottiefiles.com/packages/lf20_kkflmtur.json'
     ];
+    // 'https://assets1.lottiefiles.com/packages/lf20_0yfsb3a1.json'
     window.addEventListener('resize', this.checkMobile);
     const selectedUrl = urls[Math.floor(Math.random() * urls.length)];
     
