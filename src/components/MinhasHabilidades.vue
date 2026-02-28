@@ -11,7 +11,7 @@
         <div class="stats-grid">
           <div class="stat-card animate-float" v-for="stat in stats" :key="stat.label">
             <h3 class="fw-bold text-gradient">{{ stat.value }}</h3>
-            <p class="small opacity-75">{{ stat.label }}</p>
+            <p class="small opacity-75">{{ currentLang.language === 'en' ? stat.labelEn : stat.label }}</p>
           </div>
         </div>
       </div>
@@ -25,8 +25,8 @@
               <font-awesome-icon :icon="category.icon" class="fa-2x" />
             </div>
             <div>
-              <h3 class="fw-bold mb-1">{{ category.title }}</h3>
-              <p class="small opacity-75 mb-0">{{ category.description }}</p>
+              <h3 class="fw-bold mb-1">{{ currentLang.language === 'en' ? category.titleEn : category.title }}</h3>
+              <p class="small opacity-75 mb-0">{{ currentLang.language === 'en' ? category.descriptionEn : category.description }}</p>
             </div>
           </div>
           <button 
@@ -59,8 +59,8 @@
                 </div>
 
                 <div class="skill-description" v-if="hoveredSkill === skill">
-                  <small >{{ skill.description || `Experiência com ${skill.title}` }}</small> <br>
-                  <small class="opacity-75">{{ skill.experience || '2+ anos' }}</small>
+                  <small >{{ currentLang.language === 'en' ? skill.descriptionEn : skill.description }}</small> <br>
+                  <small class="opacity-75">{{ currentLang.language === 'en' ? skill.experienceEn : skill.experience }}</small>
                 </div>                
               </div>
             </div>
@@ -97,7 +97,9 @@ export default {
       skillCategories: [
         {
           title: 'Linguagens',
+          titleEn: 'Languages',
           description: 'Linguagens de programação',
+          descriptionEn: 'Programming languages',
           icon: ['fab', 'java'],
           items: [
             { 
@@ -106,8 +108,11 @@ export default {
               level: 95, 
               tags: ['Backend', 'Enterprise'],
               description: 'Desenvolvimento Java desde 2016, com foco em Spring Boot e aplicações empresariais',
+              descriptionEn: 'Java development since 2016, focusing on Spring Boot and enterprise applications',
               experience: '5+ anos',
-              category: 'Linguagens'
+              experienceEn: '5+ years',
+              category: 'Linguagens',
+              categoryEn: 'Languages'
             },
             { 
               title: 'Python', 
@@ -115,8 +120,11 @@ export default {
               level: 45, 
               tags: ['Data', 'Scripts', 'IA'],
               description: 'Automação, Inteligência artificial, análise de dados e desenvolvimento web com Django/Flask',
+              descriptionEn: 'Automation, Artificial Intelligence, data analysis and web development with Django/Flask',
               experience: '2+ anos',
-              category: 'Linguagens'
+              experienceEn: '2+ years',
+              category: 'Linguagens',
+              categoryEn: 'Languages'
             },
             { 
               title: 'JavaScript', 
@@ -124,23 +132,31 @@ export default {
               level: 55, 
               tags: ['Frontend', 'Backend'],
               description: 'ES6+, Node.js, e desenvolvimento de aplicações interativas',
+              descriptionEn: 'ES6+, Node.js, and interactive application development',
               experience: '3+ anos',
-              category: 'Linguagens'
+              experienceEn: '3+ years',
+              category: 'Linguagens',
+              categoryEn: 'Languages'
             },
             { 
               title: 'Golang', 
               icon: ['fab', 'golang'], 
               level: 20, 
-              tags: ['Performace', 'Escalabilidade'],
+              tags: ['Performance', 'Scalability'],
               description: 'Desenvolvimento API performáticas e seguras',
+              descriptionEn: 'High-performance and secure API development',
               experience: '1+ ano',
-              category: 'Linguagens'
+              experienceEn: '1+ year',
+              category: 'Linguagens',
+              categoryEn: 'Languages'
             }
           ]
         },
         {
           title: 'Frameworks & Web',
+          titleEn: 'Frameworks & Web',
           description: 'Frameworks e tecnologias web',
+          descriptionEn: 'Frameworks and web technologies',
           icon: ['fa', 'leaf'],
           items: [
             { 
@@ -149,8 +165,11 @@ export default {
               level: 95, 
               tags: ['Microservices', 'API REST'],
               description: 'Conhecimento de vários projetos Spring Framework (Security, Cloud e etc)',
+              descriptionEn: 'Knowledge of various Spring Framework projects (Security, Cloud, etc)',
               experience: '5+ anos',
-              category: 'Frameworks & Web'
+              experienceEn: '5+ years',
+              category: 'Frameworks & Web',
+              categoryEn: 'Frameworks & Web'
             },
             { 
               title: 'Angular', 
@@ -158,17 +177,23 @@ export default {
               level: 70, 
               tags: ['SPA', 'RxJS'],
               description: 'Aplicações single-page com Angular 2+',
+              descriptionEn: 'Single-page applications with Angular 2+',
               experience: '3+ anos',
-              category: 'Frameworks & Web'
+              experienceEn: '3+ years',
+              category: 'Frameworks & Web',
+              categoryEn: 'Frameworks & Web'
             },
             { 
               title: 'Vue.js', 
               icon: ['fab', 'vuejs'], 
               level: 75, 
-              tags: ['Reativo', 'Composição'],
+              tags: ['Reactive', 'Composition'],
               description: 'Desenvolvimento de componentes reativos e SPAs',
+              descriptionEn: 'Development of reactive components and SPAs',
               experience: '3+ anos',
-              category: 'Frameworks & Web'
+              experienceEn: '3+ years',
+              category: 'Frameworks & Web',
+              categoryEn: 'Frameworks & Web'
             },
             { 
               title: 'React', 
@@ -176,78 +201,112 @@ export default {
               level: 20, 
               tags: ['Hooks', 'Context'],
               description: 'Desenvolvimento de interfaces modernas',
+              descriptionEn: 'Modern interface development',
               experience: '1+ ano',
-              category: 'Frameworks & Web'
+              experienceEn: '1+ year',
+              category: 'Frameworks & Web',
+              categoryEn: 'Frameworks & Web'
             },
             { 
               title: 'Bootstrap', 
               icon: ['fab', 'bootstrap'], 
               level: 90, 
-              tags: ['Responsivo', 'UI'],
-              experience: '3+ ano',
-              category: 'Frameworks & Web'
+              tags: ['Responsive', 'UI'],
+              description: 'Design responsivo e componentes UI',
+              descriptionEn: 'Responsive design and UI components',
+              experience: '3+ anos',
+              experienceEn: '3+ years',
+              category: 'Frameworks & Web',
+              categoryEn: 'Frameworks & Web'
             },
             { 
               title: 'HTML5/CSS3', 
               icon: ['fab', 'html5'], 
               level: 95, 
-              tags: ['Semântico', 'Flex/Grid'],
-              experience: '5+ ano',
-              category: 'Frameworks & Web'
+              tags: ['Semantic', 'Flex/Grid'],
+              description: 'Desenvolvimento de interfaces semânticas e responsivas',
+              descriptionEn: 'Semantic and responsive interface development',
+              experience: '5+ anos',
+              experienceEn: '5+ years',
+              category: 'Frameworks & Web',
+              categoryEn: 'Frameworks & Web'
             }
           ]
         },
         {
           title: 'Banco de Dados',
+          titleEn: 'Database',
           description: 'Bancos de dados relacionais e NoSQL',
+          descriptionEn: 'Relational and NoSQL databases',
           icon: ['fa', 'database'],
           items: [
             { 
               title: 'PostgreSQL', 
               icon: ['fa', 'database'], 
               level: 85, 
-              tags: ['Relacional', 'Performance'],
+              tags: ['Relational', 'Performance'],
               description: 'Modelagem de dados e otimização de queries',
+              descriptionEn: 'Data modeling and query optimization',
               experience: '4+ anos',
-              category: 'Banco de Dados'
+              experienceEn: '4+ years',
+              category: 'Banco de Dados',
+              categoryEn: 'Database'
             },
             { 
               title: 'MySQL', 
               icon: ['fa', 'database'], 
               level: 75, 
-              tags: ['Relacional'],
-              category: 'Banco de Dados'
+              tags: ['Relational'],
+              description: 'Banco de dados relacional amplamente utilizado',
+              descriptionEn: 'Widely used relational database',
+              experience: '4+ anos',
+              experienceEn: '4+ years',
+              category: 'Banco de Dados',
+              categoryEn: 'Database'
             },
             { 
               title: 'Oracle', 
               icon: ['fa', 'database'], 
               level: 75, 
               tags: ['Enterprise', 'PL/SQL'],
+              description: 'Banco de dados corporativo Oracle',
+              descriptionEn: 'Oracle enterprise database',
               experience: '3+ anos',
-              category: 'Banco de Dados'
+              experienceEn: '3+ years',
+              category: 'Banco de Dados',
+              categoryEn: 'Database'
             },
             { 
               title: 'MongoDB', 
               icon: ['fa', 'database'], 
               level: 30, 
-              tags: ['NoSQL', 'Documentos'],
+              tags: ['NoSQL', 'Documents'],
               description: 'Modelagem de dados não-relacionais',
+              descriptionEn: 'Non-relational data modeling',
               experience: '1+ ano',
-              category: 'Banco de Dados'
+              experienceEn: '1+ year',
+              category: 'Banco de Dados',
+              categoryEn: 'Database'
             },
             { 
               title: 'DynamoDB', 
               icon: ['fa', 'database'], 
               level: 75, 
               tags: ['NoSQL', 'AWS'],
-              experience: '2+ ano',
-              category: 'Banco de Dados'
+              description: 'Banco de dados NoSQL da AWS',
+              descriptionEn: 'AWS NoSQL database',
+              experience: '2+ anos',
+              experienceEn: '2+ years',
+              category: 'Banco de Dados',
+              categoryEn: 'Database'
             }
           ]
         },
         {
           title: 'Cloud',
+          titleEn: 'Cloud',
           description: 'Provedores e serviços cloud',
+          descriptionEn: 'Cloud providers and services',
           icon: ['fa', 'cloud'],
           items: [
             { 
@@ -256,15 +315,23 @@ export default {
               level: 90, 
               tags: ['EC2', 'S3', 'Lambda', 'API Gateway'],
               description: 'Certificação Developer, experiência com diversos serviços',
+              descriptionEn: 'Developer Certification, experience with various services',
               experience: '3+ anos',
-              category: 'Cloud'
+              experienceEn: '3+ years',
+              category: 'Cloud',
+              categoryEn: 'Cloud'
             },
             { 
               title: 'GCP', 
               icon: ['fab', 'google'], 
               level: 70, 
               tags: ['Compute', 'Storage'],
-              category: 'Cloud'
+              description: 'Google Cloud Platform',
+              descriptionEn: 'Google Cloud Platform',
+              experience: '2+ anos',
+              experienceEn: '2+ years',
+              category: 'Cloud',
+              categoryEn: 'Cloud'
             },
             { 
               title: 'OCI', 
@@ -272,30 +339,43 @@ export default {
               level: 65, 
               tags: ['Oracle Cloud', 'Infra'],
               description: 'Certificação OCI, deploys otimizados',
-              category: 'Cloud'
+              descriptionEn: 'OCI Certification, optimized deployments',
+              experience: '2+ anos',
+              experienceEn: '2+ years',
+              category: 'Cloud',
+              categoryEn: 'Cloud'
             },
             { 
               title: 'Firebase', 
               icon: ['fab', 'google-plus'], 
               level: 80, 
               tags: ['BaaS', 'Auth', 'Deploy'],
-              experience: '3+ anos',
               description: 'Vários projetos utilizando as ferramentas Google Firebase',
-              category: 'Cloud'
+              descriptionEn: 'Multiple projects using Google Firebase tools',
+              experience: '3+ anos',
+              experienceEn: '3+ years',
+              category: 'Cloud',
+              categoryEn: 'Cloud'
             },
             { 
-              title: 'SpringCloud', 
+              title: 'Spring Cloud', 
               icon: ['fa', 'leaf'], 
               level: 45, 
               tags: ['PaaS', 'Tools'],
               description: 'API Gateway, Eureka e outras ferramentas Spring Cloud',
-              category: 'Cloud'
+              descriptionEn: 'API Gateway, Eureka and other Spring Cloud tools',
+              experience: '2+ anos',
+              experienceEn: '2+ years',
+              category: 'Cloud',
+              categoryEn: 'Cloud'
             }
           ]
         },
         {
           title: 'DevOps',
+          titleEn: 'DevOps',
           description: 'Ferramentas e práticas DevOps',
+          descriptionEn: 'DevOps tools and practices',
           icon: ['fab', 'docker'],
           items: [
             { 
@@ -304,48 +384,68 @@ export default {
               level: 90, 
               tags: ['Containers', 'Compose'],
               description: 'Containerização de aplicações e orquestração',
+              descriptionEn: 'Application containerization and orchestration',
               experience: '3+ anos',
-              category: 'DevOps'
+              experienceEn: '3+ years',
+              category: 'DevOps',
+              categoryEn: 'DevOps'
             },
             { 
               title: 'Kubernetes', 
               icon: ['fa', 'box'], 
               level: 35, 
-              tags: ['Orquestração', 'K8s'],
+              tags: ['Orchestration', 'K8s'],
+              description: 'Orquestração de contêineres',
+              descriptionEn: 'Container orchestration',
               experience: '1+ ano',
-              category: 'DevOps'
+              experienceEn: '1+ year',
+              category: 'DevOps',
+              categoryEn: 'DevOps'
             },
             { 
               title: 'GitHub Actions', 
               icon: ['fab', 'github'], 
               level: 75, 
-              tags: ['CI/CD', 'Automação'],
+              tags: ['CI/CD', 'Automation'],
               description: 'Pipelines completas e automáticas',
-              category: 'DevOps'
+              descriptionEn: 'Complete and automated pipelines',
+              experience: '2+ anos',
+              experienceEn: '2+ years',
+              category: 'DevOps',
+              categoryEn: 'DevOps'
             },
             { 
-              title: 'Messageria', 
+              title: 'Messaging', 
               icon: ['fa', 'envelope'], 
               level: 50, 
-              tags: ['Streaming', 'Eventos'],
+              tags: ['Streaming', 'Events'],
               description: 'Experiências com Apache Kafka e RabbitMQ',
-              category: 'DevOps'
+              descriptionEn: 'Experience with Apache Kafka and RabbitMQ',
+              experience: '2+ anos',
+              experienceEn: '2+ years',
+              category: 'DevOps',
+              categoryEn: 'DevOps'
             },
             { 
               title: 'Grafana', 
               icon: ['fab', 'sketch'], 
               level: 50, 
-              tags: ['Monitoramento', 'Dashboards'],
-              category: 'DevOps'
+              tags: ['Monitoring', 'Dashboards'],
+              description: 'Monitoramento e visualização de métricas',
+              descriptionEn: 'Monitoring and metrics visualization',
+              experience: '2+ anos',
+              experienceEn: '2+ years',
+              category: 'DevOps',
+              categoryEn: 'DevOps'
             }
           ]
         }
       ],
       stats: [
-        { value: '5+', label: 'Anos de experiência' },
-        { value: '30+', label: 'Projetos entregues' },
-        { value: '2', label: 'Certificações' },
-        { value: '60+', label: 'Cursos concluídos' }
+        { value: '5+', label: 'Anos de experiência', labelEn: 'Years of experience' },
+        { value: '30+', label: 'Projetos entregues', labelEn: 'Projects delivered' },
+        { value: '2', label: 'Certificações', labelEn: 'Certifications' },
+        { value: '60+', label: 'Cursos concluídos', labelEn: 'Courses completed' }
       ]
     }
   },

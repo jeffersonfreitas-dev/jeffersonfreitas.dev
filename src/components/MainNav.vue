@@ -54,6 +54,7 @@ export default {
       this.isMenuOpen = !this.isMenuOpen;
     },
     changeLanguage(lang) {
+      console.log(lang)
       this.$i18n.locale = lang;
       localStorage.setItem('lang', lang);
     }
