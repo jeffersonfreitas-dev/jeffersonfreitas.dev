@@ -3,9 +3,9 @@ import App from './App.vue'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faBars, faPhone, faComment, faCode, faHandshake, faAddressCard, faDiagramProject, faThumbsUp, faDatabase, faLeaf, faEnvelope, 
-  faCloud, faInfoCircle, faEye, faArrowAltCircleRight} from "@fortawesome/free-solid-svg-icons";
-import { faGithub, faLinkedinIn, faWhatsapp, faJava, faPython, faAngular, faVuejs, faDocker, faAws, faBootstrap, faHtml5, faYoutube, faGoogle, faGooglePlusSquare, faDev, faConnectdevelop, faSketch} from '@fortawesome/free-brands-svg-icons'
+import { faBox,faBars, faPhone, faComment, faCode, faHandshake, faAddressCard, faDiagramProject, faThumbsUp, faDatabase, faLeaf, faEnvelope, 
+  faCloud, faInfoCircle, faEye, faArrowAltCircleRight, faChevronUp, faChevronDown} from "@fortawesome/free-solid-svg-icons";
+import { faGithub, faGooglePlus, faReact, faLinkedinIn, faWhatsapp, faJava, faPython, faGolang, faAngular, faVuejs, faDocker, faAws, faBootstrap, faHtml5, faYoutube, faGoogle, faGooglePlusSquare, faDev, faConnectdevelop, faSketch} from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 import VuePlyr from 'vue-plyr'
@@ -32,6 +32,12 @@ const i18n = createI18n({
 
 
 library.add(
+  faBox,
+  faGooglePlus,
+  faReact,
+  faGolang,
+  faChevronUp,
+  faChevronDown,
   faBars, 
   faYoutube,
   faGithub, 

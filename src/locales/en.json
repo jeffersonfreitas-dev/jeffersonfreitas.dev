@@ -45,6 +45,8 @@
   "post_problem_title": "Problem Fetching Posts",
   "post_problem_body": "There was a problem fetching the posts from my blog, but you can access them directly by clicking here!",
 
+  "tech_cloud": "Tech Cloud",
+
   "cv_pt": "Portuguese Version",
   "cv_en": "English Version",
   "access_project": "Project Access",

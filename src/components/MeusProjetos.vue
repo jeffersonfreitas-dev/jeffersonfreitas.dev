@@ -13,10 +13,6 @@
       </div>
     </div>
 
-    <div class="col-12">
-      <h5 ><strong>{{ $t('text_to_test_projects') }}</strong> 😊 </h5>
-    </div>
-
     <div class="col-12 mt-5 mb-5 div-projetos" v-for="(p) in projetos" :key="p.name">
       <a class="text-decoration-none text-white" :href="p.link" target="_blank">
 
@@ -56,13 +52,13 @@
       </a>
     </div>
 
-    <!-- <div class="row mb-5">
+    <div class="row mb-5">
       <div class="col-12 d-flex align-items-center justify-content-center mt-3">
         <a href="#" class="btn btn-outline-light custom-btn">
           {{ $t('btn_check_all_projects') }}
         </a>
       </div>
-    </div> -->
+    </div>
 
 
     <div class="modal fade text-start" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
