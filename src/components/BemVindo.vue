@@ -162,11 +162,11 @@ export default {
       
       return [
         'Arquiteto de Software',
-        'Engenharia de Software',
+        'Engenheiro de Software',
         'Especialista Cloud', 
         'Desenvolvedor FullCycle',
         'Backend Engineer',
-        'Engenharia de Dados'
+        'Engenheiro de Dados'
       ]
     }
   },
