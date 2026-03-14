@@ -25,7 +25,7 @@
                   { active: selectedProject?.name === projeto.name }
                 ]"
               >
-                <div class="d-flex align-items-center gap-3">
+                <div class="mini-group-project">
                   <div class="project-list-image">
                     <img 
                       :src="`/images/${projeto.imageFolder}/0.png`" 
@@ -33,9 +33,23 @@
                       class="rounded-2"
                     >
                   </div>
-                  <div>
-                    <h6 class="mb-1">{{ projeto.name }}</h6>
+                  <div class="mini-name-project">
+                    <h6 class="mb-1" style="font-size: large;">{{ projeto.name }}</h6>
+                    <small class="opacity-75" style="font-size: small;">{{ projeto.stacks.slice(0, 3).join(' • ') }}</small>
                   </div>
+                  <div>
+                    <a 
+                      v-if="selectedProject.youtubeCode" 
+                      :href="`https://www.youtube.com/watch?v=${selectedProject.youtubeCode}`"
+                      target="_blank"
+                      class="action-btn youtube-btn"
+                      data-bs-toggle="tooltip"
+                      :title="$t('btn_see_apresentation_video')"
+                    >
+                      <font-awesome-icon :icon="['fab', 'youtube']" class="me-1" />
+                    </a>
+                  </div>
+
                 </div>
               </button>
             </div>
@@ -83,7 +97,7 @@
               <!-- Stacks -->
               <div class="stacks-container mb-4">
                 <h5 class="fw-bold mb-3">{{ $t('tech_used')}}</h5>
-                <div class="d-flex flex-wrap gap-2">
+                <div class="d-flex flex-wrap gap-2 stacks-used">
                   <span class="tech-badge" v-for="stack in selectedProject.stacks" :key="stack">
                     {{ stack }}
                   </span>
@@ -628,5 +642,22 @@ export default {
 
 .project-carousel-card:hover::before {
   opacity: 1;
+}
+
+.stacks-used {
+  display: flex;
+  justify-content: center;
+}
+
+.mini-group-project{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mini-name-project {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 </style>
