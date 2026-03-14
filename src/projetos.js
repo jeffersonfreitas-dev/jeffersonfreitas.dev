@@ -7,6 +7,7 @@ export default [
     imageFolder: "financialapp",
     stacks: ["Golang", "Angular 17", "PostgreSQL", "Docker"],
     youtubeCode:'poOCmzhHV4c',
+    github: "https://github.com/jeffersonfreitas-dev/golang-simple-finance",
   },  
   // {
   //   name: "Aipna App",
@@ -63,20 +64,20 @@ export default [
   //   youtubeCode: 'XvEQi2AN_4s',
   //   acessoProjeto:true
   // },
-  // {
-  //   name: "StockSet Catálogo",
-  //   description: "O StockSet permite o cadastro de produtos com fotos, preços e categorias, além da personalização visual da aplicação e inclusão do número de WhatsApp do vendedor. Gera um link público para exibição dos produtos, que pode ser compartilhado com clientes, mostrando as principais informações. Também oferece um botão de contato que inicia uma conversa via WhatsApp entre cliente e vendedor para facilitar negociações.",
-  //   descriptionEng: "StockSet allows you to register products with photos, prices and categories, as well as customize the visual appearance of the application and include the seller's WhatsApp number. It generates a public link to display the products, which can be shared with customers, showing the main information. It also offers a contact button that starts a conversation via WhatsApp between the customer and the seller to facilitate negotiations.",
-  //   imageFolder: "stockset",
-  //   detailDescription: "O projeto foi criado no formato Serverless BaaS (Backend as a Service), onde toda a parte do backend foi usado a stack do Google Firebase. O projeto possui a opção de realizar o login criando um conta com e-mail e senha bem como a utilização de login social (Google).",
-  //   detailDescriptionEng: "The project was created in the Serverless BaaS (Backend as a Service) format, where the entire backend part used the Google Firebase stack. The project has the option to log in by creating an account with email and password as well as using social login (Google).",
-  //   link: "https://stockset.jeffersonfreitas.dev/",
-  //   functions: "O StockSet realiza o cadastro de produtos com fotos e preços, cadastro de categorias, configuração do usuário podendo personalizar as cores e titulo da aplicação e a inclusão do número de Whatsapp do vendedor para contato. Disponibiliza um link público que pode ser compartilhado com os clientes exibindo os produtos cadastrados para venda, mostrando a foto e as principais informações dos produtos. Possui um botão de contato que abre uma conversa, no whatsapp, entre o cliente e o vendedor possibilitando a obtenção de mais detalhes e negociação sobre o produto selecionado.",
-  //   functionsEng: "StockSet registers products with photos and prices, categories, user configuration, allowing the application to be customized with colors and title, and includes the seller's WhatsApp number for contact. It provides a public link that can be shared with customers, displaying the products registered for sale, showing the photo and main information about the products. It has a contact button that opens a conversation on WhatsApp between the customer and the seller, allowing for more details and negotiation about the selected product.",
-  //   stacks: ["VueJS", "Quasar Framework", "Firebase Authentication", "Firebase Storage", "NoSQL Firestore", "Firebase Hosting", "Github Actions"],
-  //   github: "https://github.com/jeffersonfreitas-dev/stock-quasar-supabase",
-  //   youtubeCode: '9GFRPZNE1VY',
-  //   acessoProjeto:true
-  // }
+  {
+    name: "StockSet Catálogo",
+    description: "O StockSet permite o cadastro de produtos com fotos, preços e categorias, além da personalização visual da aplicação e inclusão do número de WhatsApp do vendedor. Gera um link público para exibição dos produtos, que pode ser compartilhado com clientes, mostrando as principais informações. Também oferece um botão de contato que inicia uma conversa via WhatsApp entre cliente e vendedor para facilitar negociações.",
+    descriptionEng: "StockSet allows you to register products with photos, prices and categories, as well as customize the visual appearance of the application and include the seller's WhatsApp number. It generates a public link to display the products, which can be shared with customers, showing the main information. It also offers a contact button that starts a conversation via WhatsApp between the customer and the seller to facilitate negotiations.",
+    imageFolder: "stockset",
+    detailDescription: "O projeto foi criado no formato Serverless BaaS (Backend as a Service), onde toda a parte do backend foi usado a stack do Google Firebase. O projeto possui a opção de realizar o login criando um conta com e-mail e senha bem como a utilização de login social (Google).",
+    detailDescriptionEng: "The project was created in the Serverless BaaS (Backend as a Service) format, where the entire backend part used the Google Firebase stack. The project has the option to log in by creating an account with email and password as well as using social login (Google).",
+    link: "https://stockset.jeffersonfreitas.dev/",
+    functions: "O StockSet realiza o cadastro de produtos com fotos e preços, cadastro de categorias, configuração do usuário podendo personalizar as cores e titulo da aplicação e a inclusão do número de Whatsapp do vendedor para contato. Disponibiliza um link público que pode ser compartilhado com os clientes exibindo os produtos cadastrados para venda, mostrando a foto e as principais informações dos produtos. Possui um botão de contato que abre uma conversa, no whatsapp, entre o cliente e o vendedor possibilitando a obtenção de mais detalhes e negociação sobre o produto selecionado.",
+    functionsEng: "StockSet registers products with photos and prices, categories, user configuration, allowing the application to be customized with colors and title, and includes the seller's WhatsApp number for contact. It provides a public link that can be shared with customers, displaying the products registered for sale, showing the photo and main information about the products. It has a contact button that opens a conversation on WhatsApp between the customer and the seller, allowing for more details and negotiation about the selected product.",
+    stacks: ["VueJS", "Quasar", "Firebase", "Firebase Storage", "NoSQL Firestore", "Firebase Auth", "Firebase Hosting", "Github Actions"],
+    github: "https://github.com/jeffersonfreitas-dev/stock-quasar-supabase",
+    youtubeCode: '9GFRPZNE1VY',
+    acessoProjeto:true
+  }
 ]
 
