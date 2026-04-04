@@ -5,7 +5,7 @@ export default [
     description: "Sistema de gestão para oficinas mecânicas que centraliza o controle de ordens de serviço, clientes, veículos e finanças em um ambiente digital. Oferece dashboard com indicadores em tempo real, criação simplificada de ordens de serviço com cálculo automático, registro completo do atendimento (incluindo checklist e fotos) e acompanhamento online para clientes. Também conta com histórico detalhado de serviços e relatórios gerenciais que auxiliam na tomada de decisão. A solução é responsiva e acessível via computador ou celular, trazendo mais organização, eficiência e controle para oficinas.",
     descriptionEng: "Workshop management system that centralizes the control of service orders, customers, vehicles, and finances in a digital environment. It features a dashboard with real-time indicators, simplified service order creation with automatic calculations, and complete service records (including checklists and photos), as well as online tracking for customers. It also includes detailed service history and management reports that support decision-making. The solution is responsive and accessible via computer or mobile devices, providing greater organization, efficiency, and operational control for workshops.",
     imageFolder: "autogest",
-    stacks: ["Java 21", "Angular 17", "PostgreSQL", "Docker", "Railway"],
+    stacks: ["Java 21", "Spring Boot", "Angular 17", "PostgreSQL", "Docker", "Railway"],
     youtubeCode:'limM0bDdzo8',
     acessoProjeto:true,
     link: "https://ajeffsolucoes.com.br"
