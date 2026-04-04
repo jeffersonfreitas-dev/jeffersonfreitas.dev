@@ -1,6 +1,16 @@
 
 export default [
   {
+    name: "AutoGest",
+    description: "Sistema de gestão para oficinas mecânicas que centraliza o controle de ordens de serviço, clientes, veículos e finanças em um ambiente digital. Oferece dashboard com indicadores em tempo real, criação simplificada de ordens de serviço com cálculo automático, registro completo do atendimento (incluindo checklist e fotos) e acompanhamento online para clientes. Também conta com histórico detalhado de serviços e relatórios gerenciais que auxiliam na tomada de decisão. A solução é responsiva e acessível via computador ou celular, trazendo mais organização, eficiência e controle para oficinas.",
+    descriptionEng: "Workshop management system that centralizes the control of service orders, customers, vehicles, and finances in a digital environment. It features a dashboard with real-time indicators, simplified service order creation with automatic calculations, and complete service records (including checklists and photos), as well as online tracking for customers. It also includes detailed service history and management reports that support decision-making. The solution is responsive and accessible via computer or mobile devices, providing greater organization, efficiency, and operational control for workshops.",
+    imageFolder: "autogest",
+    stacks: ["Java 21", "Angular 17", "PostgreSQL", "Docker", "Railway"],
+    youtubeCode:'limM0bDdzo8',
+    acessoProjeto:true,
+    link: "https://ajeffsolucoes.com.br"
+  },  
+  {
     name: "FinancialApp",
     description: "Aplicação para gestão financeira pessoal que permite ao usuário controlar contas a pagar, contas a receber e transações financeiras de forma centralizada. O sistema oferece autenticação de usuários, cadastro e gerenciamento de transações, além de um dashboard com indicadores financeiros, como saldo atual, valores a receber, valores a pagar e contas vencidas. A aplicação também apresenta visualizações de dados por meio de gráficos de fluxo de caixa e distribuição por categorias, facilitando a análise do comportamento financeiro. Entre as funcionalidades estão listagem e filtragem de transações, resumo financeiro diário com consolidação de saldo, entradas e saídas, e acompanhamento de próximos vencimentos, permitindo uma visão clara da situação financeira do usuário.",
     descriptionEng: "A SaaS application for personal financial management that allows users to manage accounts payable, accounts receivable, and financial transactions in a centralized way. The system provides user authentication, transaction creation and management, and a financial dashboard displaying key indicators such as current balance, receivables, payables, and overdue accounts. The application also includes data visualization through cash flow charts and category distribution graphs, helping users analyze their financial behavior. Features include transaction listing and filtering, a daily financial summary with consolidated balances, inflows and outflows, and tracking of upcoming due dates, providing a clear overview of the user's financial situation.",
